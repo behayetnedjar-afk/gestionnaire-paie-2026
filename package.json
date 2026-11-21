@@ -1,0 +1,12 @@
+{
+  "name": "gestionnaire-paie-2026",
+  "private": true,
+  "description": "Plateforme d'apprentissage de la paie — Référentiel 2026",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspace @paie/moteur",
+    "build": "npm run build --workspace @paie/moteur"
+  }
+}

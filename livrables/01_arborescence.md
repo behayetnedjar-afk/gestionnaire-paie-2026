@@ -15,7 +15,7 @@
 | Moteur de paie | **Package TypeScript isolé** `@paie/moteur`, sans dépendance à React ni à la BDD | Testable unitairement (Vitest), réutilisable (API, CLI, front). |
 | Paramètres légaux | **Un fichier JSON par année** : `parametres/2026.json` | Mise à jour annuelle sans toucher au code. Ajout de 2027 = ajout d'un fichier. |
 | Export PDF | `@react-pdf/renderer` côté serveur | Fiches de révision et bulletins simulés. |
-| Organisation | **Monorepo pnpm + Turborepo** | Séparation claire : app web / moteur / contenu / paramètres. |
+| Organisation | **Monorepo npm (workspaces)** | Séparation claire : app web / moteur / contenu / paramètres. |
 
 **Règle d'or :** aucun taux, plafond ou montant légal n'est écrit en dur dans le code. Tout passe par le fichier de paramètres de l'année concernée.
 
