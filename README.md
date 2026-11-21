@@ -20,13 +20,27 @@ Public : étudiants, alternants, personnes en reconversion, candidats au titre p
 
 ## Prévisualiser en local
 
-Depuis la racine du dépôt :
+Prérequis : Node.js et Python. Depuis la racine du dépôt :
 
 ```
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Puis ouvrir http://localhost:8000/site/
+`npm run dev` compile le moteur de paie pour le navigateur (`site/assets/moteur.js`) puis lance un serveur local.
+Ouvrir ensuite http://localhost:8000/site/
+
+## Pages du site
+
+| Page | Contenu |
+|---|---|
+| Programme | Les 10 modules, chiffres clés 2026, accès aux outils |
+| Cours | Module 1 avec sommaire (modules 2 à 10 en préparation) |
+| Fiches | 10 fiches synthèse transverses |
+| QCM | 20 questions corrigées, filtres par niveau, meilleur score mémorisé |
+| Simulateur | Bulletin de paie complet calculé par le moteur, impression / PDF |
+| Calculateurs | Heures sup., heures compl., congés payés, licenciement, fin de CDD, maintien de salaire, plafond, coût employeur |
+| Paramètres 2026 | Toutes les valeurs légales, filtre « À VÉRIFIER » |
 
 ## Publication
 

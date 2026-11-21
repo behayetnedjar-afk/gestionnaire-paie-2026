@@ -2,6 +2,7 @@ node_modules/
 .next/
 out/
 dist/
+site/assets/moteur.js
 _site/
 .env
 .env.*

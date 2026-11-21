@@ -37,6 +37,9 @@ jobs:
             node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "JSON invalide : $f"; exit 1; }
           done
 
+      - name: Compiler le moteur pour le navigateur
+        run: npm run build:site
+
       - name: Assembler le site
         run: |
           mkdir -p _site/packages

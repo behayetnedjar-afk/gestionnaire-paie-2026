@@ -125,6 +125,11 @@
         (chiffres.length ? '<div class="chiffres">' + chiffres.map(function (x) {
           return '<div class="chiffre"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>';
         }).join('') + '</div>' : '') +
+        '<h2>Outils</h2><div class="grille-modules" style="margin-bottom:32px">' +
+        '<article class="carte"><span class="num">Application</span><h3>Simulateur de bulletin</h3><ul><li>Saisie guidée</li><li>Bulletin détaillé ligne par ligne</li><li>Nets, coût employeur, impression PDF</li></ul><div class="actions"><a class="bouton" href="#/simulateur">Ouvrir</a></div></article>' +
+        '<article class="carte"><span class="num">Application</span><h3>Calculateurs rapides</h3><ul><li>Heures sup. et complémentaires</li><li>Congés payés, licenciement, fin de CDD</li><li>Maintien de salaire, plafond, coût employeur</li></ul><div class="actions"><a class="bouton" href="#/calculateurs">Ouvrir</a></div></article>' +
+        '<article class="carte"><span class="num">Révision</span><h3>Fiches et QCM</h3><ul><li>10 fiches synthèse</li><li>QCM corrigés avec références</li></ul><div class="actions"><a class="bouton" href="#/fiches">Fiches</a><a class="bouton secondaire" href="#/qcm/1">QCM</a></div></article>' +
+        '</div>' +
         '<h2>Les 10 modules</h2><div class="grille-modules">' +
         MODULES.map(function (m, i) {
           var n = i + 1;
@@ -308,6 +313,17 @@
     });
   }
 
+  /* ---------- simulateur et calculateurs (assets/outils.js + assets/moteur.js) ---------- */
+  function pageOutil(nom) {
+    if (!window.MoteurPaie || !window.PagesOutils) {
+      return Promise.reject(new Error('Moteur de calcul non chargé. En local, lancez « npm run build:site » pour générer site/assets/moteur.js.'));
+    }
+    return charger(CHEMINS.parametres, true).then(function (p) {
+      titrePage(nom === 'simulateur' ? 'Simulateur de bulletin' : 'Calculateurs');
+      window.PagesOutils[nom](main, p);
+    });
+  }
+
   /* ---------- routeur ---------- */
   function router() {
     var h = location.hash.replace(/^#\/?/, '');
@@ -323,6 +339,7 @@
     else if (nav === 'qcm') p = pageQcm(n);
     else if (nav === 'fiches') p = pageMarkdown(CHEMINS.fiches, 'Fiches synthèse');
     else if (nav === 'parametres') p = pageParametres();
+    else if (nav === 'simulateur' || nav === 'calculateurs') p = pageOutil(nav);
     else p = pageAccueil();
     p.catch(erreur).then(function () { window.scrollTo(0, 0); main.focus({ preventScroll: true }); });
   }
