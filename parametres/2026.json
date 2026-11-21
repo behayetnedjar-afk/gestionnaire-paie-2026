@@ -1,0 +1,311 @@
+{
+  "$schema": "./schema.json",
+  "meta": {
+    "annee": 2026,
+    "nom_fichier_equivalent": "parametres_2026.json",
+    "version": "0.1.0",
+    "date_derniere_maj": "2026-11-21",
+    "avertissement": "Fichier pédagogique. Chaque valeur porte un statut. 'publie' = valeur connue comme publiée officiellement pour 2026, à re-contrôler quand même avant mise en ligne. 'A_VERIFIER' = valeur non confirmée : ne pas utiliser en production sans vérification sur la source indiquée. Une valeur null signifie qu'aucune valeur fiable n'est connue : le moteur de calcul refuse de calculer avec une valeur null.",
+    "legende_statuts": {
+      "publie": "Valeur officielle connue. Re-contrôle recommandé (revalorisations en cours d'année).",
+      "A_VERIFIER": "À VÉRIFIER — valeur incertaine, provisoire ou reprise de l'année précédente.",
+      "stable": "Règle légale permanente (Code du travail / CSS), non revalorisée annuellement. Vérifier seulement qu'aucune réforme ne l'a modifiée."
+    },
+    "sources_officielles": {
+      "urssaf": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes.html",
+      "boss": "https://boss.gouv.fr",
+      "service_public": "https://www.service-public.fr",
+      "legifrance": "https://www.legifrance.gouv.fr",
+      "agirc_arrco": "https://www.agirc-arrco.fr",
+      "impots": "https://bofip.impots.gouv.fr",
+      "net_entreprises": "https://www.net-entreprises.fr",
+      "ameli": "https://www.ameli.fr"
+    }
+  },
+
+  "plafonds_securite_sociale": {
+    "pass_annuel": { "valeur": 48060, "unite": "€", "statut": "publie", "reference": "Arrêté annuel fixant le plafond de la sécurité sociale pour 2026 — CSS art. L241-3 et D242-17", "source": "urssaf" },
+    "pmss_mensuel": { "valeur": 4005, "unite": "€", "statut": "publie", "reference": "Idem", "source": "urssaf" },
+    "plafond_trimestriel": { "valeur": 12015, "unite": "€", "statut": "publie", "note": "= 3 × PMSS", "source": "urssaf" },
+    "plafond_quinzaine": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "plafond_semaine": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "plafond_journalier": { "valeur": 220, "unite": "€", "statut": "A_VERIFIER", "note": "Arrondi réglementaire à l'euro. À confirmer sur urssaf.fr.", "source": "urssaf" },
+    "plafond_horaire": { "valeur": 30, "unite": "€", "statut": "A_VERIFIER", "note": "Pour une durée de travail < 5 heures. Sert aussi au calcul de la gratification de stage.", "source": "urssaf" },
+    "tranches": {
+      "tranche_A": { "de": 0, "a_x_pmss": 1, "usage": "Sécurité sociale plafonnée, prévoyance cadres 1,50 %" },
+      "tranche_B": { "de_x_pmss": 1, "a_x_pmss": 4, "usage": "Chômage, APEC, prévoyance" },
+      "tranche_C": { "de_x_pmss": 4, "a_x_pmss": 8, "usage": "Prévoyance / régimes supplémentaires" },
+      "tranche_1_agirc_arrco": { "de": 0, "a_x_pmss": 1 },
+      "tranche_2_agirc_arrco": { "de_x_pmss": 1, "a_x_pmss": 8 },
+      "statut": "stable",
+      "reference": "ANI du 17 novembre 2017 (AGIRC-ARRCO) ; CSS art. L241-3"
+    }
+  },
+
+  "smic": {
+    "horaire_brut": { "valeur": 12.02, "unite": "€", "date_effet": "2026-01-01", "statut": "publie", "reference": "Décret portant relèvement du salaire minimum de croissance au 1er janvier 2026 — C. trav. art. L3231-2 et s.", "note": "Vérifier l'absence de revalorisation automatique en cours d'année (inflation > 2 %, C. trav. art. L3231-5).", "source": "service_public" },
+    "mensuel_35h": { "valeur": 1823.03, "unite": "€", "statut": "publie", "note": "= 12,02 × (35 × 52 / 12) = 12,02 × 151,6667 h, arrondi au centime. Attention : 12,02 × 151,67 donne 1 823,07 € (écart d'arrondi classique).", "source": "service_public" },
+    "annuel_35h": { "valeur": 21876.36, "unite": "€", "statut": "publie", "note": "= 1 823,03 × 12. Utilisé dans la réduction générale.", "source": "urssaf" },
+    "horaire_mayotte": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "service_public" },
+    "minimum_garanti": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "note": "Sert à évaluer certains avantages en nature (HCR). Montant 2026 à confirmer.", "reference": "C. trav. art. L3231-12", "source": "service_public" }
+  },
+
+  "duree_travail": {
+    "statut": "stable",
+    "duree_legale_hebdo_h": 35,
+    "duree_mensuelle_mensualisee_h": 151.67,
+    "duree_annuelle_h": 1607,
+    "jours_ouvres_moyens_mois": 21.67,
+    "majoration_hs_8_premieres_pct": 25,
+    "majoration_hs_suivantes_pct": 50,
+    "majoration_hs_minimum_accord_pct": 10,
+    "contingent_annuel_hs_defaut_h": 220,
+    "duree_max_quotidienne_h": 10,
+    "duree_max_hebdo_absolue_h": 48,
+    "duree_max_hebdo_moyenne_12_semaines_h": 44,
+    "repos_quotidien_min_h": 11,
+    "repos_hebdo_min_h": 35,
+    "pause_apres_6h_min": 20,
+    "forfait_jours_max": 218,
+    "temps_partiel_duree_min_hebdo_h": 24,
+    "heures_complementaires_limite_legale_fraction": 0.1,
+    "heures_complementaires_limite_accord_fraction": 0.3333,
+    "majoration_hc_dans_dixieme_pct": 10,
+    "majoration_hc_au_dela_dixieme_pct": 25,
+    "references": {
+      "duree_legale": "C. trav. art. L3121-27",
+      "majorations_hs": "C. trav. art. L3121-33 et L3121-36",
+      "contingent": "C. trav. art. L3121-30 et D3121-24",
+      "durees_max": "C. trav. art. L3121-18, L3121-20, L3121-22",
+      "repos": "C. trav. art. L3131-1 et L3132-2",
+      "pause": "C. trav. art. L3121-16",
+      "forfait_jours": "C. trav. art. L3121-64",
+      "temps_partiel": "C. trav. art. L3123-27 ; heures complémentaires L3123-28, L3123-29, L3123-20"
+    }
+  },
+
+  "cotisations": {
+    "_note": "Taux en %. Assiette : 'totalite' = brut total ; 'TA' = dans la limite du PMSS ; '4PMSS' = dans la limite de 4 PMSS ; 'T1'/'T2' = tranches AGIRC-ARRCO.",
+    "maladie": { "assiette": "totalite", "salarial": 0, "patronal": 13.0, "statut": "publie", "reference": "CSS art. L241-2, D242-3" },
+    "maladie_taux_reduit": { "assiette": "totalite", "patronal": 7.0, "condition_seuil_smic": 2.25, "statut": "A_VERIFIER", "note": "Seuil abaissé à 2,25 SMIC depuis 2025. Vérifier le maintien du dispositif et du seuil en 2026.", "reference": "CSS art. L241-2-1", "source": "urssaf" },
+    "maladie_alsace_moselle": { "assiette": "totalite", "salarial": 1.3, "statut": "A_VERIFIER", "note": "Taux fixé par le conseil d'administration du régime local. À confirmer pour 2026.", "source": "urssaf" },
+    "contribution_solidarite_autonomie": { "assiette": "totalite", "patronal": 0.3, "statut": "publie", "reference": "CASF art. L14-10-4" },
+    "vieillesse_plafonnee": { "assiette": "TA", "salarial": 6.9, "patronal": 8.55, "statut": "publie", "reference": "CSS art. D242-4" },
+    "vieillesse_deplafonnee": { "assiette": "totalite", "salarial": 0.4, "patronal": 2.11, "statut": "A_VERIFIER", "note": "Taux patronal à confirmer pour 2026 (évolutions récentes de ce taux).", "reference": "CSS art. D242-4", "source": "urssaf" },
+    "allocations_familiales": { "assiette": "totalite", "patronal": 5.25, "statut": "publie", "reference": "CSS art. L241-6, D241-3-1" },
+    "allocations_familiales_taux_reduit": { "assiette": "totalite", "patronal": 3.45, "condition_seuil_smic": 3.3, "statut": "A_VERIFIER", "note": "Seuil abaissé à 3,3 SMIC depuis 2025 (anciennement 3,5). Vérifier le seuil applicable en 2026.", "reference": "CSS art. L241-6-1", "source": "urssaf" },
+    "accident_travail": { "assiette": "totalite", "patronal": null, "statut": "publie", "note": "Taux propre à chaque établissement, notifié par la CARSAT (compte AT/MP sur net-entreprises). Valeur à saisir dans le simulateur.", "reference": "CSS art. L242-5, D242-6-1 et s." },
+    "fnal_moins_50": { "assiette": "TA", "patronal": 0.1, "statut": "publie", "reference": "CSS art. L834-1" },
+    "fnal_50_et_plus": { "assiette": "totalite", "patronal": 0.5, "statut": "publie", "reference": "CSS art. L834-1" },
+    "csg_deductible": { "assiette": "base_csg", "salarial": 6.8, "statut": "publie", "reference": "CSS art. L136-1 et s. ; CGI art. 154 quinquies" },
+    "csg_non_deductible": { "assiette": "base_csg", "salarial": 2.4, "statut": "publie", "reference": "CSS art. L136-8" },
+    "crds": { "assiette": "base_csg", "salarial": 0.5, "statut": "publie", "reference": "Ordonnance n° 96-50 du 24 janvier 1996, art. 14" },
+    "base_csg": {
+      "abattement_frais_pro_pct": 1.75,
+      "limite_abattement_x_pass": 4,
+      "ajouts_sans_abattement": ["contributions patronales prévoyance complémentaire", "contributions patronales retraite supplémentaire", "contributions patronales complémentaire santé"],
+      "statut": "publie",
+      "reference": "CSS art. L136-1-1 et L136-1-2"
+    },
+    "chomage": { "assiette": "4PMSS", "salarial": 0, "patronal": 4.0, "statut": "A_VERIFIER", "note": "Taux de droit commun. Bonus-malus possible dans certains secteurs (taux modulé notifié). Vérifier toute modulation 2026.", "reference": "C. trav. art. L5422-9 et s. ; règlement d'assurance chômage", "source": "urssaf" },
+    "ags": { "assiette": "4PMSS", "patronal": 0.25, "statut": "A_VERIFIER", "note": "Fixé par le conseil d'administration de l'AGS, peut changer en cours d'année.", "reference": "C. trav. art. L3253-18", "source": "urssaf" },
+    "agirc_arrco_t1": { "assiette": "T1", "salarial": 3.15, "patronal": 4.72, "statut": "publie", "note": "Taux contractuel 6,20 % × pourcentage d'appel 127 % = 7,87 %. Répartition 40/60.", "reference": "ANI AGIRC-ARRCO du 17 novembre 2017", "source": "agirc_arrco" },
+    "agirc_arrco_t2": { "assiette": "T2", "salarial": 8.64, "patronal": 12.95, "statut": "publie", "note": "17,00 % × 127 % = 21,59 %.", "source": "agirc_arrco" },
+    "ceg_t1": { "assiette": "T1", "salarial": 0.86, "patronal": 1.29, "statut": "publie", "note": "Contribution d'équilibre général 2,15 %.", "source": "agirc_arrco" },
+    "ceg_t2": { "assiette": "T2", "salarial": 1.08, "patronal": 1.62, "statut": "publie", "note": "2,70 %.", "source": "agirc_arrco" },
+    "cet": { "assiette": "T1+T2", "salarial": 0.14, "patronal": 0.21, "condition": "Uniquement si la rémunération dépasse le PMSS", "statut": "publie", "note": "Contribution d'équilibre technique 0,35 %.", "source": "agirc_arrco" },
+    "apec": { "assiette": "4PMSS", "salarial": 0.024, "patronal": 0.036, "condition": "Cadres (art. 2.1 et 2.2 ANI 2017)", "statut": "publie", "source": "agirc_arrco" },
+    "prevoyance_cadres_minimum": { "assiette": "TA", "patronal": 1.5, "condition": "Cadres — obligation conventionnelle", "statut": "stable", "reference": "ANI du 17 novembre 2017, art. 7 (ex-CCN 1947)" },
+    "contribution_dialogue_social": { "assiette": "totalite", "patronal": 0.016, "statut": "publie", "reference": "C. trav. art. L2135-10" },
+    "formation_professionnelle_moins_11": { "assiette": "totalite", "patronal": 0.55, "statut": "stable", "reference": "C. trav. art. L6331-1" },
+    "formation_professionnelle_11_et_plus": { "assiette": "totalite", "patronal": 1.0, "statut": "stable", "reference": "C. trav. art. L6331-3" },
+    "taxe_apprentissage_principale": { "assiette": "totalite", "patronal": 0.59, "statut": "stable", "reference": "CGI art. 1599 ter A ; C. trav. art. L6241-1" },
+    "taxe_apprentissage_solde": { "assiette": "totalite", "patronal": 0.09, "condition": "Hors entreprises exonérées", "statut": "stable" },
+    "contribution_supplementaire_apprentissage": { "assiette": "totalite", "patronal": null, "condition": "Entreprises ≥ 250 salariés sous le quota d'alternants", "statut": "A_VERIFIER", "note": "Taux de 0,05 % à 0,6 % selon le taux d'alternants." },
+    "versement_mobilite": { "assiette": "totalite", "patronal": null, "condition": "Entreprises ≥ 11 salariés dans une zone instituant le VM", "statut": "publie", "note": "Taux local, consultable sur urssaf.fr (outil taux VM). À saisir.", "reference": "CGCT art. L2333-64" },
+    "peec_effort_construction": { "assiette": "totalite_n_1", "patronal": 0.45, "condition": "Entreprises ≥ 50 salariés", "statut": "stable", "reference": "CCH art. L313-1" },
+    "forfait_social_taux_normal": { "patronal": 20, "statut": "publie", "reference": "CSS art. L137-15 et L137-16" },
+    "forfait_social_prevoyance_11_et_plus": { "patronal": 8, "statut": "publie", "reference": "CSS art. L137-16" }
+  },
+
+  "reduction_generale": {
+    "denomination": "Réduction générale dégressive unique (RGDU) — réforme applicable au 1er janvier 2026",
+    "statut": "A_VERIFIER",
+    "formule": "C = Tmin + Tdelta × [ (1/2) × (3 × SMIC annuel / rémunération annuelle brute − 1) ] ^ P",
+    "seuil_sortie_x_smic": 3,
+    "Tmin": 0.02,
+    "Tdelta_fnal_0_10": 0.3781,
+    "Tdelta_fnal_0_50": 0.3821,
+    "P": 1.75,
+    "coefficient_max_fnal_0_10": 0.3981,
+    "coefficient_max_fnal_0_50": 0.4021,
+    "arrondi_coefficient": "4 décimales (au dix-millième le plus proche)",
+    "note": "Paramètres issus de la LFSS 2025 et de son décret d'application (2025). À VÉRIFIER impérativement sur boss.gouv.fr (rubrique « Allègements généraux ») : valeurs exactes de Tmin, Tdelta, P, règles d'arrondi, et éventuelle modification par la LFSS 2026.",
+    "reference": "CSS art. L241-13 et D241-7",
+    "source": "boss"
+  },
+
+  "heures_supplementaires_exoneration": {
+    "reduction_cotisations_salariales_taux_max_pct": { "valeur": 11.31, "statut": "publie", "reference": "CSS art. L241-17 et D241-21" },
+    "exoneration_impot_plafond_annuel": { "valeur": 7500, "unite": "€", "statut": "publie", "note": "Montant net imposable. Vérifier toute modification par la loi de finances 2026.", "reference": "CGI art. 81 quater" },
+    "deduction_forfaitaire_patronale_moins_20": { "valeur": 1.5, "unite": "€/heure", "statut": "publie", "reference": "CSS art. L241-18" },
+    "deduction_forfaitaire_patronale_20_249": { "valeur": null, "unite": "€/heure", "statut": "A_VERIFIER", "note": "Vérifier l'existence en 2026 d'une déduction forfaitaire pour les entreprises de 20 à 249 salariés (évolution législative à confirmer)." }
+  },
+
+  "absences": {
+    "ijss_maladie": {
+      "carence_jours": { "valeur": 3, "statut": "stable", "reference": "CSS art. R323-1" },
+      "taux_pct_salaire_journalier_base": { "valeur": 50, "statut": "stable", "reference": "CSS art. R323-5" },
+      "diviseur_salaire_journalier": { "valeur": 91.25, "statut": "stable", "note": "Moyenne des 3 derniers mois / 91,25." },
+      "plafond_revenu_x_smic": { "valeur": 1.4, "statut": "A_VERIFIER", "note": "Plafond abaissé à 1,4 SMIC pour les arrêts depuis le 1er avril 2025. Vérifier 2026.", "reference": "CSS art. R323-4", "source": "ameli" },
+      "ij_max_journaliere": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "ameli" }
+    },
+    "maintien_salaire_legal": {
+      "statut": "stable",
+      "anciennete_min_ans": 1,
+      "carence_jours": 7,
+      "carence_supprimee_si": "Accident du travail / maladie professionnelle",
+      "taux_premiere_periode_pct": 90,
+      "taux_seconde_periode_pct": 66.66,
+      "duree_base_jours_par_periode": 30,
+      "majoration_jours_par_tranche_5_ans": 10,
+      "duree_max_jours_par_periode": 90,
+      "reference": "C. trav. art. L1226-1, D1226-1 à D1226-8",
+      "note": "Les conventions collectives sont souvent plus favorables : toujours les vérifier."
+    },
+    "ij_maternite_max_journaliere": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "ameli" },
+    "conges_payes": {
+      "statut": "stable",
+      "acquisition_jours_ouvrables_mois": 2.5,
+      "acquisition_max_jours_ouvrables": 30,
+      "acquisition_pendant_maladie_non_pro_jours_ouvrables_mois": 2,
+      "acquisition_pendant_maladie_non_pro_max": 24,
+      "periode_report_mois": 15,
+      "indemnite_dixieme_pct": 10,
+      "reference": "C. trav. art. L3141-3, L3141-5, L3141-5-1, L3141-19-1, L3141-24 (loi n° 2024-364 du 22 avril 2024)"
+    }
+  },
+
+  "rupture_contrat": {
+    "indemnite_legale_licenciement": {
+      "statut": "stable",
+      "anciennete_min_mois": 8,
+      "fraction_mois_par_an_jusqua_10_ans": 0.25,
+      "fraction_mois_par_an_au_dela_10_ans": 0.3333,
+      "salaire_reference": "Le plus favorable : moyenne des 12 derniers mois ou des 3 derniers mois (primes annuelles proratisées)",
+      "reference": "C. trav. art. L1234-9, R1234-1 à R1234-4"
+    },
+    "preavis_licenciement": {
+      "statut": "stable",
+      "moins_6_mois": "Selon convention collective ou usage",
+      "de_6_mois_a_2_ans_mois": 1,
+      "2_ans_et_plus_mois": 2,
+      "reference": "C. trav. art. L1234-1"
+    },
+    "indemnite_precarite_cdd_pct": { "valeur": 10, "statut": "stable", "reference": "C. trav. art. L1243-8" },
+    "exoneration_sociale_plafond_x_pass": { "valeur": 2, "statut": "publie", "reference": "CSS art. L242-1, II, 7°" },
+    "assujettissement_integral_au_dela_x_pass": { "valeur": 10, "statut": "publie", "reference": "CSS art. L242-1" },
+    "contribution_patronale_rupture_conventionnelle_pct": { "valeur": 30, "statut": "A_VERIFIER", "note": "30 % depuis le 1er septembre 2023. Une hausse a été discutée : vérifier le taux applicable en 2026.", "reference": "CSS art. L137-12", "source": "urssaf" }
+  },
+
+  "apprentis": {
+    "statut": "publie",
+    "remuneration_pct_smic": {
+      "16_17_ans": { "annee_1": 27, "annee_2": 39, "annee_3": 55 },
+      "18_20_ans": { "annee_1": 43, "annee_2": 51, "annee_3": 67 },
+      "21_25_ans": { "annee_1": 53, "annee_2": 61, "annee_3": 78 },
+      "26_ans_et_plus": { "annee_1": 100, "annee_2": 100, "annee_3": 100 }
+    },
+    "note_remuneration": "Minimum légal. Pour 21 ans et plus, le pourcentage s'applique au salaire minimum conventionnel s'il est plus favorable que le SMIC.",
+    "exoneration_cotisations_salariales_limite_pct_smic": { "valeur": 50, "statut": "A_VERIFIER", "note": "Limite à 50 % du SMIC pour les contrats conclus depuis le 1er mars 2025 ; CSG/CRDS dues au-delà. Vérifier 2026." },
+    "reference": "C. trav. art. D6222-26 ; CSS art. L6243-2"
+  },
+
+  "stagiaires": {
+    "duree_declenchant_gratification": "Plus de 2 mois consécutifs ou non au cours d'une même année d'enseignement",
+    "gratification_min_pct_plafond_horaire": { "valeur": 15, "statut": "stable", "reference": "C. éduc. art. L124-6, D124-8" },
+    "gratification_min_horaire": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "note": "= 15 % × plafond horaire SS 2026. Si plafond horaire = 30 €, gratification = 4,50 €/h. À confirmer." }
+  },
+
+  "avantages_en_nature": {
+    "repas_valeur_forfaitaire": { "valeur": null, "unite": "€/repas", "statut": "A_VERIFIER", "note": "Revalorisée chaque année (5,45 € en 2025).", "source": "urssaf" },
+    "logement_bareme": { "valeur": null, "statut": "A_VERIFIER", "note": "Barème forfaitaire en 8 tranches de revenus, revalorisé chaque année.", "source": "urssaf" },
+    "vehicule": { "valeur": null, "statut": "A_VERIFIER", "note": "Règles d'évaluation modifiées en février 2025 (forfaits relevés, abattement véhicules électriques). Vérifier les pourcentages 2026 sur le BOSS.", "source": "boss" },
+    "ntic": { "statut": "stable", "evaluation_forfaitaire_pct_cout": 10 }
+  },
+
+  "frais_professionnels": {
+    "titres_restaurant_exoneration_max_part_patronale": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "note": "7,26 € en 2025. Montant 2026 à confirmer.", "source": "urssaf" },
+    "titres_restaurant_part_patronale_pct": { "min": 50, "max": 60, "statut": "stable", "reference": "CSS art. L131-4 ; CGI art. 81, 19°" },
+    "repas_restaurant": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "repas_sur_lieu_travail": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "repas_hors_locaux": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "teletravail_allocation_forfaitaire_jour": { "valeur": null, "unite": "€", "statut": "A_VERIFIER", "source": "urssaf" },
+    "bareme_kilometrique": { "valeur": null, "statut": "A_VERIFIER", "note": "Barème fiscal publié au BOFiP pour les revenus de l'année.", "source": "impots" },
+    "transport_public_prise_en_charge_obligatoire_pct": { "valeur": 50, "statut": "stable", "reference": "C. trav. art. L3261-2" },
+    "forfait_mobilites_durables_plafond": { "valeur": null, "unite": "€/an", "statut": "A_VERIFIER", "source": "urssaf" }
+  },
+
+  "epargne_salariale": {
+    "prime_partage_valeur_plafond": { "valeur": 3000, "unite": "€", "statut": "publie", "reference": "Loi n° 2022-1158 du 16 août 2022, art. 1" },
+    "prime_partage_valeur_plafond_majore": { "valeur": 6000, "unite": "€", "statut": "publie", "note": "Si accord d'intéressement ou de participation (conditions à vérifier)." },
+    "plafond_interessement_individuel_x_pass": { "valeur": 0.75, "statut": "stable", "reference": "C. trav. art. L3314-8" }
+  },
+
+  "prelevement_a_la_source": {
+    "statut": "A_VERIFIER",
+    "note": "La grille du taux neutre (taux par défaut) est revalorisée chaque année par la loi de finances. Les valeurs ci-dessous sont la grille 2025 (métropole), fournie comme référence pédagogique : NE PAS l'utiliser pour 2026 sans vérification sur bofip.impots.gouv.fr (BOI-BAREME-000037).",
+    "annee_grille_fournie": 2025,
+    "grille_metropole_mensuelle": [
+      { "jusqua": 1620, "taux": 0 },
+      { "jusqua": 1683, "taux": 0.5 },
+      { "jusqua": 1791, "taux": 1.3 },
+      { "jusqua": 1911, "taux": 2.1 },
+      { "jusqua": 2042, "taux": 2.9 },
+      { "jusqua": 2151, "taux": 3.5 },
+      { "jusqua": 2294, "taux": 4.1 },
+      { "jusqua": 2714, "taux": 5.3 },
+      { "jusqua": 3107, "taux": 7.5 },
+      { "jusqua": 3539, "taux": 9.9 },
+      { "jusqua": 3983, "taux": 11.9 },
+      { "jusqua": 4648, "taux": 13.8 },
+      { "jusqua": 5574, "taux": 15.8 },
+      { "jusqua": 6974, "taux": 17.9 },
+      { "jusqua": 8711, "taux": 20 },
+      { "jusqua": 12091, "taux": 24 },
+      { "jusqua": 16376, "taux": 28 },
+      { "jusqua": 25706, "taux": 33 },
+      { "jusqua": 55062, "taux": 38 },
+      { "jusqua": null, "taux": 43 }
+    ],
+    "grilles_outre_mer": { "valeur": null, "statut": "A_VERIFIER" },
+    "reference": "CGI art. 204 H",
+    "source": "impots"
+  },
+
+  "saisies_sur_salaire": {
+    "bareme_fractions_saisissables": { "valeur": null, "statut": "A_VERIFIER", "note": "Barème annuel fixé par décret (C. trav. art. R3252-2). Majoration par personne à charge. Procédure transférée au commissaire de justice depuis le 1er juillet 2025 : vérifier les modalités.", "source": "service_public" },
+    "solde_bancaire_insaisissable": { "valeur": null, "statut": "A_VERIFIER", "note": "= montant forfaitaire du RSA pour une personne seule." }
+  },
+
+  "seuils_effectif": {
+    "statut": "stable",
+    "seuils": [11, 20, 50, 250],
+    "regle_franchissement": "Un seuil n'est franchi que s'il est atteint ou dépassé pendant 5 années civiles consécutives.",
+    "reference": "CSS art. L130-1"
+  },
+
+  "conservation_documents": {
+    "statut": "stable",
+    "double_bulletin_employeur_ans": { "valeur": 5, "reference": "C. trav. art. L3243-4" },
+    "bulletin_electronique_disponibilite": { "valeur": "50 ans ou jusqu'aux 75 ans du salarié", "reference": "C. trav. art. D3243-8" },
+    "registre_unique_personnel_apres_depart_ans": { "valeur": 5, "reference": "C. trav. art. R1221-26" },
+    "documents_cotisations_ans": { "valeur": 6, "note": "Contrôle URSSAF : 3 ans + année en cours (5 ans en cas de travail dissimulé). Conservation pratique recommandée : 6 ans.", "reference": "CSS art. L244-3" },
+    "pieces_fiscales_ans": { "valeur": 6, "reference": "LPF art. L102 B" },
+    "pieces_comptables_ans": { "valeur": 10, "reference": "C. com. art. L123-22" },
+    "prescription_action_salaire_ans": { "valeur": 3, "reference": "C. trav. art. L3245-1" },
+    "prescription_execution_contrat_ans": { "valeur": 2, "reference": "C. trav. art. L1471-1" },
+    "prescription_rupture_ans": { "valeur": 1, "reference": "C. trav. art. L1471-1 al. 2" },
+    "decompte_duree_travail_ans": { "valeur": 1, "reference": "C. trav. art. D3171-16" }
+  }
+}

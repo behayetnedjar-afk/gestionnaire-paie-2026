@@ -1,0 +1,50 @@
+name: Publication GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier les fichiers JSON
+        run: |
+          for f in parametres/*.json packages/contenu/modules/*/qcm.json; do
+            python3 -m json.tool "$f" > /dev/null || { echo "JSON invalide : $f"; exit 1; }
+          done
+
+      - name: Assembler le site
+        run: |
+          mkdir -p _site/packages
+          cp -r site/. _site/
+          cp -r parametres _site/parametres
+          cp -r packages/contenu _site/packages/contenu
+          touch _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deployer:
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - id: deploiement
+        uses: actions/deploy-pages@v4

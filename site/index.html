@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestionnaire de Paie — Référentiel 2026</title>
+  <meta name="description" content="Plateforme d'apprentissage de la paie : cours, fiches de révision, QCM corrigés et paramètres légaux 2026.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="entete-int">
+      <a class="marque" href="#/">
+        <span class="marque-logo" aria-hidden="true">€</span>
+        <span><strong>Gestionnaire de Paie</strong><small>Référentiel 2026</small></span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav">
+          <li><a href="#/" data-nav="accueil">Programme</a></li>
+          <li><a href="#/module/1" data-nav="module">Cours</a></li>
+          <li><a href="#/fiches" data-nav="fiches">Fiches</a></li>
+          <li><a href="#/qcm/1" data-nav="qcm">QCM</a></li>
+          <li><a href="#/parametres" data-nav="parametres">Paramètres 2026</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Basculer le mode sombre">◐</button>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <p class="chargement">Chargement…</p>
+  </main>
+
+  <footer class="pied">
+    <p><strong>Avertissement.</strong> Contenu pédagogique en cours de rédaction. Il ne remplace pas les sources officielles.
+      Les valeurs marquées <span class="badge badge-verif">À VÉRIFIER</span> doivent être confirmées sur
+      urssaf.fr, boss.gouv.fr, service-public.fr, legifrance.gouv.fr ou agirc-arrco.fr avant tout usage professionnel.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
