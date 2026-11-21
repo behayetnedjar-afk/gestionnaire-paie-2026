@@ -35,12 +35,20 @@ Ouvrir ensuite http://localhost:8000/site/
 | Page | Contenu |
 |---|---|
 | Programme | Les 10 modules, chiffres clés 2026, accès aux outils |
-| Cours | Module 1 avec sommaire (modules 2 à 10 en préparation) |
-| Fiches | 10 fiches synthèse transverses |
-| QCM | 20 questions corrigées, filtres par niveau, meilleur score mémorisé |
-| Simulateur | Bulletin de paie complet calculé par le moteur, impression / PDF |
-| Calculateurs | Heures sup., heures compl., congés payés, licenciement, fin de CDD, maintien de salaire, plafond, coût employeur |
-| Paramètres 2026 | Toutes les valeurs légales, filtre « À VÉRIFIER » |
+| Tableau de bord | Lecture par module, scores, points faibles par thème, examens, flashcards, prochaines échéances, export/import de la progression |
+| Apprendre › Cours | Module 1 avec sommaire, suivi de lecture, impression PDF (modules 2 à 10 en préparation) |
+| Apprendre › Fiches | 10 fiches synthèse transverses, impression PDF |
+| Apprendre › Glossaire | 65 termes et sigles, filtre, liens vers les modules |
+| S'entraîner › QCM | Questions corrigées, filtres par niveau, thème ou dernières erreurs |
+| S'entraîner › Examen blanc | 60 questions / 90 min (réduit au prorata tant que la banque est incomplète), temps majoré +1/3, correction détaillée |
+| S'entraîner › Flashcards | Répétition espacée (SM-2), paquets module 1 et glossaire, raccourcis clavier |
+| Outils › Simulateur | Bulletin de paie complet calculé par le moteur, impression / PDF |
+| Outils › Calculateurs | Heures sup., heures compl., congés payés, licenciement, fin de CDD, maintien de salaire, plafond, coût employeur |
+| Outils › Calendrier social | Échéances DSN 2026 avec report week-end / jours fériés, événements annuels |
+| Outils › Paramètres 2026 | Toutes les valeurs légales, filtre « À VÉRIFIER » |
+| Rechercher | Recherche plein texte dans le cours, les fiches, le glossaire et les QCM |
+
+La progression est enregistrée dans le navigateur de l'apprenant (`localStorage`), sans compte ni serveur.
 
 ## Publication
 

@@ -4,12 +4,7 @@
 
   // En ligne, le site est à la racine ; en local, on sert la racine du dépôt et on ouvre /site/.
   var BASE = /\/site\/?/.test(location.pathname) ? '../' : './';
-  var CHEMINS = {
-    parametres: BASE + 'parametres/2026.json',
-    fiches: BASE + 'packages/contenu/fiches-synthese/fiches-synthese.md',
-    module: function (n) { return BASE + 'packages/contenu/modules/' + MODULES[n - 1].dossier + '/module-0' + n + '.md'; },
-    qcm: function (n) { return BASE + 'packages/contenu/modules/' + MODULES[n - 1].dossier + '/qcm.json'; }
-  };
+  var CONTENU = BASE + 'packages/contenu/';
 
   var MODULES = [
     { titre: 'Cadre juridique et environnement de la paie', dossier: 'm01-cadre-juridique', dispo: true,
@@ -25,8 +20,19 @@
     { titre: 'Pilotage et relation sociale', themes: ['Masse salariale, indicateurs', 'Communication', 'Veille et éthique', 'Préparation à l\'épreuve'] }
   ];
 
+  var CHEMINS = {
+    parametres: BASE + 'parametres/2026.json',
+    fiches: CONTENU + 'fiches-synthese/fiches-synthese.md',
+    glossaire: CONTENU + 'glossaire.json',
+    calendrier: CONTENU + 'calendrier-social-2026.json',
+    module: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/module-' + String(n).padStart(2, '0') + '.md'; },
+    qcm: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/qcm.json'; },
+    flashcards: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/flashcards.json'; }
+  };
+
   var main = document.getElementById('contenu');
   var cache = {};
+  var nettoyages = [];
 
   /* ---------- utilitaires ---------- */
   function charger(url, json) {
@@ -47,11 +53,9 @@
   function fmt(n) {
     return typeof n === 'number' ? n.toLocaleString('fr-FR', { maximumFractionDigits: 4 }) : n;
   }
-  function stockLire(cle) { try { return JSON.parse(localStorage.getItem(cle)); } catch (e) { return null; } }
-  function stockEcrire(cle, v) { try { localStorage.setItem(cle, JSON.stringify(v)); } catch (e) {} }
   function erreur(e) {
     main.innerHTML = '<h1>Contenu indisponible</h1><p>' + esc(e.message) + '</p>' +
-      '<p class="param-note">En local, servez la racine du dépôt (ex. <code>python -m http.server</code>) puis ouvrez <code>/site/</code>.</p>';
+      '<p class="param-note">En local, lancez <code>npm run dev</code> à la racine du dépôt puis ouvrez <code>/site/</code>.</p>';
   }
   function titrePage(t) { document.title = t + ' — Gestionnaire de Paie 2026'; }
   function badge(statut) {
@@ -59,6 +63,26 @@
     if (statut === 'A_VERIFIER') return '<span class="badge badge-verif">À VÉRIFIER</span>';
     if (statut === 'stable') return '<span class="badge badge-stable">Règle stable</span>';
     return '';
+  }
+  function melanger(t) {
+    var a = t.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; }
+    return a;
+  }
+  /** Fonction appelée quand on quitte la page courante (chronomètre, écouteurs…). */
+  function surDepart(fn) { nettoyages.push(fn); }
+  function allerA(id) {
+    var cible = document.getElementById(id);
+    if (!cible) return false;
+    cible.setAttribute('tabindex', '-1');
+    cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    cible.focus({ preventScroll: true });
+    return true;
+  }
+  /** Toutes les questions des modules disponibles. */
+  function toutesLesQuestions() {
+    return Promise.all(MODULES.map(function (m, i) { return m.dispo ? charger(CHEMINS.qcm(i + 1), true) : []; }))
+      .then(function (l) { return [].concat.apply([], l); });
   }
 
   /* ---------- rendu Markdown ---------- */
@@ -79,28 +103,60 @@
       if (/qcm\.json$/.test(h)) a.setAttribute('href', '#/qcm/1');
       else if (/^https?:/.test(h)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
+    return idsTitres(conteneur.querySelectorAll('h2, h3'));
+  }
+  /** Identifiants stables des titres (partagés avec la recherche). */
+  function idsTitres(titres) {
     var vus = {};
-    return Array.prototype.map.call(conteneur.querySelectorAll('h2, h3'), function (h) {
+    return Array.prototype.map.call(titres, function (h) {
       var id = slug(h.textContent) || 'section';
       while (vus[id]) id += '-b';
       vus[id] = true; h.id = id;
-      return { id: id, texte: h.textContent, niveau: h.tagName === 'H2' ? 2 : 3 };
+      return { id: id, texte: h.textContent, niveau: h.tagName === 'H2' ? 2 : 3, el: h };
     });
   }
 
-  function pageMarkdown(url, titre) {
+  function pageMarkdown(url, titre, ancre, numeroModule) {
     return charger(url).then(function (texte) {
       titrePage(titre);
-      main.innerHTML = '<div class="cours"><nav class="toc" aria-label="Sommaire"><p>Sommaire</p><ul></ul></nav><article class="md"></article></div>';
+      main.innerHTML = '<div class="cours"><nav class="toc" aria-label="Sommaire"><p>Sommaire</p><ul></ul></nav>' +
+        '<div><div class="barre-outils no-print"><button type="button" class="bouton secondaire petit" id="imprimer">Imprimer / enregistrer en PDF</button></div>' +
+        '<article class="md"></article></div></div>';
       var titres = rendreMarkdown(texte, main.querySelector('.md'));
       main.querySelector('.toc ul').innerHTML = titres.map(function (t) {
         return '<li class="n' + t.niveau + '"><button type="button" data-cible="' + t.id + '">' + esc(t.texte) + '</button></li>';
       }).join('');
       main.querySelector('.toc').addEventListener('click', function (e) {
-        var b = e.target.closest('button[data-cible]'); if (!b) return;
-        var cible = document.getElementById(b.dataset.cible);
-        cible.setAttribute('tabindex', '-1'); cible.scrollIntoView({ behavior: 'smooth' }); cible.focus({ preventScroll: true });
+        var b = e.target.closest('button[data-cible]'); if (b) allerA(b.dataset.cible);
       });
+      main.querySelector('#imprimer').addEventListener('click', function () { window.print(); });
+
+      // Suivi de lecture : une section est « vue » quand son titre de niveau 2 passe dans les 60 % hauts de l'écran.
+      if (numeroModule) {
+        var h2 = titres.filter(function (t) { return t.niveau === 2; });
+        var dejaVu = {};
+        var minuteurLecture = null;
+        var verifierLecture = function () {
+          minuteurLecture = null;
+          var limite = window.innerHeight * 0.6;
+          h2.forEach(function (t) {
+            if (!dejaVu[t.id] && t.el.getBoundingClientRect().top < limite) {
+              dejaVu[t.id] = true;
+              Stock.marquerLu(numeroModule, t.id, h2.length);
+            }
+          });
+        };
+        var surDefilement = function () { if (!minuteurLecture) minuteurLecture = setTimeout(verifierLecture, 250); };
+        window.addEventListener('scroll', surDefilement, { passive: true });
+        // Filet de sécurité : certains navigateurs suspendent les événements de défilement (onglet en arrière-plan…).
+        var veille = setInterval(verifierLecture, 1500);
+        surDepart(function () { window.removeEventListener('scroll', surDefilement); clearTimeout(minuteurLecture); clearInterval(veille); });
+        setTimeout(verifierLecture, 300);
+      }
+      if (ancre) {
+        setTimeout(function () { allerA(ancre); }, 50);
+        return 'garder-defilement';
+      }
     });
   }
 
@@ -117,18 +173,25 @@
         [fmt(c('smic.horaire_brut')) + ' €', 'SMIC horaire brut'],
         [fmt(c('smic.mensuel_35h')) + ' €', 'SMIC mensuel 35 h']
       ] : [];
-      var prog = stockLire('qcm-m1');
+      var scores = Stock.lire('qcm', {});
+      var carte = function (num, titre, items, actions) {
+        return '<article class="carte"><span class="num">' + esc(num) + '</span><h3>' + esc(titre) + '</h3><ul>' +
+          items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><div class="actions">' + actions + '</div></article>';
+      };
       main.innerHTML =
         '<section class="hero"><h1>Devenez gestionnaire de paie</h1>' +
-        '<p>Cours structurés, fiches de révision, QCM corrigés et paramètres légaux 2026. ' +
+        '<p>Cours structurés, fiches de révision, QCM corrigés, simulateur de bulletin et paramètres légaux 2026. ' +
         'Pour les étudiants, alternants, personnes en reconversion et candidats au titre professionnel.</p></section>' +
         (chiffres.length ? '<div class="chiffres">' + chiffres.map(function (x) {
           return '<div class="chiffre"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>';
         }).join('') + '</div>' : '') +
-        '<h2>Outils</h2><div class="grille-modules" style="margin-bottom:32px">' +
-        '<article class="carte"><span class="num">Application</span><h3>Simulateur de bulletin</h3><ul><li>Saisie guidée</li><li>Bulletin détaillé ligne par ligne</li><li>Nets, coût employeur, impression PDF</li></ul><div class="actions"><a class="bouton" href="#/simulateur">Ouvrir</a></div></article>' +
-        '<article class="carte"><span class="num">Application</span><h3>Calculateurs rapides</h3><ul><li>Heures sup. et complémentaires</li><li>Congés payés, licenciement, fin de CDD</li><li>Maintien de salaire, plafond, coût employeur</li></ul><div class="actions"><a class="bouton" href="#/calculateurs">Ouvrir</a></div></article>' +
-        '<article class="carte"><span class="num">Révision</span><h3>Fiches et QCM</h3><ul><li>10 fiches synthèse</li><li>QCM corrigés avec références</li></ul><div class="actions"><a class="bouton" href="#/fiches">Fiches</a><a class="bouton secondaire" href="#/qcm/1">QCM</a></div></article>' +
+        '<h2>S\'entraîner et réviser</h2><div class="grille-modules" style="margin-bottom:32px">' +
+        carte('Suivi', 'Tableau de bord', ['Progression de lecture', 'Scores et points faibles', 'Prochaines échéances'], '<a class="bouton" href="#/tableau-de-bord">Ouvrir</a>') +
+        carte('Entraînement', 'QCM et examen blanc', ['Questions corrigées et référencées', 'Examen chronométré', 'Aménagement du temps (+1/3)'], '<a class="bouton" href="#/qcm/1">QCM</a><a class="bouton secondaire" href="#/examen">Examen blanc</a>') +
+        carte('Mémorisation', 'Flashcards', ['Répétition espacée', 'Cartes du module 1 et du glossaire'], '<a class="bouton" href="#/flashcards">Réviser</a>') +
+        carte('Application', 'Simulateur de bulletin', ['Saisie guidée', 'Bulletin détaillé ligne par ligne', 'Impression PDF'], '<a class="bouton" href="#/simulateur">Ouvrir</a>') +
+        carte('Application', 'Calculateurs rapides', ['HS, congés payés, licenciement', 'Fin de CDD, maintien de salaire', 'Plafond, coût employeur'], '<a class="bouton" href="#/calculateurs">Ouvrir</a>') +
+        carte('Ressources', 'Glossaire et calendrier', ['65 termes et sigles', 'Échéances DSN et sociales 2026'], '<a class="bouton" href="#/glossaire">Glossaire</a><a class="bouton secondaire" href="#/calendrier">Calendrier</a>') +
         '</div>' +
         '<h2>Les 10 modules</h2><div class="grille-modules">' +
         MODULES.map(function (m, i) {
@@ -138,39 +201,52 @@
             '<ul>' + m.themes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
             '<div class="actions">' + (m.dispo
               ? '<a class="bouton" href="#/module/' + n + '">Cours</a><a class="bouton secondaire" href="#/qcm/' + n + '">QCM</a>' +
-                (n === 1 && prog ? '<span class="etiquette">Meilleur score : ' + prog.meilleur + ' %</span>' : '')
+                (scores[n] ? '<span class="etiquette">Meilleur score : ' + scores[n].meilleur + ' %</span>' : '')
               : '<span class="etiquette">En préparation</span>') +
             '</div></article>';
         }).join('') + '</div>';
     });
   }
 
-  /* ---------- QCM ---------- */
+  /* ---------- QCM d'entraînement ---------- */
   function pageQcm(n) {
     if (!MODULES[n - 1] || !MODULES[n - 1].dispo) { main.innerHTML = '<h1>QCM en préparation</h1>'; return Promise.resolve(); }
     return charger(CHEMINS.qcm(n), true).then(function (toutes) {
       titrePage('QCM module ' + n);
       var etat = { filtre: 'tous', liste: [], i: 0, reponses: [] };
+      var themes = toutes.map(function (q) { return q.theme; }).filter(function (t, i, a) { return t && a.indexOf(t) === i; });
 
       function demarrer(liste) {
         etat.liste = liste; etat.i = 0; etat.reponses = [];
         afficherQuestion();
       }
       function filtrer() {
-        return etat.filtre === 'tous' ? toutes.slice() : toutes.filter(function (q) {
-          return etat.filtre === 'calcul' ? q.type === 'calcul' : q.niveau === etat.filtre;
-        });
+        var f = etat.filtre;
+        if (f === 'tous') return toutes.slice();
+        if (f === 'faibles') {
+          var s = Stock.lire('reponses', {});
+          return toutes.filter(function (q) { return s[q.id] && s[q.id].dernier === false; });
+        }
+        if (f.indexOf('theme:') === 0) return toutes.filter(function (q) { return q.theme === f.slice(6); });
+        return toutes.filter(function (q) { return f === 'calcul' ? q.type === 'calcul' : q.niveau === f; });
       }
       function ecranAccueil() {
         main.innerHTML = '<div class="qcm"><h1>QCM — Module ' + n + '</h1>' +
           '<p>' + toutes.length + ' questions avec correction détaillée, référence juridique et piège à éviter.</p>' +
           '<div class="filtres"><label for="filtre">Questions :</label><select id="filtre">' +
           '<option value="tous">Toutes</option><option value="facile">Faciles</option><option value="moyen">Moyennes</option>' +
-          '<option value="difficile">Difficiles</option><option value="calcul">Calculs uniquement</option></select>' +
-          '<button class="bouton" id="go" type="button">Commencer</button></div></div>';
+          '<option value="difficile">Difficiles</option><option value="calcul">Calculs uniquement</option>' +
+          '<option value="faibles">Mes dernières erreurs</option>' +
+          '<optgroup label="Par thème">' + themes.map(function (t) { return '<option value="theme:' + esc(t) + '">' + esc(t) + '</option>'; }).join('') + '</optgroup>' +
+          '</select><button class="bouton" id="go" type="button">Commencer</button></div><p id="info" class="param-note" aria-live="polite"></p>' +
+          '<p class="param-note">Pour une épreuve en conditions réelles, utilisez l\'<a href="#/examen">examen blanc chronométré</a>.</p></div>';
         main.querySelector('#filtre').value = etat.filtre;
         main.querySelector('#filtre').onchange = function (e) { etat.filtre = e.target.value; };
-        main.querySelector('#go').onclick = function () { demarrer(filtrer()); };
+        main.querySelector('#go').onclick = function () {
+          var l = filtrer();
+          if (!l.length) { main.querySelector('#info').textContent = 'Aucune question dans cette sélection.'; return; }
+          demarrer(l);
+        };
       }
       function afficherQuestion() {
         var q = etat.liste[etat.i];
@@ -181,7 +257,8 @@
           '<span class="etiquette">Question ' + (etat.i + 1) + ' / ' + etat.liste.length + '</span></div>' +
           '<div class="progression" role="progressbar" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Progression"><div style="width:' + pct + '%"></div></div>' +
           '<form class="question" novalidate><div class="meta-q"><span class="etiquette">' + esc(q.id) + '</span>' +
-          '<span class="etiquette">' + esc(q.niveau) + '</span><span class="etiquette">' + esc(q.type) + '</span></div>' +
+          '<span class="etiquette">' + esc(q.niveau) + '</span><span class="etiquette">' + esc(q.type) + '</span>' +
+          (q.theme ? '<span class="etiquette">' + esc(q.theme) + '</span>' : '') + '</div>' +
           '<fieldset><legend>' + esc(q.enonce) + (multiple ? ' <small>(plusieurs réponses possibles)</small>' : '') + '</legend>' +
           q.choix.map(function (c) {
             var l = c.charAt(0);
@@ -200,6 +277,7 @@
           var bonnes = q.bonne_reponse.slice().sort();
           var ok = choisies.join() === bonnes.join();
           etat.reponses.push({ q: q, ok: ok });
+          Stock.enregistrerReponse(q, ok);
           form.dataset.corrige = '1';
           form.querySelectorAll('input').forEach(function (x) { x.disabled = true; });
           form.querySelectorAll('.choix').forEach(function (lab) {
@@ -207,11 +285,7 @@
             if (bonnes.indexOf(l) >= 0) lab.classList.add('bon');
             else if (choisies.indexOf(l) >= 0) lab.classList.add('faux');
           });
-          form.querySelector('#retour').innerHTML = '<div class="correction ' + (ok ? 'ok' : 'ko') + '">' +
-            '<h3>' + (ok ? 'Bonne réponse' : 'Réponse incorrecte — bonne réponse : ' + esc(bonnes.join(', '))) + '</h3>' +
-            '<p>' + esc(q.explication) + '</p>' +
-            (q.piege ? '<p><strong>Piège :</strong> ' + esc(q.piege) + '</p>' : '') +
-            (q.reference ? '<p class="param-note"><strong>Référence :</strong> ' + esc(q.reference) + '</p>' : '') + '</div>';
+          form.querySelector('#retour').innerHTML = correctionHtml(q, ok, bonnes);
           var btn = form.querySelector('#valider');
           btn.textContent = etat.i + 1 < etat.liste.length ? 'Question suivante' : 'Voir le résultat';
           btn.focus();
@@ -224,10 +298,8 @@
       function resultat() {
         var bons = etat.reponses.filter(function (r) { return r.ok; }).length;
         var pct = Math.round(bons / etat.reponses.length * 100);
-        if (etat.liste.length === toutes.length) {
-          var prec = stockLire('qcm-m' + n) || { meilleur: 0, tentatives: 0 };
-          stockEcrire('qcm-m' + n, { meilleur: Math.max(prec.meilleur, pct), tentatives: prec.tentatives + 1, dernier: pct });
-        }
+        if (etat.liste.length === toutes.length) Stock.enregistrerScoreQcm(n, pct);
+        Stock.ajouterHistorique({ type: 'qcm', module: n, bons: bons, total: etat.reponses.length, pct: pct });
         var parNiveau = ['facile', 'moyen', 'difficile'].map(function (niv) {
           var r = etat.reponses.filter(function (x) { return x.q.niveau === niv; });
           return r.length ? '<tr><td>' + niv + '</td><td>' + r.filter(function (x) { return x.ok; }).length + ' / ' + r.length + '</td></tr>' : '';
@@ -238,13 +310,21 @@
           (ratees.length ? '<p>À revoir : ' + ratees.map(function (q) { return esc(q.id); }).join(', ') + '</p>' : '<p>Aucune erreur. Bravo.</p>') +
           '<div class="qcm-actions">' + (ratees.length ? '<button class="bouton" id="revoir" type="button">Refaire les questions ratées</button>' : '') +
           '<button class="bouton secondaire" id="recommencer" type="button">Recommencer</button>' +
-          '<a class="bouton secondaire" href="#/module/' + n + '">Revoir le cours</a></div></div>';
+          '<a class="bouton secondaire" href="#/module/' + n + '">Revoir le cours</a>' +
+          '<a class="bouton secondaire" href="#/tableau-de-bord">Tableau de bord</a></div></div>';
         main.querySelector('h1').focus();
         if (ratees.length) main.querySelector('#revoir').onclick = function () { demarrer(ratees); };
         main.querySelector('#recommencer').onclick = ecranAccueil;
       }
       ecranAccueil();
     });
+  }
+  function correctionHtml(q, ok, bonnes) {
+    return '<div class="correction ' + (ok ? 'ok' : 'ko') + '">' +
+      '<h3>' + (ok ? 'Bonne réponse' : 'Réponse incorrecte — bonne réponse : ' + esc(bonnes.join(', '))) + '</h3>' +
+      '<p>' + esc(q.explication) + '</p>' +
+      (q.piege ? '<p><strong>Piège :</strong> ' + esc(q.piege) + '</p>' : '') +
+      (q.reference ? '<p class="param-note"><strong>Référence :</strong> ' + esc(q.reference) + '</p>' : '') + '</div>';
   }
 
   /* ---------- paramètres 2026 ---------- */
@@ -313,7 +393,13 @@
     });
   }
 
-  /* ---------- simulateur et calculateurs (assets/outils.js + assets/moteur.js) ---------- */
+  /* ---------- pages définies dans les autres fichiers ---------- */
+  function pageExterne(nom, titre) {
+    var args = Array.prototype.slice.call(arguments, 2);
+    if (!window.Pages || !window.Pages[nom]) return Promise.reject(new Error('Module de page non chargé : ' + nom));
+    titrePage(titre);
+    return Promise.resolve(window.Pages[nom].apply(null, [main].concat(args)));
+  }
   function pageOutil(nom) {
     if (!window.MoteurPaie || !window.PagesOutils) {
       return Promise.reject(new Error('Moteur de calcul non chargé. En local, lancez « npm run build:site » pour générer site/assets/moteur.js.'));
@@ -324,24 +410,56 @@
     });
   }
 
-  /* ---------- routeur ---------- */
-  function router() {
-    var h = location.hash.replace(/^#\/?/, '');
-    var parts = h.split('/');
-    var nav = parts[0] || 'accueil';
+  /* ---------- navigation ---------- */
+  function mettreAJourNav(nav) {
     document.querySelectorAll('[data-nav]').forEach(function (a) {
       if (a.dataset.nav === nav) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
+    document.querySelectorAll('details.menu').forEach(function (d) {
+      d.open = false;
+      d.classList.toggle('actif', !!d.querySelector('[aria-current="page"]'));
+    });
+  }
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.menu[open]').forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var ouvert = document.querySelector('details.menu[open]');
+    if (ouvert) { ouvert.open = false; ouvert.querySelector('summary').focus(); }
+  });
+
+  function router() {
+    nettoyages.splice(0).forEach(function (fn) { try { fn(); } catch (e) {} });
+    var h = location.hash.replace(/^#\/?/, '');
+    var parts = h.split('/').map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } });
+    var nav = parts[0] || 'accueil';
+    mettreAJourNav(nav);
     main.innerHTML = '<p class="chargement">Chargement…</p>';
-    var p;
     var n = parseInt(parts[1], 10) || 1;
-    if (nav === 'module') p = MODULES[n - 1] && MODULES[n - 1].dispo ? pageMarkdown(CHEMINS.module(n), 'Module ' + n) : Promise.resolve(main.innerHTML = '<h1>Module en préparation</h1>');
-    else if (nav === 'qcm') p = pageQcm(n);
-    else if (nav === 'fiches') p = pageMarkdown(CHEMINS.fiches, 'Fiches synthèse');
-    else if (nav === 'parametres') p = pageParametres();
-    else if (nav === 'simulateur' || nav === 'calculateurs') p = pageOutil(nav);
-    else p = pageAccueil();
-    p.catch(erreur).then(function () { window.scrollTo(0, 0); main.focus({ preventScroll: true }); });
+    var p;
+    switch (nav) {
+      case 'module':
+        p = MODULES[n - 1] && MODULES[n - 1].dispo ? pageMarkdown(CHEMINS.module(n), 'Module ' + n, parts[2], n)
+          : Promise.resolve(main.innerHTML = '<h1>Module en préparation</h1>');
+        break;
+      case 'qcm': p = pageQcm(n); break;
+      case 'fiches': p = pageMarkdown(CHEMINS.fiches, 'Fiches synthèse', parts[1]); break;
+      case 'parametres': p = pageParametres(); break;
+      case 'simulateur': case 'calculateurs': p = pageOutil(nav); break;
+      case 'tableau-de-bord': p = pageExterne('tableauDeBord', 'Tableau de bord'); break;
+      case 'examen': p = pageExterne('examen', 'Examen blanc'); break;
+      case 'flashcards': p = pageExterne('flashcards', 'Flashcards'); break;
+      case 'glossaire': p = pageExterne('glossaire', 'Glossaire', parts[1]); break;
+      case 'calendrier': p = pageExterne('calendrier', 'Calendrier social'); break;
+      case 'recherche': p = pageExterne('recherche', 'Recherche', parts.slice(1).join('/')); break;
+      default: p = pageAccueil();
+    }
+    p.catch(erreur).then(function (r) {
+      if (r === 'garder-defilement') return; // la page défile elle-même vers l'ancre demandée
+      window.scrollTo(0, 0);
+      main.focus({ preventScroll: true });
+    });
   }
 
   document.getElementById('themeBtn').addEventListener('click', function () {
@@ -350,6 +468,14 @@
     root.dataset.theme = sombre ? 'light' : 'dark';
     try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
   });
+
+  window.App = {
+    MODULES: MODULES, CHEMINS: CHEMINS, charger: charger, esc: esc, slug: slug, fmt: fmt, melanger: melanger,
+    titrePage: titrePage, surDepart: surDepart, allerA: allerA, correctionHtml: correctionHtml,
+    toutesLesQuestions: toutesLesQuestions, idsTitres: idsTitres
+  };
+
   window.addEventListener('hashchange', router);
-  router();
+  // Les autres scripts (revision.js, ressources.js) sont chargés après : on attend la fin du chargement.
+  if (document.readyState === 'complete') router(); else window.addEventListener('load', router);
 })();

@@ -1,0 +1,44 @@
+{
+  "annee": 2026,
+  "avertissement": "Calendrier pédagogique généré à partir de règles. Les dates exactes d'exigibilité sont publiées sur net-entreprises.fr et urssaf.fr : À VÉRIFIER avant toute échéance réelle.",
+  "regle_report": "Une échéance qui tombe un samedi, un dimanche ou un jour férié est reportée au premier jour ouvré suivant.",
+  "echeances_mensuelles": [
+    {
+      "jour": 5,
+      "categorie": "DSN",
+      "libelle": "DSN mensuelle et paiement des cotisations (URSSAF, retraite complémentaire, prélèvement à la source)",
+      "condition": "Entreprises d'au moins 50 salariés qui versent la paie dans le mois de travail",
+      "reference": "CSS art. R243-6"
+    },
+    {
+      "jour": 15,
+      "categorie": "DSN",
+      "libelle": "DSN mensuelle et paiement des cotisations",
+      "condition": "Autres entreprises (moins de 50 salariés, ou paie versée le mois suivant)",
+      "reference": "CSS art. R243-6"
+    }
+  ],
+  "echeances_trimestrielles": [
+    {
+      "jour": 15,
+      "mois": [1, 4, 7, 10],
+      "categorie": "URSSAF",
+      "libelle": "Paiement trimestriel des cotisations URSSAF (la DSN reste mensuelle)",
+      "condition": "Employeurs de moins de 11 salariés ayant opté pour le paiement trimestriel",
+      "statut": "A_VERIFIER"
+    }
+  ],
+  "evenements": [
+    { "date": "2026-01-01", "categorie": "Paramètres", "libelle": "Entrée en vigueur des paramètres 2026 : PMSS, SMIC, taux de cotisations, réduction générale dégressive unique" },
+    { "date": "2026-01-01", "categorie": "Paramètres", "libelle": "Contrôle des cumuls annuels repartis à zéro (plafonds, HS exonérées, réduction générale)" },
+    { "date": "2026-03-01", "categorie": "Annuel", "libelle": "Publication de l'index de l'égalité professionnelle (entreprises d'au moins 50 salariés)", "reference": "C. trav. art. D1142-4", "statut": "A_VERIFIER", "note": "Dispositif susceptible d'évoluer avec la transposition de la directive UE 2023/970." },
+    { "date": "2026-05-01", "categorie": "Congés", "libelle": "Début de la période légale de prise du congé principal (1er mai – 31 octobre, sauf accord)", "reference": "C. trav. art. L3141-13" },
+    { "mois": 5, "categorie": "Annuel", "libelle": "DSN d'avril (échéance du 5 ou 15 mai) : déclaration annuelle DOETH et solde de la taxe d'apprentissage", "statut": "A_VERIFIER" },
+    { "date": "2026-05-25", "categorie": "Congés", "libelle": "Journée de solidarité (lundi de Pentecôte, à défaut d'accord)", "reference": "C. trav. art. L3133-11 et L3133-12" },
+    { "date": "2026-05-31", "categorie": "Congés", "libelle": "Fin de la période de référence d'acquisition des congés payés (sauf accord)", "reference": "C. trav. art. R3141-4" },
+    { "date": "2026-06-01", "categorie": "Congés", "libelle": "Début de la nouvelle période d'acquisition des congés payés : mise à jour des compteurs" },
+    { "date": "2026-06-07", "categorie": "Veille", "libelle": "Date limite de transposition de la directive UE 2023/970 sur la transparence des rémunérations", "statut": "A_VERIFIER" },
+    { "date": "2026-10-31", "categorie": "Congés", "libelle": "Fin de la période légale de prise du congé principal" },
+    { "date": "2026-12-31", "categorie": "Annuel", "libelle": "Clôture de l'année : contrôle des cumuls, régularisations, préparation du fichier parametres/2027.json" }
+  ]
+}

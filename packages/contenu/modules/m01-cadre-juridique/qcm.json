@@ -5,11 +5,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Quelle est la durée légale du travail pour un salarié à temps plein ?",
-    "choix": ["A. 35 heures par mois", "B. 35 heures par semaine civile", "C. 39 heures par semaine", "D. 48 heures par semaine"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 35 heures par mois",
+      "B. 35 heures par semaine civile",
+      "C. 39 heures par semaine",
+      "D. 48 heures par semaine"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "La durée légale est fixée à 35 heures par semaine civile. Au-delà, les heures sont des heures supplémentaires. 48 h est la durée maximale absolue, pas la durée légale.",
     "reference": "C. trav. art. L3121-27",
-    "piege": "Confondre durée légale (35 h, seuil de déclenchement des HS) et durée maximale (48 h, limite à ne pas dépasser)."
+    "piege": "Confondre durée légale (35 h, seuil de déclenchement des HS) et durée maximale (48 h, limite à ne pas dépasser).",
+    "theme": "Durée du travail"
   },
   {
     "id": "M1-Q02",
@@ -17,11 +25,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "D'où vient le nombre de 151,67 heures utilisé pour un salarié mensualisé à 35 heures ?",
-    "choix": ["A. 35 × 4,33 arrondi au supérieur", "B. 35 × 52 / 12", "C. 1 607 / 12 arrondi", "D. 21,67 jours × 7 heures"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 35 × 4,33 arrondi au supérieur",
+      "B. 35 × 52 / 12",
+      "C. 1 607 / 12 arrondi",
+      "D. 21,67 jours × 7 heures"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "La mensualisation lisse les 52 semaines de l'année sur 12 mois : 35 × 52 / 12 = 151,666… soit 151,67 h. Le salaire est identique chaque mois quel que soit le nombre de jours.",
     "reference": "C. trav. art. L3242-1",
-    "piege": "1 607 / 12 = 133,92 h : 1 607 h est la durée annuelle après déduction des congés payés et jours fériés, ce n'est pas la base de mensualisation."
+    "piege": "1 607 / 12 = 133,92 h : 1 607 h est la durée annuelle après déduction des congés payés et jours fériés, ce n'est pas la base de mensualisation.",
+    "theme": "Durée du travail"
   },
   {
     "id": "M1-Q03",
@@ -29,11 +45,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Quand l'employeur doit-il effectuer la déclaration préalable à l'embauche (DPAE) ?",
-    "choix": ["A. Dans les 8 jours suivant l'embauche", "B. Au plus tard le jour de la première paie", "C. Au plus tôt 8 jours avant l'embauche et au plus tard avant la prise de poste", "D. Dans le mois suivant la fin de la période d'essai"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. Dans les 8 jours suivant l'embauche",
+      "B. Au plus tard le jour de la première paie",
+      "C. Au plus tôt 8 jours avant l'embauche et au plus tard avant la prise de poste",
+      "D. Dans le mois suivant la fin de la période d'essai"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "La DPAE est préalable : elle est faite dans les 8 jours qui précèdent l'embauche et, au plus tard, avant que le salarié commence à travailler. À défaut, l'employeur s'expose notamment au délit de travail dissimulé.",
     "reference": "C. trav. art. L1221-10 et R1221-5 ; L8221-5",
-    "piege": "Penser qu'on a 8 jours APRÈS l'embauche. Le délai de 8 jours est AVANT."
+    "piege": "Penser qu'on a 8 jours APRÈS l'embauche. Le délai de 8 jours est AVANT.",
+    "theme": "Obligations de l'employeur"
   },
   {
     "id": "M1-Q04",
@@ -41,11 +65,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Quelle est la durée maximale initiale de la période d'essai d'un cadre en CDI, selon le Code du travail ?",
-    "choix": ["A. 2 mois", "B. 3 mois", "C. 4 mois", "D. 6 mois"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. 2 mois",
+      "B. 3 mois",
+      "C. 4 mois",
+      "D. 6 mois"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "Durées maximales initiales : 2 mois (ouvriers, employés), 3 mois (agents de maîtrise, techniciens), 4 mois (cadres). Renouvellement compris : 4, 6 et 8 mois.",
     "reference": "C. trav. art. L1221-19 et L1221-21",
-    "piege": "8 mois est la durée maximale renouvellement compris, pas la durée initiale."
+    "piege": "8 mois est la durée maximale renouvellement compris, pas la durée initiale.",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q05",
@@ -53,11 +85,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Quel est le montant de l'indemnité de fin de contrat (précarité) d'un CDD, à défaut de disposition conventionnelle particulière ?",
-    "choix": ["A. 6 % de la rémunération brute totale", "B. 10 % de la rémunération brute totale", "C. 10 % du dernier salaire mensuel", "D. 1/10e des congés payés acquis"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 6 % de la rémunération brute totale",
+      "B. 10 % de la rémunération brute totale",
+      "C. 10 % du dernier salaire mensuel",
+      "D. 1/10e des congés payés acquis"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "L'indemnité de précarité est égale à 10 % de la rémunération brute totale versée pendant le contrat. Un accord de branche peut la limiter à 6 % en contrepartie d'un accès privilégié à la formation.",
     "reference": "C. trav. art. L1243-8 et L1243-9",
-    "piege": "Calculer sur le dernier salaire mensuel au lieu de la totalité des rémunérations du contrat."
+    "piege": "Calculer sur le dernier salaire mensuel au lieu de la totalité des rémunérations du contrat.",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q06",
@@ -65,11 +105,20 @@
     "niveau": "facile",
     "type": "choix multiple",
     "enonce": "Parmi les sources suivantes, lesquelles sont des sources conventionnelles (négociées) du droit du travail ?",
-    "choix": ["A. Un accord d'entreprise", "B. Un usage d'entreprise", "C. Une convention collective de branche", "D. Un décret"],
-    "bonne_reponse": ["A", "C"],
+    "choix": [
+      "A. Un accord d'entreprise",
+      "B. Un usage d'entreprise",
+      "C. Une convention collective de branche",
+      "D. Un décret"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C"
+    ],
     "explication": "Les sources conventionnelles résultent d'une négociation entre employeurs (ou organisations patronales) et syndicats : ANI, conventions et accords de branche, accords d'entreprise. L'usage est une source unilatérale ; le décret est une source réglementaire.",
     "reference": "C. trav. art. L2221-1 et suivants",
-    "piege": "Classer l'usage parmi les sources conventionnelles : il naît de la seule pratique de l'employeur."
+    "piege": "Classer l'usage parmi les sources conventionnelles : il naît de la seule pratique de l'employeur.",
+    "theme": "Sources du droit"
   },
   {
     "id": "M1-Q07",
@@ -77,11 +126,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Combien de temps l'employeur doit-il conserver le double des bulletins de paie ?",
-    "choix": ["A. 1 an", "B. 3 ans", "C. 5 ans", "D. 10 ans"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. 1 an",
+      "B. 3 ans",
+      "C. 5 ans",
+      "D. 10 ans"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "L'employeur conserve un double des bulletins de paie pendant 5 ans. Le bulletin électronique doit, lui, rester disponible pour le salarié 50 ans ou jusqu'à ses 75 ans.",
     "reference": "C. trav. art. L3243-4 et D3243-8",
-    "piege": "Confondre avec la prescription de l'action en paiement du salaire, qui est de 3 ans (L3245-1)."
+    "piege": "Confondre avec la prescription de l'action en paiement du salaire, qui est de 3 ans (L3245-1).",
+    "theme": "Archivage et RGPD"
   },
   {
     "id": "M1-Q08",
@@ -89,11 +146,19 @@
     "niveau": "facile",
     "type": "choix unique",
     "enonce": "Un salarié a fait grève 2 jours dans le mois. Que doit indiquer le bulletin de paie ?",
-    "choix": ["A. « Retenue pour grève – 2 jours »", "B. « Absence non rémunérée » sans en préciser le motif", "C. « Absence injustifiée »", "D. Rien : la retenue est faite sans ligne apparente"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. « Retenue pour grève – 2 jours »",
+      "B. « Absence non rémunérée » sans en préciser le motif",
+      "C. « Absence injustifiée »",
+      "D. Rien : la retenue est faite sans ligne apparente"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "Il est interdit de mentionner sur le bulletin l'exercice du droit de grève ou l'activité de représentation des salariés. La retenue apparaît sous un libellé neutre. Elle doit toutefois être visible : on ne modifie pas le salaire de base sans ligne explicative.",
     "reference": "C. trav. art. R3243-4",
-    "piege": "« Absence injustifiée » est un motif inexact et potentiellement discriminatoire ; la grève est un droit constitutionnel."
+    "piege": "« Absence injustifiée » est un motif inexact et potentiellement discriminatoire ; la grève est un droit constitutionnel.",
+    "theme": "Archivage et RGPD"
   },
   {
     "id": "M1-Q09",
@@ -101,11 +166,19 @@
     "niveau": "moyen",
     "type": "calcul",
     "enonce": "Un salarié à 35 h a un taux horaire de 16,00 €. Il a travaillé 45 heures dans la semaine. Aucun accord ne fixe de taux de majoration. Quel est le montant brut de ses heures supplémentaires pour cette semaine ?",
-    "choix": ["A. 200,00 €", "B. 208,00 €", "C. 240,00 €", "D. 160,00 €"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 200,00 €",
+      "B. 208,00 €",
+      "C. 240,00 €",
+      "D. 160,00 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "10 HS : 8 à 25 % (36e à 43e heure) et 2 à 50 % (44e et 45e). 8 × 16 × 1,25 = 160,00 € ; 2 × 16 × 1,50 = 48,00 €. Total = 208,00 €.",
     "reference": "C. trav. art. L3121-36",
-    "piege": "Appliquer 25 % aux 10 heures (200 €) en oubliant que le taux passe à 50 % dès la 44e heure."
+    "piege": "Appliquer 25 % aux 10 heures (200 €) en oubliant que le taux passe à 50 % dès la 44e heure.",
+    "theme": "Durée du travail"
   },
   {
     "id": "M1-Q10",
@@ -113,11 +186,19 @@
     "niveau": "moyen",
     "type": "choix unique",
     "enonce": "Une entreprise de 45 salariés n'a pas d'accord sur le temps de travail. Un salarié effectue 250 heures supplémentaires dans l'année. Quelle contrepartie obligatoire en repos lui est due ?",
-    "choix": ["A. Aucune, le contingent est de 250 heures", "B. 15 heures", "C. 30 heures", "D. 125 heures"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. Aucune, le contingent est de 250 heures",
+      "B. 15 heures",
+      "C. 30 heures",
+      "D. 125 heures"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "À défaut d'accord, le contingent est de 220 h. Heures au-delà : 250 − 220 = 30 h. Dans une entreprise de plus de 20 salariés, la contrepartie est de 100 % : 30 h de repos (en plus du paiement des heures et de leurs majorations).",
     "reference": "C. trav. art. D3121-24 et L3121-38",
-    "piege": "Appliquer 50 % (15 h) : ce taux concerne les entreprises de 20 salariés au plus."
+    "piege": "Appliquer 50 % (15 h) : ce taux concerne les entreprises de 20 salariés au plus.",
+    "theme": "Durée du travail"
   },
   {
     "id": "M1-Q11",
@@ -125,11 +206,19 @@
     "niveau": "moyen",
     "type": "calcul",
     "enonce": "Un étudiant de 22 ans a un contrat à temps partiel de 20 h par semaine, taux horaire 12,50 €. Un accord de branche autorise les heures complémentaires jusqu'au tiers de la durée contractuelle, sans fixer de taux. Il travaille 23 heures dans la semaine. Quel est le montant des heures complémentaires ?",
-    "choix": ["A. 37,50 €", "B. 41,25 €", "C. 43,13 €", "D. 46,88 €"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. 37,50 €",
+      "B. 41,25 €",
+      "C. 43,13 €",
+      "D. 46,88 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "3 heures complémentaires. Limite du 1/10e : 20 × 10 % = 2 h, majorées de 10 % : 2 × 12,50 × 1,10 = 27,50 €. La 3e heure dépasse le 1/10e : majoration de 25 % à défaut de taux conventionnel : 1 × 12,50 × 1,25 = 15,625 → 15,63 €. Total : 43,13 €.",
     "reference": "C. trav. art. L3123-29 et L3123-20",
-    "piege": "Appliquer 10 % aux 3 heures (41,25 €) ou appliquer les taux des heures supplémentaires (25 % dès la 1re heure : 46,88 €)."
+    "piege": "Appliquer 10 % aux 3 heures (41,25 €) ou appliquer les taux des heures supplémentaires (25 % dès la 1re heure : 46,88 €).",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q12",
@@ -137,11 +226,19 @@
     "niveau": "moyen",
     "type": "choix unique",
     "enonce": "La convention de branche prévoit une prime d'ancienneté de 3 % après 3 ans. Un accord d'entreprise prévoit 2 %. La branche n'intègre pas cette prime dans ses salaires minima hiérarchiques. Quel taux appliquer ?",
-    "choix": ["A. 3 %, car la règle la plus favorable s'applique toujours", "B. 2 %, car la prime d'ancienneté relève du bloc 3 où l'accord d'entreprise prime", "C. 3 %, car la prime d'ancienneté relève du bloc 1", "D. 2,5 %, moyenne des deux taux"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 3 %, car la règle la plus favorable s'applique toujours",
+      "B. 2 %, car la prime d'ancienneté relève du bloc 3 où l'accord d'entreprise prime",
+      "C. 3 %, car la prime d'ancienneté relève du bloc 1",
+      "D. 2,5 %, moyenne des deux taux"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "Depuis les ordonnances de 2017, l'accord d'entreprise prévaut sur la convention de branche, même s'il est moins favorable, dans toutes les matières qui ne relèvent pas des blocs 1 et 2. La prime d'ancienneté n'en fait pas partie (sauf si la branche l'intègre dans les salaires minima hiérarchiques).",
     "reference": "C. trav. art. L2253-1 à L2253-3 ; CE, 7 octobre 2021",
-    "piege": "Appliquer le principe de faveur entre branche et entreprise : il ne joue plus que dans les blocs 1 et 2."
+    "piege": "Appliquer le principe de faveur entre branche et entreprise : il ne joue plus que dans les blocs 1 et 2.",
+    "theme": "Sources du droit"
   },
   {
     "id": "M1-Q13",
@@ -149,11 +246,19 @@
     "niveau": "moyen",
     "type": "choix unique",
     "enonce": "Le contrat de travail d'une salariée prévoit un 13e mois. Un accord d'entreprise est signé ensuite ; il ne prévoit aucun 13e mois. Ce n'est pas un accord de performance collective. Que se passe-t-il ?",
-    "choix": ["A. La salariée perd son 13e mois", "B. La salariée conserve son 13e mois en application du principe de faveur", "C. Le 13e mois est réduit de moitié", "D. L'employeur doit consulter l'inspection du travail"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. La salariée perd son 13e mois",
+      "B. La salariée conserve son 13e mois en application du principe de faveur",
+      "C. Le 13e mois est réduit de moitié",
+      "D. L'employeur doit consulter l'inspection du travail"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "Entre un accord collectif et le contrat de travail, la clause la plus favorable au salarié s'applique. Le 13e mois contractuel est maintenu. Seul un accord de performance collective peut s'imposer au contrat.",
     "reference": "C. trav. art. L2254-1 et L2254-2",
-    "piege": "Confondre l'articulation branche / entreprise (l'entreprise prime) et l'articulation accord / contrat (principe de faveur)."
+    "piege": "Confondre l'articulation branche / entreprise (l'entreprise prime) et l'articulation accord / contrat (principe de faveur).",
+    "theme": "Sources du droit"
   },
   {
     "id": "M1-Q14",
@@ -161,11 +266,19 @@
     "niveau": "moyen",
     "type": "calcul",
     "enonce": "Un CDD de 3 mois pour accroissement temporaire d'activité prend fin. L'employeur veut conclure un nouveau CDD sur le même poste pour le même motif. Aucun accord de branche ne règle la carence. Quel délai doit-il respecter ?",
-    "choix": ["A. Aucun délai", "B. 15 jours", "C. 1 mois", "D. 1 mois et demi"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. Aucun délai",
+      "B. 15 jours",
+      "C. 1 mois",
+      "D. 1 mois et demi"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "Le contrat dure 14 jours ou plus : le délai de carence est égal au tiers de sa durée. 3 mois / 3 = 1 mois (décompté en jours d'ouverture de l'établissement).",
     "reference": "C. trav. art. L1244-3 et L1244-3-1",
-    "piege": "Appliquer la moitié (1,5 mois) : ce ratio vaut seulement pour les contrats de moins de 14 jours."
+    "piege": "Appliquer la moitié (1,5 mois) : ce ratio vaut seulement pour les contrats de moins de 14 jours.",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q15",
@@ -173,11 +286,20 @@
     "niveau": "moyen",
     "type": "choix multiple",
     "enonce": "Sur quelles bases légales du RGPD l'employeur s'appuie-t-il pour traiter les données de paie de ses salariés ?",
-    "choix": ["A. Le respect d'une obligation légale", "B. Le consentement écrit de chaque salarié", "C. L'exécution du contrat de travail", "D. L'intérêt légitime de l'employeur à faire de la prospection"],
-    "bonne_reponse": ["A", "C"],
+    "choix": [
+      "A. Le respect d'une obligation légale",
+      "B. Le consentement écrit de chaque salarié",
+      "C. L'exécution du contrat de travail",
+      "D. L'intérêt légitime de l'employeur à faire de la prospection"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C"
+    ],
     "explication": "La paie est imposée par la loi (bulletin, DSN, prélèvement à la source) et nécessaire à l'exécution du contrat (paiement du salaire). Le consentement n'est pas une base adaptée dans une relation de subordination : il n'est pas libre.",
     "reference": "RGPD art. 6.1.b et 6.1.c",
-    "piege": "Faire signer un consentement aux salariés : inutile et juridiquement fragile, car le salarié ne peut pas réellement refuser."
+    "piege": "Faire signer un consentement aux salariés : inutile et juridiquement fragile, car le salarié ne peut pas réellement refuser.",
+    "theme": "Archivage et RGPD"
   },
   {
     "id": "M1-Q16",
@@ -185,11 +307,19 @@
     "niveau": "moyen",
     "type": "choix unique",
     "enonce": "Depuis 6 ans, l'employeur verse une prime de 150 € en décembre aux seuls salariés présents au 1er décembre. Quels critères en font un usage obligatoire ?",
-    "choix": ["A. Ancienneté, montant, écrit", "B. Généralité, constance, fixité", "C. Généralité, accord du CSE, publicité", "D. Constance et accord écrit des salariés"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. Ancienneté, montant, écrit",
+      "B. Généralité, constance, fixité",
+      "C. Généralité, accord du CSE, publicité",
+      "D. Constance et accord écrit des salariés"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "Un usage devient obligatoire s'il est général (catégorie de salariés objectivement définie), constant (répété dans le temps) et fixe (montant ou mode de calcul déterminé). Ici, les trois critères sont remplis. Pour le supprimer, l'employeur doit informer le CSE, chaque salarié, et respecter un délai de prévenance.",
     "reference": "Jurisprudence constante de la chambre sociale de la Cour de cassation",
-    "piege": "Croire qu'un usage nécessite un écrit : c'est justement une pratique non écrite."
+    "piege": "Croire qu'un usage nécessite un écrit : c'est justement une pratique non écrite.",
+    "theme": "Sources du droit"
   },
   {
     "id": "M1-Q17",
@@ -197,11 +327,19 @@
     "niveau": "difficile",
     "type": "calcul",
     "enonce": "Un cadre au forfait de 218 jours perçoit 55 590 € brut par an. L'accord prévoit que le salaire journalier = salaire annuel / 218. Il renonce à 4 jours de repos avec une majoration de 15 %. Quel est le montant brut du rachat ?",
-    "choix": ["A. 1 020,00 €", "B. 1 122,00 €", "C. 1 173,00 €", "D. 1 275,00 €"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. 1 020,00 €",
+      "B. 1 122,00 €",
+      "C. 1 173,00 €",
+      "D. 1 275,00 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "Salaire journalier : 55 590 / 218 = 255,00 €. Rachat : 4 × 255,00 × 1,15 = 1 173,00 €. La majoration doit être d'au moins 10 % ; 15 % est donc valable.",
     "reference": "C. trav. art. L3121-59",
-    "piege": "Oublier la majoration (1 020 €) ou appliquer la majoration légale minimale de 10 % au lieu du taux convenu (1 122 €)."
+    "piege": "Oublier la majoration (1 020 €) ou appliquer la majoration légale minimale de 10 % au lieu du taux convenu (1 122 €).",
+    "theme": "Durée du travail"
   },
   {
     "id": "M1-Q18",
@@ -209,11 +347,19 @@
     "niveau": "difficile",
     "type": "calcul",
     "enonce": "Un CDD de remplacement de 5 mois prend fin à son terme. Rémunération brute totale versée : 11 500 €. Le salarié n'a pris aucun congé et n'a reçu aucune indemnité de congés payés. Quel est le total des indemnités de fin de contrat (précarité + ICCP selon la règle du 1/10e) ?",
-    "choix": ["A. 2 300,00 €", "B. 2 415,00 €", "C. 1 265,00 €", "D. 2 530,00 €"],
-    "bonne_reponse": ["B"],
+    "choix": [
+      "A. 2 300,00 €",
+      "B. 2 415,00 €",
+      "C. 1 265,00 €",
+      "D. 2 530,00 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
     "explication": "Précarité : 11 500 × 10 % = 1 150,00 €. ICCP : (11 500 + 1 150) × 10 % = 1 265,00 €. Total : 2 415,00 €. L'indemnité de précarité entre dans l'assiette des congés payés.",
     "reference": "C. trav. art. L1243-8 et L3141-24",
-    "piege": "Calculer l'ICCP sur 11 500 € seulement (total 2 300 €), en oubliant d'y inclure la précarité."
+    "piege": "Calculer l'ICCP sur 11 500 € seulement (total 2 300 €), en oubliant d'y inclure la précarité.",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q19",
@@ -221,11 +367,21 @@
     "niveau": "difficile",
     "type": "choix multiple",
     "enonce": "Dans quels cas l'indemnité de précarité N'EST-ELLE PAS due à la fin d'un CDD (en l'absence de disposition conventionnelle plus favorable) ?",
-    "choix": ["A. CDD saisonnier", "B. CDD de remplacement d'un salarié absent", "C. Le salarié refuse un CDI pour un emploi similaire avec une rémunération au moins équivalente", "D. Rupture anticipée pour faute grave du salarié"],
-    "bonne_reponse": ["A", "C", "D"],
+    "choix": [
+      "A. CDD saisonnier",
+      "B. CDD de remplacement d'un salarié absent",
+      "C. Le salarié refuse un CDI pour un emploi similaire avec une rémunération au moins équivalente",
+      "D. Rupture anticipée pour faute grave du salarié"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C",
+      "D"
+    ],
     "explication": "Exclusions légales : CDD saisonniers et d'usage, contrats de jeunes pendant leurs vacances scolaires ou universitaires, refus d'un CDI similaire, rupture anticipée à l'initiative du salarié, faute grave, force majeure. Le CDD de remplacement ouvre droit à l'indemnité.",
     "reference": "C. trav. art. L1243-10",
-    "piege": "Penser que le CDD de remplacement est exclu parce qu'il n'y a pas de délai de carence pour un nouveau remplacement. Ce sont deux règles différentes."
+    "piege": "Penser que le CDD de remplacement est exclu parce qu'il n'y a pas de délai de carence pour un nouveau remplacement. Ce sont deux règles différentes.",
+    "theme": "Contrats de travail"
   },
   {
     "id": "M1-Q20",
@@ -233,10 +389,18 @@
     "niveau": "difficile",
     "type": "calcul",
     "enonce": "Un apprenti de 22 ans est en 2e année. SMIC mensuel 2026 : 1 823,03 €. Le minimum conventionnel de l'emploi occupé est 1 790,00 €. Quel est son salaire minimum brut mensuel ?",
-    "choix": ["A. 929,74 €", "B. 1 091,90 €", "C. 1 112,05 €", "D. 1 421,96 €"],
-    "bonne_reponse": ["C"],
+    "choix": [
+      "A. 929,74 €",
+      "B. 1 091,90 €",
+      "C. 1 112,05 €",
+      "D. 1 421,96 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
     "explication": "21-25 ans, 2e année : 61 %. Pour 21 ans et plus, on retient le SMIC ou le minimum conventionnel s'il est plus élevé. Ici le SMIC (1 823,03 €) est plus élevé que le minimum conventionnel (1 790,00 €). 1 823,03 × 61 % = 1 112,0483 → 1 112,05 €.",
     "reference": "C. trav. art. D6222-26",
-    "piege": "Appliquer le pourcentage au minimum conventionnel alors qu'il est inférieur au SMIC (1 091,90 €), ou utiliser le taux de la tranche 18-20 ans (51 % : 929,74 €)."
+    "piege": "Appliquer le pourcentage au minimum conventionnel alors qu'il est inférieur au SMIC (1 091,90 €), ou utiliser le taux de la tranche 18-20 ans (51 % : 929,74 €).",
+    "theme": "Contrats de travail"
   }
 ]
