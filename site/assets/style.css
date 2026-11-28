@@ -38,6 +38,15 @@
   --grad-bc1: linear-gradient(135deg, var(--bc1), var(--bc1-2));
   --grad-bc2: linear-gradient(135deg, var(--bc2), var(--bc2-2));
 
+  /* Fond, en-tête, verre, titre (étendus par les thèmes sombres) */
+  --fond-2: #eef0fb;
+  --verre: #ffffff;
+  --entete-grad: linear-gradient(90deg, rgba(67, 56, 202, .94), rgba(124, 58, 237, .94));
+  --titre-grad: linear-gradient(90deg, #be185d, #6d28d9 50%, #0e7490);
+  /* Couleurs par univers (versions foncées pour le thème clair : contraste AA sur blanc) */
+  --u-cours: #1d5fd6; --u-cas: #b45309; --u-memos: #047857; --u-glossaire: #6d3fd6; --u-revisions: #be185d; --u-oral: #8a6100;
+  /* Statuts à faire / en cours / maîtrisé */
+  --st-gris: #6b7280; --st-orange: #c2410c; --st-vert: #166534; --st-texte: #ffffff;
   --ombre: 0 1px 2px rgba(17, 24, 39, .05), 0 6px 20px -8px rgba(49, 46, 129, .16);
   --ombre-forte: 0 2px 4px rgba(17, 24, 39, .06), 0 16px 36px -12px rgba(49, 46, 129, .30);
   --rayon: 14px;
@@ -47,38 +56,72 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
   color-scheme: light;
 }
-/* Mode sombre : préférence système, sauf choix explicite du mode clair */
+/* ---------- Thèmes sombres ----------
+   « Néon violet » : thème par défaut quand le système est en mode sombre (sans choix mémorisé),
+   ou choisi explicitement. « Océan cyan » et « Aurore rose » ne redéfinissent que leurs couleurs propres. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --fond: #0c0f1d; --surface: #151a2d; --surface-2: #1e2440; --texte: #e9ebf7; --texte-doux: #aab0cc; --bord: #2b3253;
-    --entete: rgba(21, 26, 45, .84);
-    --accent: #a5b4fc; --accent-2: #c4b5fd; --accent-texte: #0c0f1d; --accent-doux: #262b5c;
+  :root:not([data-theme]) {
+    --fond: #0f1226; --fond-2: #1a1038; --surface: #171a36; --surface-2: #22264a; --verre: rgba(23, 26, 54, .78);
+    --texte: #eceefe; --texte-doux: #b0b5d6; --bord: #2e3361;
+    --accent: #b39cff; --accent-2: #f472b6; --accent-texte: #0f1226; --accent-doux: #2c2560;
+    --entete-grad: linear-gradient(90deg, rgba(109, 40, 217, .9), rgba(190, 24, 93, .9));
+    --titre-grad: linear-gradient(90deg, #ff5fa2, #9b6dff 50%, #22d3ee);
+    --grad-hero: linear-gradient(135deg, #5b21b6 0%, #7e22ce 50%, #be185d 100%);
+    --u-cours: #4d8dff; --u-cas: #ff9a3c; --u-memos: #2ee59d; --u-glossaire: #9b6dff; --u-revisions: #ff5fa2; --u-oral: #ffc53d;
     --bc1: #818cf8; --bc1-2: #a78bfa; --bc1-texte: #c7d2fe; --bc1-doux: #1f2452;
     --bc2: #fb923c; --bc2-2: #4ade80; --bc2-texte: #fdba74; --bc2-doux: #3a2212;
     --ok: #86efac; --ok-texte: #0c0f1d; --ok-doux: #12321f; --ko: #fca5a5; --ko-doux: #3b1718;
     --verif: #fcd34d; --verif-doux: #3a2c0b; --stable: #c7d2fe; --stable-doux: #1f2452;
+    --st-gris: #9ca3af; --st-orange: #fb923c; --st-vert: #4ade80; --st-texte: #0f1226;
     --s1: #7577f5; --s2: #e0600f;
-    --grad-hero: linear-gradient(135deg, #312e81 0%, #4c1d95 55%, #6b21a8 100%);
     --ombre: 0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px -10px rgba(0, 0, 0, .55);
     --ombre-forte: 0 2px 4px rgba(0, 0, 0, .4), 0 18px 40px -12px rgba(0, 0, 0, .65);
     color-scheme: dark;
   }
 }
-/* Mode sombre choisi avec le bouton */
-:root[data-theme="dark"] {
-  --fond: #0c0f1d; --surface: #151a2d; --surface-2: #1e2440; --texte: #e9ebf7; --texte-doux: #aab0cc; --bord: #2b3253;
-  --entete: rgba(21, 26, 45, .84);
-  --accent: #a5b4fc; --accent-2: #c4b5fd; --accent-texte: #0c0f1d; --accent-doux: #262b5c;
+:root[data-theme="neon"], :root[data-theme="dark"], :root[data-theme="ocean"], :root[data-theme="aurore"] {
+  --fond: #0f1226; --fond-2: #1a1038; --surface: #171a36; --surface-2: #22264a; --verre: rgba(23, 26, 54, .78);
+  --texte: #eceefe; --texte-doux: #b0b5d6; --bord: #2e3361;
+  --accent: #b39cff; --accent-2: #f472b6; --accent-texte: #0f1226; --accent-doux: #2c2560;
+  --entete-grad: linear-gradient(90deg, rgba(109, 40, 217, .9), rgba(190, 24, 93, .9));
+  --titre-grad: linear-gradient(90deg, #ff5fa2, #9b6dff 50%, #22d3ee);
+  --grad-hero: linear-gradient(135deg, #5b21b6 0%, #7e22ce 50%, #be185d 100%);
+  --u-cours: #4d8dff; --u-cas: #ff9a3c; --u-memos: #2ee59d; --u-glossaire: #9b6dff; --u-revisions: #ff5fa2; --u-oral: #ffc53d;
   --bc1: #818cf8; --bc1-2: #a78bfa; --bc1-texte: #c7d2fe; --bc1-doux: #1f2452;
   --bc2: #fb923c; --bc2-2: #4ade80; --bc2-texte: #fdba74; --bc2-doux: #3a2212;
   --ok: #86efac; --ok-texte: #0c0f1d; --ok-doux: #12321f; --ko: #fca5a5; --ko-doux: #3b1718;
   --verif: #fcd34d; --verif-doux: #3a2c0b; --stable: #c7d2fe; --stable-doux: #1f2452;
+  --st-gris: #9ca3af; --st-orange: #fb923c; --st-vert: #4ade80; --st-texte: #0f1226;
   --s1: #7577f5; --s2: #e0600f;
-  --grad-hero: linear-gradient(135deg, #312e81 0%, #4c1d95 55%, #6b21a8 100%);
   --ombre: 0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px -10px rgba(0, 0, 0, .55);
   --ombre-forte: 0 2px 4px rgba(0, 0, 0, .4), 0 18px 40px -12px rgba(0, 0, 0, .65);
   color-scheme: dark;
 }
+/* Océan cyan : bleu nuit → pétrole, en-tête émeraude → cyan */
+:root[data-theme="ocean"] {
+  --fond: #071521; --fond-2: #0a2a3a; --surface: #0f2433; --surface-2: #163245; --verre: rgba(15, 36, 51, .8);
+  --texte: #e6f6fb; --texte-doux: #a3c2cf; --bord: #21455a;
+  --accent: #22d3ee; --accent-2: #34d399; --accent-texte: #04121a; --accent-doux: #0e3a48;
+  --entete-grad: linear-gradient(90deg, rgba(4, 120, 87, .92), rgba(14, 116, 144, .92));
+  --titre-grad: linear-gradient(90deg, #2ee59d, #22d3ee 50%, #4d8dff);
+  --grad-hero: linear-gradient(135deg, #065f46 0%, #0e7490 60%, #1d4ed8 100%);
+}
+/* Aurore rose : prune → bordeaux, en-tête rose → orange */
+:root[data-theme="aurore"] {
+  --fond: #1a0d1f; --fond-2: #2a0f2e; --surface: #26142c; --surface-2: #33193a; --verre: rgba(38, 20, 44, .8);
+  --texte: #fbeaf3; --texte-doux: #d3b3c6; --bord: #4a2645;
+  --accent: #ff7ab8; --accent-2: #ffb86b; --accent-texte: #1a0d1f; --accent-doux: #4a1d3d;
+  --entete-grad: linear-gradient(90deg, rgba(190, 24, 93, .92), rgba(194, 65, 12, .92));
+  --titre-grad: linear-gradient(90deg, #ffc53d, #ff7ab8 50%, #b39cff);
+  --grad-hero: linear-gradient(135deg, #9d174d 0%, #be185d 50%, #c2410c 100%);
+}
+/* Univers : chaque élément porteur de data-univers reçoit sa couleur dans --u */
+[data-univers="cours"] { --u: var(--u-cours); }
+[data-univers="cas"] { --u: var(--u-cas); }
+[data-univers="memos"] { --u: var(--u-memos); }
+[data-univers="glossaire"] { --u: var(--u-glossaire); }
+[data-univers="revisions"] { --u: var(--u-revisions); }
+[data-univers="oral"] { --u: var(--u-oral); }
 
 /* ---------- 2. Base ---------- */
 * { box-sizing: border-box; }
@@ -545,6 +588,193 @@ mark { background: var(--verif-doux); color: inherit; padding: 0 2px; border-rad
 .toast { background: var(--texte); color: var(--fond); padding: 10px 16px; border-radius: 12px; font-weight: 600; font-size: 14.5px; box-shadow: var(--ombre-forte); animation: toast-entre .3s var(--ease); }
 .toast.sortie { opacity: 0; translate: 0 8px; transition: opacity .4s, translate .4s; }
 .confettis { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 70; }
+
+/* ---------- 5 bis. Habillage « fun » : thèmes, en-tête, cartes, gamification ---------- */
+/* Fond : dégradé nuit → violet (selon le thème), animé très lentement sur un calque composité (transform). */
+.fond-anime { position: fixed; inset: -15%; z-index: -1; pointer-events: none;
+  background: radial-gradient(40% 35% at 20% 15%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+              radial-gradient(35% 30% at 85% 30%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 70%),
+              linear-gradient(160deg, var(--fond) 0%, var(--fond-2) 100%);
+  animation: derive 40s ease-in-out infinite alternate; }
+@keyframes derive { from { transform: translate3d(0, 0, 0) rotate(0deg); } to { transform: translate3d(-4%, 3%, 0) rotate(4deg); } }
+
+/* Titres en Poppins */
+h1, h2, h3, .level-up-titre, .niveau-nom { font-family: "Poppins", var(--police); }
+
+/* En-tête : dégradé semi-transparent, texte blanc (contraste ≥ 5,2:1 dans tous les thèmes) */
+.entete { background: var(--entete-grad); border-bottom: 0; box-shadow: 0 8px 28px -12px rgba(0, 0, 0, .55); }
+.entete .marque, .entete .nav > li > a, .entete .menu > summary { color: #fff; }
+.entete .marque small { color: rgba(255, 255, 255, .85); }
+.entete .marque-logo { background: rgba(255, 255, 255, .18); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.entete .nav > li > a:hover, .entete .menu > summary:hover, .entete .menu[open] > summary { background: rgba(255, 255, 255, .16); }
+.entete .nav a[aria-current="page"], .entete .menu.actif > summary { background: rgba(255, 255, 255, .24); color: #fff; animation: halo 2.6s ease-out infinite; }
+.entete .menu > summary::after { color: rgba(255, 255, 255, .85); }
+@keyframes halo { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .45); } 70%, 100% { box-shadow: 0 0 0 7px rgba(255, 255, 255, 0); } }
+.menu ul a[data-univers] { border-left: 3px solid var(--u); border-radius: 0 8px 8px 0; display: flex; align-items: center; gap: 8px; }
+.anneau { --p: 0; width: 16px; height: 16px; border-radius: 50%; margin-left: auto; background: conic-gradient(var(--u-memos) calc(var(--p) * 1%), var(--bord) 0);
+  -webkit-mask: radial-gradient(circle, transparent 4px, #000 4.5px); mask: radial-gradient(circle, transparent 4px, #000 4.5px); }
+.recherche-entete { display: flex; align-items: center; border-radius: 99px; background: rgba(255, 255, 255, .16); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.recherche-entete input { width: 120px; border: 0; background: transparent; color: #fff; font: inherit; font-size: 14px; padding: 7px 4px 7px 14px; outline: none; transition: width .25s var(--ease); }
+.recherche-entete input:focus { width: 170px; }
+.recherche-entete input::placeholder { color: rgba(255, 255, 255, .85); }
+.recherche-entete button { border: 0; background: transparent; color: #fff; padding: 6px 10px 6px 4px; cursor: pointer; display: grid; place-items: center; }
+.recherche-entete:focus-within { box-shadow: inset 0 0 0 2px #fff; }
+.entete .rebours-chip { background: rgba(255, 255, 255, .18); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.entete .rebours-chip span { display: none; }
+.entete .theme-btn { background: rgba(255, 255, 255, .16); color: #fff; border-color: rgba(255, 255, 255, .4); list-style: none; }
+.entete .theme-btn::-webkit-details-marker { display: none; }
+.entete .theme-btn::after { content: none; }
+.menu-theme, .menu-profil { position: relative; }
+.menu-theme ul, .panneau-profil { left: auto; right: 0; }
+.menu-theme ul button { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border-radius: 8px; cursor: pointer; color: var(--texte); font-size: 15px; }
+.menu-theme ul button:hover, .menu-theme ul button:focus-visible { background: var(--surface-2); }
+.menu-theme ul button:focus-visible { outline: 3px solid var(--accent); }
+.menu-theme ul button[aria-pressed="true"] { font-weight: 700; color: var(--accent); }
+.menu-theme ul button[aria-pressed="true"]::after { content: "✓"; margin-left: auto; }
+.apercu { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3); }
+.apercu.neon { background: linear-gradient(135deg, #1a1038, #9b6dff, #ff5fa2); }
+.apercu.ocean { background: linear-gradient(135deg, #071521, #22d3ee, #2ee59d); }
+.apercu.aurore { background: linear-gradient(135deg, #2a0f2e, #ff7ab8, #ffb86b); }
+.apercu.clair { background: linear-gradient(135deg, #ffffff, #c7d2fe); box-shadow: inset 0 0 0 1px #c7cbe0; }
+.apercu.auto { background: linear-gradient(90deg, #f5f6fb 50%, #0f1226 50%); box-shadow: inset 0 0 0 1px #9ca3af; }
+.bouton.connexion { background: #fff; color: #4338ca; box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .5); }
+.zone-profil summary { list-style: none; padding: 0; border-radius: 50%; }
+.zone-profil summary::-webkit-details-marker { display: none; }
+.zone-profil .menu > summary::after, .zone-profil summary::after { content: none; }
+/* Avatar 3D : sphère (reflet en haut à gauche, ombre propre en bas à droite), anneau en dégradé,
+   lettre en relief ; flotte doucement et pivote vers la souris (variables --ax / --ay posées par animations.js). */
+.avatar { --a1: #9b6dff; --a2: #db2777; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; position: relative;
+  font-weight: 800; color: #fff; font-family: "Poppins", var(--police); font-size: 17px;
+  background: radial-gradient(circle at 32% 26%, rgba(255, 255, 255, .9) 0 7%, rgba(255, 255, 255, 0) 36%),
+              radial-gradient(circle at 70% 80%, rgba(0, 0, 0, .38), rgba(0, 0, 0, 0) 58%),
+              linear-gradient(145deg, var(--a1), var(--a2));
+  box-shadow: inset -4px -6px 10px rgba(0, 0, 0, .35), inset 3px 4px 8px rgba(255, 255, 255, .25),
+              0 0 0 2px rgba(255, 255, 255, .9), 0 0 0 4px rgba(155, 109, 255, .55), 0 8px 16px -6px rgba(0, 0, 0, .6);
+  transform: perspective(320px) rotateX(var(--ax, 0deg)) rotateY(var(--ay, 0deg)); transition: transform .25s var(--ease);
+  animation: flotte 4s ease-in-out infinite; }
+.avatar > span { transform: translateZ(14px); text-shadow: 0 1px 0 rgba(0, 0, 0, .25), 0 3px 6px rgba(0, 0, 0, .35); }
+.avatar.grand { width: 120px; height: 120px; font-size: 50px; box-shadow: inset -10px -14px 24px rgba(0, 0, 0, .35), inset 8px 10px 18px rgba(255, 255, 255, .25),
+  0 0 0 4px rgba(255, 255, 255, .9), 0 0 0 8px rgba(155, 109, 255, .5), 0 24px 40px -14px rgba(0, 0, 0, .65); }
+@keyframes flotte { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3px; } }
+.carte-compte { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+.carte-compte > div { flex: 1; min-width: 200px; }
+.panneau-profil { position: absolute; top: 100%; margin-top: 8px; z-index: 40; width: 260px; max-width: calc(100vw - 32px); padding: 14px; background: var(--surface); color: var(--texte);
+  border: 1px solid var(--bord); border-radius: 14px; box-shadow: var(--ombre-forte); animation: menu-ouvre .18s var(--ease); }
+.panneau-profil p { margin: 0 0 6px; }
+.profil-nom { font-weight: 700; font-size: 16px; }
+.pastille-ok { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: var(--ok-doux); color: var(--ok); vertical-align: 2px; }
+.panneau-profil ul { list-style: none; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid var(--bord); position: static; box-shadow: none; border-radius: 0; min-width: 0; animation: none; background: none; }
+.panneau-profil ul a, .panneau-profil ul button { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 7px 8px; border-radius: 8px; cursor: pointer; color: var(--texte); font-size: 14.5px; }
+.panneau-profil ul a:hover, .panneau-profil ul button:hover { background: var(--surface-2); }
+.panneau-profil ul a:focus-visible, .panneau-profil ul button:focus-visible { outline: 3px solid var(--accent); }
+
+/* Boutons en pilule, rebond au clic */
+.bouton { border-radius: 99px; }
+.bouton.petit { border-radius: 99px; }
+.bouton:active { animation: rebond .35s var(--ease); }
+@keyframes rebond { 0% { scale: 1; } 35% { scale: .92; } 70% { scale: 1.04; } 100% { scale: 1; } }
+
+/* Cartes d'outils : verre sombre, bordure en dégradé de la couleur d'univers, émoji lumineux, inclinaison 3D au survol */
+.carte { background: var(--verre); }
+.carte-outil { border: 1.5px solid transparent; border-radius: 16px;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, linear-gradient(140deg, var(--u, var(--accent)), color-mix(in srgb, var(--u, var(--accent)) 10%, transparent) 65%) border-box;
+  transition: transform .3s var(--ease), box-shadow .3s; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+.carte-outil:hover { translate: none; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-5px);
+  box-shadow: 0 22px 44px -18px color-mix(in srgb, var(--u, var(--accent)) 70%, transparent); }
+.carte-outil .num { color: var(--u); }
+.carte-emoji { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; line-height: 1;
+  background: color-mix(in srgb, var(--u) 20%, transparent); box-shadow: 0 0 22px -2px color-mix(in srgb, var(--u) 55%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--u) 45%, transparent); }
+.carte-outil .bouton:not(.secondaire) { background: linear-gradient(135deg, var(--u), color-mix(in srgb, var(--u) 60%, var(--accent-2))); color: var(--accent-texte); }
+.carte-outil .bouton.secondaire { color: var(--u); border-color: var(--u); }
+
+/* Accueil : carte « verre », titre en dégradé multicolore, invite « > » clignotante, faux terminal, décompte */
+.hero { background: linear-gradient(var(--verre), var(--verre)) padding-box, linear-gradient(120deg, var(--u-revisions), var(--u-glossaire), var(--u-cours)) border-box;
+  border: 1.5px solid transparent; color: var(--texte); }
+.hero::before { background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%); }
+.hero::after { background: radial-gradient(circle, color-mix(in srgb, var(--accent-2) 30%, transparent), transparent 70%); }
+.hero p { color: var(--texte-doux); }
+.surtitre { background: var(--accent-doux); color: var(--accent); }
+.titre-degrade { background: var(--titre-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.titre-degrade .invite { display: inline-block; color: var(--u-revisions); -webkit-text-fill-color: var(--u-revisions); animation: clignote 1.1s steps(1) infinite; }
+@keyframes clignote { 50% { opacity: 0; } }
+@media (forced-colors: active) { .titre-degrade { color: CanvasText; background: none; } }
+.terminal { margin: 16px 0 4px; max-width: 460px; border-radius: 12px; background: #0b0d1a; border: 1px solid #2a2f55; box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .7); font-family: var(--mono); font-size: 14.5px; overflow: hidden; }
+.terminal-barre { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: #15182e; color: #9aa0c8; font-size: 12px; }
+.terminal-barre i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+.terminal-barre i:nth-child(2) { background: #febc2e; }
+.terminal-barre i:nth-child(3) { background: #28c840; }
+.terminal-barre span { margin-left: 8px; }
+.terminal p { margin: 0; padding: 12px 14px; color: #a7f3d0; min-height: 46px; }
+.terminal .prompt { color: #ff7ab8; font-weight: 700; }
+.terminal .curseur { animation: clignote 1s steps(1) infinite; color: #a7f3d0; }
+.hero-rebours { background: var(--grad-hero); border-color: rgba(255, 255, 255, .25); min-width: 250px; }
+.rebours-titre { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .95; }
+.decompte { display: flex; gap: 8px; margin: 8px 0 6px; }
+.decompte > span { display: flex; flex-direction: column; align-items: center; min-width: 52px; padding: 8px 6px; border-radius: 12px; background: rgba(255, 255, 255, .14); }
+.decompte b { font-size: 28px; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; font-family: "Poppins", var(--police); }
+.decompte small { font-size: 11.5px; opacity: .95; }
+@media (max-width: 720px) { .hero-rebours { flex-direction: column; } .decompte b { font-size: 22px; } .decompte > span { min-width: 44px; } }
+
+/* Astuce du jour, encouragement */
+.astuce { margin: 10px 0 6px; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, var(--u-oral) 14%, transparent); border-left: 4px solid var(--u-oral); font-size: 14.5px; }
+.encouragement { margin: 0 0 10px; font-weight: 600; color: var(--accent); }
+
+/* Statuts à faire / en cours / maîtrisé (segmenté, boutons radio) */
+.barre-outils { justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+fieldset.statut { display: inline-flex; gap: 0; border: 1px solid var(--bord); border-radius: 99px; padding: 3px; margin: 0 0 12px; background: var(--surface); }
+fieldset.statut label { position: relative; cursor: pointer; }
+fieldset.statut input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+fieldset.statut span { display: block; padding: 4px 12px; border-radius: 99px; font-size: 13.5px; font-weight: 600; color: var(--texte-doux); transition: background .2s, color .2s; }
+fieldset.statut label:has(input:focus-visible) span { outline: 3px solid var(--accent); outline-offset: 1px; }
+fieldset.statut .st-a-faire input:checked + span { background: var(--st-gris); color: var(--st-texte); }
+fieldset.statut .st-en-cours input:checked + span { background: var(--st-orange); color: var(--st-texte); }
+fieldset.statut .st-maitrise input:checked + span { background: var(--st-vert); color: var(--st-texte); }
+.md h2 + fieldset.statut { margin-top: -2px; }
+.pastille-statut { display: inline-block; min-width: 76px; text-align: center; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 99px; color: var(--st-texte); }
+.pastille-statut.st-a-faire { background: var(--st-gris); }
+.pastille-statut.st-en-cours { background: var(--st-orange); }
+.pastille-statut.st-maitrise { background: var(--st-vert); }
+.liste-chapitres { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.liste-chapitres li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px dashed var(--bord); }
+.liste-chapitres li:last-child { border-bottom: 0; }
+.chap-pct { color: var(--texte-doux); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Barre de progression de lecture (pages de cours et de fiches) */
+.barre-lecture { position: fixed; left: 0; right: 0; top: var(--h-entete, 0px); height: 3px; z-index: 25; pointer-events: none; }
+.barre-lecture i { display: block; height: 100%; background: linear-gradient(90deg, var(--u-cours), var(--u-glossaire), var(--u-revisions)); transform: scaleX(0); transform-origin: left; }
+.toc button.lu::before { content: "✓ "; color: var(--ok); font-weight: 700; }
+
+/* Série 🔥 : flamme animée */
+.flamme { display: inline-block; }
+.flamme.vive { animation: flamme 1.1s ease-in-out infinite alternate; transform-origin: 50% 90%; }
+@keyframes flamme { from { transform: scale(1) rotate(-4deg); } to { transform: scale(1.18) rotate(4deg); } }
+.chiffre-niveau b { background: var(--titre-grad); -webkit-background-clip: text; background-clip: text; }
+
+/* LEVEL UP ! */
+.level-up { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 16px; background: rgba(5, 6, 20, .55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); animation: fondu .25s ease; }
+.level-up.sortie { opacity: 0; transition: opacity .3s; }
+.level-up-carte { text-align: center; padding: 26px 30px; border-radius: 22px; background: var(--surface); color: var(--texte); box-shadow: var(--ombre-forte); border: 2px solid transparent;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--titre-grad) border-box; animation: pop .55s cubic-bezier(.2, 1.4, .4, 1); }
+.level-up-emoji { font-size: 54px; display: block; }
+.level-up-titre { margin: 6px 0; font-size: clamp(32px, 7vw, 46px); font-weight: 800; letter-spacing: .02em; background: var(--titre-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@keyframes pop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fondu { from { opacity: 0; } }
+
+/* Badges (émoji) et niveaux */
+.badge-ico { font-size: 26px; line-height: 1; }
+.badge-carte.verrouille .badge-ico { filter: grayscale(1); opacity: .5; }
+.badge-carte.obtenu .badge-ico { background: color-mix(in srgb, var(--u-oral) 22%, transparent); box-shadow: 0 0 20px -4px color-mix(in srgb, var(--u-oral) 70%, transparent); }
+.badge-etat { font-size: 12px; font-weight: 700; color: var(--ok); }
+.badges.grands { grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr)); margin-bottom: 24px; }
+.badges.grands .badge-ico { width: 60px; height: 60px; font-size: 32px; }
+.niveau-carte { display: flex; gap: 16px; align-items: center; padding: 16px 18px; margin-bottom: 16px; border-radius: 16px; border: 1.5px solid transparent;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--titre-grad) border-box; }
+.niveau-carte > div { flex: 1; min-width: 0; }
+.niveau-emoji { font-size: 44px; }
+.niveau-nom { margin: 0; font-size: 20px; font-weight: 700; }
+.niveaux { padding-left: 22px; }
+.niveaux li { margin-bottom: 4px; color: var(--texte-doux); }
+.niveaux li.atteint { color: var(--texte); font-weight: 600; }
 
 /* ---------- 6. Animations ---------- */
 @keyframes entree-page { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }

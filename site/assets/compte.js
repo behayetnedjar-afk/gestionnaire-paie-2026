@@ -92,6 +92,14 @@
         case 'planning':
           R[k] = parId(l, d, function (x, y) { return Object.assign({}, x, y); });
           break;
+        case 'xp': // le total le plus élevé, récompenses déjà accordées réunies (pas de double gain)
+          var base = (l.total || 0) >= (d.total || 0) ? l : d;
+          R[k] = { total: base.total || 0, journal: base.journal || [], recompenses: Object.assign({}, d.recompenses, l.recompenses) };
+          break;
+        case 'statuts': // l'état le plus avancé l'emporte
+          var rang = { 'a-faire': 0, 'en-cours': 1, maitrise: 2 };
+          R[k] = parId(l, d, function (x, y) { return rang[x] >= rang[y] ? x : y; });
+          break;
         default:
           R[k] = l; // réglages (objectif, rappel…) : la valeur de cet appareil l'emporte
       }
@@ -160,7 +168,8 @@
     configure: configure,
     etat: function () { return etat; },
     surChangement: function (f) { abonnes.push(f); return function () { abonnes = abonnes.filter(function (x) { return x !== f; }); }; },
-    inscrire: function (email, mdp) { exiger(); return lancer(client.auth.signUp({ email: email, password: mdp, options: { emailRedirectTo: adresseRetour() } })); },
+    // Le mot de passe est transmis à Supabase Auth (HTTPS), qui le stocke haché : le site ne le conserve jamais.
+    inscrire: function (email, mdp, prenom) { exiger(); return lancer(client.auth.signUp({ email: email, password: mdp, options: { emailRedirectTo: adresseRetour(), data: { prenom: prenom || '' } } })); },
     connecter: function (email, mdp) { exiger(); return lancer(client.auth.signInWithPassword({ email: email, password: mdp })); },
     deconnecter: function () { exiger(); return lancer(client.auth.signOut()); },
     motDePasseOublie: function (email) { exiger(); return lancer(client.auth.resetPasswordForEmail(email, { redirectTo: adresseRetour() })); },
@@ -178,13 +187,27 @@
   window.Pages.compte = function (main, sousPage) {
     var esc = App.esc;
     if (!configure) {
-      main.innerHTML = '<div class="qcm"><h1>' + Icone('utilisateur', 'ico-titre') + ' Mon compte</h1>' +
+      var nl = window.Jeu ? Jeu.niveau(Jeu.xp().total) : null;
+      main.innerHTML = '<div class="qcm"><h1>Mon compte</h1>' +
+        (window.Jeu ? '<section class="carte-compte bloc">' + Jeu.avatarHtml('grand') + '<div><p class="niveau-nom">' + esc(Jeu.prenom() || 'Mon profil') + '</p>' +
+          '<p class="param-note">' + nl.emoji + ' Niveau ' + nl.rang + ' — ' + esc(nl.nom) + ' · ' + nl.total + ' XP</p>' +
+          '<div class="qcm-actions"><a class="bouton petit" href="#/tableau-de-bord">📊 Ma progression</a><a class="bouton petit secondaire" href="#/badges">🏆 Mes badges</a></div></div></section>' : '') +
         '<div class="alerte"><strong>Mode local.</strong> Les comptes ne sont pas encore activés sur ce site : votre progression est enregistrée ' +
         'dans ce navigateur uniquement.</div>' +
         '<p>Pour retrouver votre progression sur un autre appareil, utilisez <strong>Exporter</strong> puis <strong>Importer</strong> dans le ' +
         '<a href="#/tableau-de-bord">tableau de bord</a> (rubrique « Mes données »).</p>' +
+        '<form class="question" id="fProfilLocal" novalidate><div class="champ"><label for="pPrenom">Mon prénom <small>(affiché dans l\'avatar, enregistré dans ce navigateur)</small></label>' +
+        '<input type="text" id="pPrenom" autocomplete="given-name" maxlength="40" value="' + esc(Stock.lire('profil', {}).prenom || '') + '"></div>' +
+        '<div class="qcm-actions"><button class="bouton" type="submit">Enregistrer</button></div><div id="msgC" aria-live="polite"></div></form>' +
         '<p class="param-note">Administrateur du site : la procédure d\'activation (projet Supabase gratuit, clés publiques, règles de sécurité) est décrite dans ' +
         '<code>livrables/06_configuration_compte_supabase.md</code>.</p></div>';
+      main.querySelector('#fProfilLocal').onsubmit = function (ev) {
+        ev.preventDefault();
+        var p = Stock.lire('profil', {});
+        p.prenom = main.querySelector('#pPrenom').value.trim().slice(0, 40);
+        Stock.ecrire('profil', p);
+        main.querySelector('#msgC').innerHTML = '<p class="resultat">Prénom enregistré.</p>';
+      };
       return;
     }
     function rendre() {
@@ -204,7 +227,12 @@
       }
       if (e.utilisateur) {
         var libelleSynchro = { 'en-cours': 'Synchronisation en cours…', ok: 'À jour', erreur: 'Erreur : ' + (e.erreur || ''), inactive: '—' }[e.synchro];
-        main.innerHTML = '<div class="qcm"><h1>' + Icone('utilisateur', 'ico-titre') + ' Mon compte</h1>' +
+        var n = window.Jeu ? Jeu.niveau(Jeu.xp().total) : null;
+        main.innerHTML = '<div class="qcm"><h1>Mon compte</h1>' +
+          (window.Jeu ? '<section class="carte-compte bloc">' + Jeu.avatarHtml('grand') + '<div><p class="niveau-nom">' + esc(Jeu.prenom() || 'Bienvenue') + '</p>' +
+            '<p class="param-note">' + n.emoji + ' Niveau ' + n.rang + ' — ' + esc(n.nom) + ' · ' + n.total + ' XP</p>' +
+            '<div class="jauge" role="progressbar" aria-label="Progression vers le niveau suivant" aria-valuenow="' + n.pct + '" aria-valuemin="0" aria-valuemax="100"><i style="width:' + n.pct + '%"></i></div>' +
+            '<div class="qcm-actions"><a class="bouton petit" href="#/tableau-de-bord">📊 Ma progression</a><a class="bouton petit secondaire" href="#/badges">🏆 Mes badges</a></div></div></section>' : '') +
           '<div class="bloc"><p>Connecté avec <strong>' + esc(e.utilisateur.email) + '</strong>.</p>' +
           '<dl class="infos-compte"><div><dt>Synchronisation</dt><dd>' + esc(libelleSynchro) + '</dd></div>' +
           '<div><dt>Dernier envoi</dt><dd>' + (e.derniere ? e.derniere.toLocaleString('fr-FR') : '—') + '</dd></div></dl>' +
@@ -237,6 +265,7 @@
         '<a role="tab" href="#/compte" aria-selected="' + !inscription + '">Connexion</a>' +
         '<a role="tab" href="#/compte/inscription" aria-selected="' + inscription + '">Inscription</a></div>' +
         '<form class="question" id="fCompte" novalidate>' +
+        (inscription ? '<div class="champ"><label for="cPrenom">Prénom <small>(affiché dans votre avatar)</small></label><input type="text" id="cPrenom" autocomplete="given-name" maxlength="40"></div>' : '') +
         '<div class="champ"><label for="cEmail">Adresse e-mail</label><input type="email" id="cEmail" autocomplete="email" required></div>' +
         '<div class="champ"><label for="cMdp">Mot de passe' + (inscription ? ' <small>(8 caractères minimum)</small>' : '') + '</label>' +
         '<input type="password" id="cMdp" autocomplete="' + (inscription ? 'new-password' : 'current-password') + '" minlength="8" required></div>' +
@@ -250,7 +279,8 @@
         if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) return message('Saisissez une adresse e-mail valide.', true, email);
         if (mdp.value.length < 8) return message('Le mot de passe doit contenir au moins 8 caractères.', true, mdp);
         var bouton = ev.target.querySelector('[type=submit]'); bouton.disabled = true;
-        (inscription ? Compte.inscrire(email.value, mdp.value) : Compte.connecter(email.value, mdp.value)).then(function (d) {
+        var champPrenom = main.querySelector('#cPrenom');
+        (inscription ? Compte.inscrire(email.value, mdp.value, champPrenom ? champPrenom.value.trim() : '') : Compte.connecter(email.value, mdp.value)).then(function (d) {
           if (inscription && (!d || !d.session)) message('Compte créé. Ouvrez le lien de confirmation reçu par e-mail, puis connectez-vous.');
         }).catch(function (x) { message(traduire(x.message), true); }).then(function () { bouton.disabled = false; });
       };

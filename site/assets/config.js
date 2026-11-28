@@ -14,6 +14,7 @@ window.CONFIG = {
 
   // Date de l'épreuve du Titre professionnel Gestionnaire de paie (RNCP37948).
   dateExamen: '2027-01-27',
+  heureExamen: '00:00',     // à remplacer par l'heure de votre convocation (ex. '08:30')
   libelleExamen: 'Titre professionnel Gestionnaire de paie',
 
   // Objectif quotidien proposé par défaut (modifiable dans le tableau de bord).

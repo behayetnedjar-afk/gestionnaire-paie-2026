@@ -1,0 +1,4227 @@
+[
+  {
+    "id": "REF-M01-01",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Quelle est la durée maximale initiale de la période d'essai d'un cadre en CDI (hors renouvellement) ?",
+    "choix": [
+      "A. 3 mois",
+      "B. 4 mois",
+      "C. 2 mois",
+      "D. 6 mois"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "La période d'essai d'un CDI dure au maximum 2 mois pour les ouvriers et employés, 3 mois pour les agents de maîtrise et techniciens, 4 mois pour les cadres.",
+    "reference": "C. trav. art. L1221-19",
+    "piege": "Retenir 8 mois : c'est la durée maximale renouvellement compris pour un cadre, pas la durée initiale."
+  },
+  {
+    "id": "REF-M01-02",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Durée du travail",
+    "enonce": "Quelle est la durée maximale quotidienne de travail effectif, sauf dérogation ?",
+    "choix": [
+      "A. 8 heures",
+      "B. 12 heures",
+      "C. 10 heures",
+      "D. 11 heures"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La durée quotidienne de travail effectif ne peut excéder 10 heures, sauf dérogations (accord collectif, urgence, autorisation de l'inspection).",
+    "reference": "C. trav. art. L3121-18",
+    "piege": "Confondre avec le repos quotidien minimal de 11 heures."
+  },
+  {
+    "id": "REF-M01-03",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Durée du travail",
+    "enonce": "Quel est le repos quotidien minimal entre deux journées de travail ?",
+    "choix": [
+      "A. 9 heures consécutives",
+      "B. 11 heures consécutives",
+      "C. 10 heures consécutives",
+      "D. 12 heures consécutives"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Tout salarié bénéficie d'un repos quotidien d'une durée minimale de 11 heures consécutives.",
+    "reference": "C. trav. art. L3131-1",
+    "piege": "Le repos hebdomadaire est de 35 heures (24 h + 11 h) : ne pas mélanger les deux."
+  },
+  {
+    "id": "REF-M01-04",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Obligations de l'employeur",
+    "enonce": "À quel organisme l'employeur du régime général adresse-t-il la déclaration préalable à l'embauche (DPAE) ?",
+    "choix": [
+      "A. L'inspection du travail",
+      "B. France Travail",
+      "C. L'URSSAF",
+      "D. La caisse de retraite complémentaire"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La DPAE est adressée à l'URSSAF (à la MSA pour le régime agricole), avant toute embauche.",
+    "reference": "C. trav. art. L1221-10 et R1221-5",
+    "piege": "Penser à France Travail, qui reçoit en réalité l'attestation employeur en fin de contrat (via la DSN)."
+  },
+  {
+    "id": "REF-M01-05",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Sauf dérogations, quelle est la durée minimale de travail d'un salarié à temps partiel ?",
+    "choix": [
+      "A. 24 heures par semaine",
+      "B. 15 heures par semaine",
+      "C. 20 heures par semaine",
+      "D. 28 heures par semaine"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La durée minimale légale du temps partiel est de 24 heures par semaine (ou l'équivalent mensuel), sauf dérogations (demande écrite du salarié, accord de branche, étudiants…).",
+    "reference": "C. trav. art. L3123-27",
+    "piege": "Croire qu'aucun minimum n'existe pour le temps partiel."
+  },
+  {
+    "id": "REF-M01-06",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Dans quel délai le CDD doit-il être transmis au salarié ?",
+    "choix": [
+      "A. Le jour de l'embauche",
+      "B. Dans les 2 jours ouvrables suivant l'embauche",
+      "C. Dans les 8 jours suivant l'embauche",
+      "D. Avant la fin de la période d'essai"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le CDD est établi par écrit et transmis au salarié au plus tard dans les deux jours ouvrables suivant l'embauche.",
+    "reference": "C. trav. art. L1242-13",
+    "piege": "Confondre avec le délai de la DPAE, qui doit être faite avant l'embauche."
+  },
+  {
+    "id": "REF-M01-07",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Archivage et RGPD",
+    "enonce": "Combien de temps le registre unique du personnel doit-il être conservé après le départ du salarié ?",
+    "choix": [
+      "A. 3 ans",
+      "B. 1 an",
+      "C. 5 ans",
+      "D. 10 ans"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les mentions relatives à un salarié sont conservées 5 ans à compter de la date de son départ.",
+    "reference": "C. trav. art. R1221-26",
+    "piege": "Retenir 10 ans, durée de conservation des pièces comptables."
+  },
+  {
+    "id": "REF-M01-08",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Durée du travail",
+    "enonce": "À partir de quelle durée de travail quotidien le salarié a-t-il droit à une pause d'au moins 20 minutes ?",
+    "choix": [
+      "A. 5 heures",
+      "B. 4 heures",
+      "C. 6 heures",
+      "D. 7 heures"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Dès que le temps de travail quotidien atteint 6 heures, le salarié bénéficie d'une pause d'au moins 20 minutes consécutives.",
+    "reference": "C. trav. art. L3121-16",
+    "piege": "Penser que la pause est forcément rémunérée : elle ne l'est que si un texte ou un usage le prévoit."
+  },
+  {
+    "id": "REF-M01-09",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Sources du droit",
+    "enonce": "Depuis les ordonnances de 2017, dans quel bloc se trouvent les salaires minima hiérarchiques ?",
+    "choix": [
+      "A. Bloc 1 : la branche prime",
+      "B. Bloc 2 : la branche peut verrouiller",
+      "C. Bloc 3 : l'accord d'entreprise prime",
+      "D. Aucun : seule la loi s'applique"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Les salaires minima hiérarchiques font partie des matières du bloc 1, où l'accord de branche prévaut sur l'accord d'entreprise (sauf garanties au moins équivalentes).",
+    "reference": "C. trav. art. L2253-1",
+    "piege": "Croire que l'accord d'entreprise peut toujours déroger à la branche depuis 2017."
+  },
+  {
+    "id": "REF-M01-10",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Sources du droit",
+    "enonce": "Le contrat de travail prévoit une prime annuelle plus élevée que celle de la convention collective. Quelle prime est due ?",
+    "choix": [
+      "A. Celle de la convention collective",
+      "B. Celle du contrat de travail",
+      "C. La moyenne des deux",
+      "D. Aucune, il faut un accord d'entreprise"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "En vertu du principe de faveur, les clauses du contrat plus favorables que la convention collective s'appliquent.",
+    "reference": "C. trav. art. L2254-1",
+    "piege": "Penser que la convention collective prime toujours sur le contrat."
+  },
+  {
+    "id": "REF-M01-11",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Quelle est, dans le cas général, la durée maximale d'un CDD renouvellements compris ?",
+    "choix": [
+      "A. 24 mois",
+      "B. 18 mois",
+      "C. 12 mois",
+      "D. 36 mois"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Sauf exceptions (ex. départ définitif précédant une suppression de poste, mission à l'étranger), la durée maximale est de 18 mois renouvellements compris ; un accord de branche étendu peut fixer d'autres règles.",
+    "reference": "C. trav. art. L1242-8 et L1243-13",
+    "piege": "Retenir 24 mois, qui ne vaut que pour certains cas particuliers."
+  },
+  {
+    "id": "REF-M01-12",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Contrats de travail",
+    "enonce": "Un CDD de 21 jours (renouvellement inclus) s'achève. Quel délai de carence faut-il respecter avant un nouveau CDD sur le même poste, à défaut de dispositions conventionnelles ?",
+    "choix": [
+      "A. 10 jours",
+      "B. 14 jours",
+      "C. 7 jours",
+      "D. 21 jours"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Pour un contrat de 14 jours ou plus, le délai de carence est égal au tiers de la durée du contrat : 21 / 3 = 7 jours, décomptés en jours d'ouverture de l'établissement.",
+    "reference": "C. trav. art. L1244-3 et L1244-3-1",
+    "piege": "Appliquer la moitié : elle ne concerne que les contrats de moins de 14 jours."
+  },
+  {
+    "id": "REF-M01-13",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Durée du travail",
+    "enonce": "Quelle est la durée hebdomadaire moyenne maximale calculée sur 12 semaines consécutives ?",
+    "choix": [
+      "A. 44 heures",
+      "B. 42 heures",
+      "C. 39 heures",
+      "D. 48 heures"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La durée hebdomadaire moyenne sur une période de 12 semaines consécutives ne peut dépasser 44 heures (46 h par accord), la durée absolue étant de 48 heures.",
+    "reference": "C. trav. art. L3121-22 et L3121-20",
+    "piege": "Confondre la moyenne sur 12 semaines (44 h) avec le maximum absolu (48 h)."
+  },
+  {
+    "id": "REF-M01-14",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Obligations de l'employeur",
+    "enonce": "Lors de l'embauche d'un salarié en CDD, quelles formalités incombent à l'employeur ?",
+    "choix": [
+      "A. Effectuer la DPAE",
+      "B. Inscrire le salarié sur le registre unique du personnel",
+      "C. Établir un contrat écrit",
+      "D. Remettre une attestation France Travail"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explication": "DPAE avant l'embauche, contrat écrit obligatoire pour un CDD et inscription au registre unique du personnel. L'attestation France Travail est remise à la fin du contrat.",
+    "reference": "C. trav. art. L1221-10, L1242-12, L1221-13",
+    "piege": "Cocher l'attestation France Travail, qui relève de la fin du contrat."
+  },
+  {
+    "id": "REF-M01-15",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Durée du travail",
+    "enonce": "Quel est le nombre maximal de jours travaillés dans l'année pour un salarié en forfait annuel en jours (hors renonciation à des jours de repos) ?",
+    "choix": [
+      "A. 218 jours",
+      "B. 210 jours",
+      "C. 215 jours",
+      "D. 235 jours"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'accord collectif fixe le nombre de jours, dans la limite de 218 jours par an. Avec renonciation à des jours de repos, le maximum est fixé par l'accord (235 jours à défaut).",
+    "reference": "C. trav. art. L3121-64 et L3121-66",
+    "piege": "Retenir 235 jours, qui est le plafond en cas de rachat de jours de repos."
+  },
+  {
+    "id": "REF-M01-16",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Archivage et RGPD",
+    "enonce": "Pendant combien de temps l'employeur doit-il conserver les documents de décompte de la durée du travail ?",
+    "choix": [
+      "A. 6 mois",
+      "B. 3 ans",
+      "C. 1 an",
+      "D. 5 ans"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les documents permettant de comptabiliser le temps de travail sont tenus à la disposition de l'inspection du travail pendant un an.",
+    "reference": "C. trav. art. D3171-16",
+    "piege": "Confondre avec la conservation du double des bulletins de paie (5 ans)."
+  },
+  {
+    "id": "REF-M01-17",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix multiple",
+    "theme": "Archivage et RGPD",
+    "enonce": "Quels principes du RGPD s'appliquent aux données de paie ?",
+    "choix": [
+      "A. Minimisation des données collectées",
+      "B. Conservation sans limite de durée",
+      "C. Accès réservé aux personnes habilitées",
+      "D. Information des salariés sur le traitement"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explication": "Les données doivent être adéquates et limitées au nécessaire, protégées (accès habilité) et les personnes informées. La conservation doit être limitée à une durée définie.",
+    "reference": "RGPD art. 5, 13 et 32",
+    "piege": "Penser que les obligations légales de conservation autorisent une conservation illimitée."
+  },
+  {
+    "id": "REF-M01-18",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Quel est le délai de prescription de l'action portant sur la rupture du contrat de travail ?",
+    "choix": [
+      "A. 12 mois",
+      "B. 6 mois",
+      "C. 2 ans",
+      "D. 3 ans"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Toute action portant sur la rupture du contrat se prescrit par 12 mois à compter de la notification de la rupture.",
+    "reference": "C. trav. art. L1471-1",
+    "piege": "Confondre avec la prescription des salaires (3 ans) ou de l'exécution du contrat (2 ans)."
+  },
+  {
+    "id": "REF-M01-19",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Sources du droit",
+    "enonce": "Laquelle de ces matières relève du bloc 2 (la branche peut interdire à l'accord d'entreprise d'y déroger) ?",
+    "choix": [
+      "A. Les salaires minima hiérarchiques",
+      "B. La durée de la période d'essai",
+      "C. Les primes pour travaux dangereux ou insalubres",
+      "D. La prime d'ancienneté"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le bloc 2 comprend notamment la prévention des risques professionnels, l'insertion des travailleurs handicapés, l'effectif de désignation des délégués syndicaux et les primes pour travaux dangereux ou insalubres.",
+    "reference": "C. trav. art. L2253-2",
+    "piege": "Placer la période d'essai ou les minima en bloc 2 : ils relèvent du bloc 1."
+  },
+  {
+    "id": "REF-M01-20",
+    "module": 1,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Contrats de travail",
+    "enonce": "Pour un cadre, quelle est la durée maximale de la période d'essai renouvellement compris, et à quelle condition peut-elle être renouvelée ?",
+    "choix": [
+      "A. 8 mois, si un accord de branche étendu le prévoit et que le contrat le stipule",
+      "B. 6 mois, si le contrat le prévoit",
+      "C. 8 mois, sur simple accord écrit du salarié",
+      "D. 12 mois, si la convention collective le prévoit"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le renouvellement n'est possible qu'une fois, s'il est prévu par un accord de branche étendu et stipulé dans le contrat ou la lettre d'engagement ; la durée totale ne peut dépasser 8 mois pour un cadre.",
+    "reference": "C. trav. art. L1221-21",
+    "piege": "Oublier la double condition : accord de branche étendu ET clause du contrat."
+  },
+  {
+    "id": "REF-M02-01",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Mentions obligatoires",
+    "enonce": "Quelle mention est interdite sur le bulletin de paie ?",
+    "choix": [
+      "A. Le montant net social",
+      "B. L'intitulé de la convention collective",
+      "C. La période de paie",
+      "D. L'exercice du droit de grève"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le bulletin ne doit faire aucune mention de l'exercice du droit de grève ni de l'activité de représentation des salariés.",
+    "reference": "C. trav. art. R3243-4",
+    "piege": "Penser que les absences pour grève doivent être nommées : seule la retenue apparaît, sans motif."
+  },
+  {
+    "id": "REF-M02-02",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Mentions obligatoires",
+    "enonce": "Combien de temps l'employeur conserve-t-il le double des bulletins de paie ?",
+    "choix": [
+      "A. 6 ans",
+      "B. 3 ans",
+      "C. 10 ans",
+      "D. 5 ans"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'employeur conserve un double des bulletins de paie pendant 5 ans.",
+    "reference": "C. trav. art. L3243-4",
+    "piege": "Confondre avec la conservation des pièces comptables (10 ans)."
+  },
+  {
+    "id": "REF-M02-03",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Mentions obligatoires",
+    "enonce": "Le bulletin de paie électronique peut être remis…",
+    "choix": [
+      "A. Uniquement avec l'accord écrit préalable du salarié",
+      "B. Seulement dans les entreprises de 50 salariés et plus",
+      "C. Jamais : le papier reste obligatoire",
+      "D. Sauf opposition du salarié"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'employeur peut procéder à la remise du bulletin sous forme électronique, sauf opposition du salarié.",
+    "reference": "C. trav. art. L3243-2",
+    "piege": "Croire qu'un accord préalable est exigé : c'est le régime de l'opposition qui s'applique."
+  },
+  {
+    "id": "REF-M02-04",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Les différents nets",
+    "enonce": "Comment obtient-on le net à payer à partir du net avant impôt (sans autre élément) ?",
+    "choix": [
+      "A. En ajoutant le net social",
+      "B. En ajoutant la CSG non déductible",
+      "C. En retranchant les cotisations patronales",
+      "D. En retranchant le prélèvement à la source"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Net à payer = net avant impôt − prélèvement à la source (± acomptes, avantages en nature, remboursements…).",
+    "reference": "BOSS ; CGI art. 204 A",
+    "piege": "Retrancher des cotisations patronales : elles ne touchent jamais le net du salarié."
+  },
+  {
+    "id": "REF-M02-05",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Les différents nets",
+    "enonce": "À quoi sert le montant net social figurant sur le bulletin ?",
+    "choix": [
+      "A. À déterminer le plafond de la Sécurité sociale",
+      "B. À calculer l'impôt sur le revenu",
+      "C. À calculer les indemnités de licenciement",
+      "D. À déclarer ses ressources pour certaines prestations sociales (prime d'activité, RSA)"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le montant net social facilite la déclaration des ressources pour les prestations sociales sous condition de ressources.",
+    "reference": "C. trav. art. R3243-1",
+    "piege": "Le confondre avec le net imposable, base du prélèvement à la source."
+  },
+  {
+    "id": "REF-M02-06",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Les différents nets",
+    "enonce": "Quel est le salaire de base brut mensuel d'un salarié à 35 heures payé au SMIC en 2026 ?",
+    "choix": [
+      "A. 1 801,80 €",
+      "B. 2 005,00 €",
+      "C. 1 840,00 €",
+      "D. 1 823,03 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "SMIC horaire 2026 : 12,02 € × 151,67 h = 1 823,03 € brut par mois.",
+    "reference": "Paramètres 2026 — SMIC (décret de revalorisation)",
+    "piege": "Multiplier par 150 h ou 152 h au lieu de 151,67 h."
+  },
+  {
+    "id": "REF-M02-07",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Les différents nets",
+    "enonce": "Que devient la CSG non déductible dans le calcul du net imposable ?",
+    "choix": [
+      "A. Elle est déduite",
+      "B. Elle est remplacée par la CRDS",
+      "C. Elle est ignorée",
+      "D. Elle est réintégrée"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La CSG non déductible et la CRDS sont retenues sur le salaire mais réintégrées dans le net imposable : elles ne sont pas déductibles de l'impôt.",
+    "reference": "CGI art. 154 quinquies ; CSS art. L136-1",
+    "piege": "Penser que toute cotisation retenue diminue le net imposable."
+  },
+  {
+    "id": "REF-M02-08",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Comment un avantage en nature est-il traité sur le bulletin ?",
+    "choix": [
+      "A. Il est ajouté au brut soumis à cotisations puis déduit du net",
+      "B. Il est versé en espèces au salarié",
+      "C. Il est uniquement mentionné pour information",
+      "D. Il est exonéré de cotisations"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'avantage en nature est un élément de rémunération : il s'ajoute à l'assiette des cotisations et de l'impôt, puis est retranché du net puisqu'il a déjà été perçu en nature.",
+    "reference": "CSS art. L242-1 ; BOSS Avantages en nature",
+    "piege": "Oublier de le retrancher du net à payer et le payer deux fois."
+  },
+  {
+    "id": "REF-M02-09",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Les différents nets",
+    "enonce": "Brut 2 500 €, cotisations salariales 550 €, prélèvement à la source 95 €. Quel est le net à payer (sans autre élément) ?",
+    "choix": [
+      "A. 1 760 €",
+      "B. 1 950 €",
+      "C. 1 855 €",
+      "D. 2 045 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Net avant impôt = 2 500 − 550 = 1 950 € ; net à payer = 1 950 − 95 = 1 855 €.",
+    "reference": "CGI art. 204 A",
+    "piege": "S'arrêter au net avant impôt (1 950 €)."
+  },
+  {
+    "id": "REF-M02-10",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Les différents nets",
+    "enonce": "Brut 2 500 €, net avant impôt 1 950 €. Quel est le net imposable si l'on ne tient compte que de la CSG non déductible (2,40 %) et de la CRDS (0,50 %), calculées sur 98,25 % du brut ?",
+    "choix": [
+      "A. 2 072,50 €",
+      "B. 1 978,50 €",
+      "C. 1 950,00 €",
+      "D. 2 021,23 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Assiette : 2 500 × 98,25 % = 2 456,25 € ; CSG non déductible + CRDS = 2,90 % × 2 456,25 = 71,23 € ; net imposable = 1 950 + 71,23 = 2 021,23 €.",
+    "reference": "CSS art. L136-1-1 et L136-8 ; Paramètres 2026",
+    "piege": "Appliquer 2,90 % sur 100 % du brut, en oubliant l'abattement de 1,75 %."
+  },
+  {
+    "id": "REF-M02-11",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Comment est évalué forfaitairement l'avantage en nature lié à l'usage privé d'outils numériques (téléphone, ordinateur) fournis par l'employeur ?",
+    "choix": [
+      "A. Il n'est jamais évalué",
+      "B. 10 % du coût d'achat annuel ou de l'abonnement",
+      "C. 5 % du coût d'achat",
+      "D. 20 % du coût d'achat"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Sur option de l'employeur, l'avantage peut être évalué forfaitairement à 10 % du coût d'achat ou de l'abonnement, TTC.",
+    "reference": "Arrêté du 10 décembre 2002 art. 5 ; BOSS",
+    "piege": "Ignorer qu'un usage raisonnable à titre privé n'est pas un avantage en nature quand l'outil est professionnel."
+  },
+  {
+    "id": "REF-M02-12",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Mentions obligatoires",
+    "enonce": "Quelles mentions doivent figurer sur le bulletin de paie ?",
+    "choix": [
+      "A. L'intitulé de la convention collective applicable",
+      "B. Le RIB du salarié",
+      "C. Le nom et l'adresse de l'employeur",
+      "D. Le montant net social"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explication": "Identité de l'employeur, convention collective et montant net social font partie des mentions obligatoires. Les coordonnées bancaires ne le sont pas.",
+    "reference": "C. trav. art. R3243-1",
+    "piege": "Croire que le RIB est obligatoire parce que le salaire est versé par virement."
+  },
+  {
+    "id": "REF-M02-13",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Contrôle du bulletin",
+    "enonce": "Quel contrôle de cohérence de base faut-il faire sur tout bulletin ?",
+    "choix": [
+      "A. Coût employeur = brut",
+      "B. Brut − cotisations salariales = net avant impôt",
+      "C. Brut + cotisations patronales = net à payer",
+      "D. Net imposable = net à payer"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le brut diminué des cotisations et contributions salariales doit donner le net avant impôt ; tout écart révèle une ligne erronée.",
+    "reference": "Méthodologie de contrôle de paie",
+    "piege": "Mélanger cotisations patronales et salariales dans le contrôle."
+  },
+  {
+    "id": "REF-M02-14",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Une prime exceptionnelle versée par l'employeur (hors dispositif d'exonération spécifique) est…",
+    "choix": [
+      "A. Exonérée de cotisations",
+      "B. Soumise au seul forfait social",
+      "C. Soumise à cotisations comme le salaire",
+      "D. Soumise uniquement à la CSG"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Toute somme versée en contrepartie ou à l'occasion du travail entre dans l'assiette des cotisations, sauf exonération expresse (ex. prime de partage de la valeur).",
+    "reference": "CSS art. L242-1",
+    "piege": "Confondre avec la prime de partage de la valeur, qui a son propre régime."
+  },
+  {
+    "id": "REF-M02-15",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Dans quelle fourchette la participation patronale au titre-restaurant doit-elle se situer pour bénéficier de l'exonération ?",
+    "choix": [
+      "A. Libre, sans limite",
+      "B. Entre 30 % et 50 %",
+      "C. Entre 50 % et 60 %",
+      "D. Entre 60 % et 80 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La contribution patronale doit être comprise entre 50 % et 60 % de la valeur du titre, dans la limite d'un montant maximal revalorisé chaque année.",
+    "reference": "CSS art. L131-4 ; CGI art. 81, 19°",
+    "piege": "Oublier la limite en euros, qui se vérifie chaque année sur urssaf.fr."
+  },
+  {
+    "id": "REF-M02-16",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Quelle part du prix des abonnements de transport public domicile-travail l'employeur doit-il prendre en charge ?",
+    "choix": [
+      "A. 50 %",
+      "B. 25 %",
+      "C. 100 %",
+      "D. 75 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'employeur prend obligatoirement en charge 50 % du prix des titres d'abonnement de transport public ou de vélos en libre-service.",
+    "reference": "C. trav. art. L3261-2 et R3261-1",
+    "piege": "Croire que cette prise en charge est facultative."
+  },
+  {
+    "id": "REF-M02-17",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Contrôle du bulletin",
+    "enonce": "Salaire mensuel 2 600 € pour 151,67 h. Le salarié a une absence non rémunérée de 7 heures. Avec la méthode du taux horaire sur 151,67 h, quel est le salaire brut du mois ?",
+    "choix": [
+      "A. 2 480,00 €",
+      "B. 2 493,33 €",
+      "C. 2 513,00 €",
+      "D. 2 500,00 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Taux horaire = 2 600 / 151,67 = 17,1425 € ; retenue = 7 × 17,1425 = 120,00 € ; brut = 2 600 − 120 = 2 480,00 €.",
+    "reference": "C. trav. art. L3242-1 (mensualisation) ; méthode de retenue à confirmer dans la convention collective",
+    "piege": "Utiliser un diviseur en jours ouvrés alors que l'absence est exprimée en heures."
+  },
+  {
+    "id": "REF-M02-18",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix multiple",
+    "theme": "Les différents nets",
+    "enonce": "Quels éléments figurent dans le net imposable sans figurer dans le net à payer ?",
+    "choix": [
+      "A. La part patronale de la complémentaire santé obligatoire",
+      "B. La CSG non déductible et la CRDS",
+      "C. La prise en charge de 50 % de l'abonnement de transport",
+      "D. Le remboursement de frais professionnels réels"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B"
+    ],
+    "explication": "La CSG non déductible et la CRDS sont retenues mais imposables ; la part patronale de complémentaire santé est imposable sans être versée au salarié. Les remboursements de frais et la prise en charge obligatoire du transport ne sont pas imposables.",
+    "reference": "CGI art. 83 et 81 ; CSS art. L136-1",
+    "piege": "Penser que tout ce qui est soumis à cotisations est automatiquement imposable."
+  },
+  {
+    "id": "REF-M02-19",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Avantages en nature et primes",
+    "enonce": "Dans une entreprise de 11 salariés ou plus, à quel taux de forfait social sont soumises les contributions patronales de prévoyance complémentaire ?",
+    "choix": [
+      "A. 8 %",
+      "B. 0 %",
+      "C. 20 %",
+      "D. 16 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Les contributions patronales de prévoyance complémentaire sont soumises au forfait social au taux de 8 % dans les entreprises d'au moins 11 salariés.",
+    "reference": "CSS art. L137-15 et L137-16 ; Paramètres 2026",
+    "piege": "Appliquer le taux normal de 20 %."
+  },
+  {
+    "id": "REF-M02-20",
+    "module": 2,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Mentions obligatoires",
+    "enonce": "Quelle information relative aux allègements doit figurer sur le bulletin clarifié ?",
+    "choix": [
+      "A. Le montant total des exonérations et allègements de cotisations patronales",
+      "B. Rien, les allègements ne concernent que l'URSSAF",
+      "C. Le détail de chaque allègement par organisme",
+      "D. Uniquement le coefficient de réduction générale"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le bulletin mentionne le montant total des exonérations et allègements de cotisations et contributions sociales, ainsi que le coût total pour l'employeur.",
+    "reference": "C. trav. art. R3243-1",
+    "piege": "Croire que le bulletin n'informe le salarié que de ses propres cotisations."
+  },
+  {
+    "id": "REF-M03-01",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Plafond et tranches",
+    "enonce": "Quel est le plafond mensuel de la Sécurité sociale (PMSS) en 2026 ?",
+    "choix": [
+      "A. 4 200 €",
+      "B. 4 040 €",
+      "C. 4 005 €",
+      "D. 3 925 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le PMSS 2026 est fixé à 4 005 € (PASS 48 060 €).",
+    "reference": "CSS art. L241-3 et D242-17 ; arrêté de fixation du plafond 2026",
+    "piege": "Retenir le montant 2025 (3 925 €)."
+  },
+  {
+    "id": "REF-M03-02",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Plafond et tranches",
+    "enonce": "Quel est le plafond annuel de la Sécurité sociale (PASS) en 2026 ?",
+    "choix": [
+      "A. 46 368 €",
+      "B. 50 000 €",
+      "C. 48 060 €",
+      "D. 47 100 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "PASS 2026 = 12 × 4 005 = 48 060 €.",
+    "reference": "Arrêté de fixation du plafond 2026",
+    "piege": "Confondre avec le PASS 2025 (47 100 €)."
+  },
+  {
+    "id": "REF-M03-03",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Plafond et tranches",
+    "enonce": "Jusqu'où s'étend la tranche A (ou tranche 1 AGIRC-ARRCO) ?",
+    "choix": [
+      "A. Jusqu'à 8 PMSS",
+      "B. Jusqu'à 3 PMSS",
+      "C. Jusqu'à 4 PMSS",
+      "D. Jusqu'à 1 PMSS"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La tranche A (tranche 1 AGIRC-ARRCO) correspond à la rémunération jusqu'à 1 plafond. La tranche 2 AGIRC-ARRCO va de 1 à 8 plafonds.",
+    "reference": "ANI AGIRC-ARRCO du 17 novembre 2017",
+    "piege": "Confondre la tranche B (1 à 4 PMSS) et la tranche 2 AGIRC-ARRCO (1 à 8 PMSS)."
+  },
+  {
+    "id": "REF-M03-04",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "CSG/CRDS",
+    "enonce": "Quel est le taux de la CSG déductible sur les revenus d'activité ?",
+    "choix": [
+      "A. 9,20 %",
+      "B. 5,10 %",
+      "C. 6,80 %",
+      "D. 2,40 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "CSG totale 9,20 % : 6,80 % déductible et 2,40 % non déductible, à quoi s'ajoute la CRDS de 0,50 %.",
+    "reference": "CSS art. L136-8 ; CGI art. 154 quinquies",
+    "piege": "Confondre le taux total de CSG (9,20 %) et sa part déductible (6,80 %)."
+  },
+  {
+    "id": "REF-M03-05",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "CSG/CRDS",
+    "enonce": "Sur quelle assiette est calculée la CSG/CRDS d'un salaire brut ordinaire (sous 4 PASS) ?",
+    "choix": [
+      "A. 98,25 % du brut",
+      "B. Le net imposable",
+      "C. 97 % du brut",
+      "D. 100 % du brut"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Un abattement forfaitaire de 1,75 % pour frais professionnels s'applique, dans la limite de 4 PASS : l'assiette est donc 98,25 % du brut.",
+    "reference": "CSS art. L136-1-1",
+    "piege": "Calculer la CSG sur le net ou sur 100 % du brut."
+  },
+  {
+    "id": "REF-M03-06",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Quel est le taux salarial de la cotisation d'assurance vieillesse plafonnée ?",
+    "choix": [
+      "A. 8,55 %",
+      "B. 6,90 %",
+      "C. 3,15 %",
+      "D. 0,40 %"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Vieillesse plafonnée : 6,90 % salarial et 8,55 % patronal, dans la limite du plafond.",
+    "reference": "CSS art. D242-4 ; Paramètres 2026",
+    "piege": "Inverser part salariale (6,90 %) et part patronale (8,55 %)."
+  },
+  {
+    "id": "REF-M03-07",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Qui supporte la cotisation d'assurance maladie au taux de 13 % (hors Alsace-Moselle) ?",
+    "choix": [
+      "A. Les deux à parts égales",
+      "B. L'employeur",
+      "C. L'État",
+      "D. Le salarié"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "La cotisation maladie de droit commun est exclusivement patronale ; seuls les salariés du régime local d'Alsace-Moselle supportent une cotisation salariale spécifique.",
+    "reference": "CSS art. D242-3",
+    "piege": "Penser qu'il existe toujours une part salariale maladie."
+  },
+  {
+    "id": "REF-M03-08",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Quel est le taux plein de la cotisation patronale d'allocations familiales ?",
+    "choix": [
+      "A. 4,05 %",
+      "B. 5,25 %",
+      "C. 7,00 %",
+      "D. 3,45 %"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le taux plein est de 5,25 % ; un taux réduit s'applique sous un seuil de rémunération fixé par la loi (à vérifier chaque année).",
+    "reference": "CSS art. L241-6-1 ; Paramètres 2026",
+    "piege": "Appliquer le taux réduit sans vérifier le seuil de rémunération."
+  },
+  {
+    "id": "REF-M03-09",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Plafond et tranches",
+    "enonce": "Un salarié à temps plein entre le 16 avril (mois de 30 jours) et y travaille jusqu'au 30. Quel est son plafond proratisé ?",
+    "choix": [
+      "A. 2 135,00 €",
+      "B. 1 869,00 €",
+      "C. 4 005,00 €",
+      "D. 2 002,50 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Plafond = PMSS × jours calendaires de présence / 30 = 4 005 × 15 / 30 = 2 002,50 €.",
+    "reference": "CSS art. R242-2",
+    "piege": "Proratiser en jours ouvrés au lieu de jours calendaires."
+  },
+  {
+    "id": "REF-M03-10",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Plafond et tranches",
+    "enonce": "Quel est le plafond mensuel d'un salarié à temps partiel à 24 heures par semaine, présent tout le mois ?",
+    "choix": [
+      "A. 2 860,71 €",
+      "B. 4 005,00 €",
+      "C. 2 402,40 €",
+      "D. 2 746,29 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Plafond = 4 005 × 24 / 35 = 2 746,29 €.",
+    "reference": "CSS art. R242-7",
+    "piege": "Garder le plafond plein pour un temps partiel."
+  },
+  {
+    "id": "REF-M03-11",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Quel est le taux global (salarial + patronal) de la cotisation AGIRC-ARRCO sur la tranche 1 ?",
+    "choix": [
+      "A. 21,59 %",
+      "B. 10,00 %",
+      "C. 7,87 %",
+      "D. 6,20 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Tranche 1 : 3,15 % salarial + 4,72 % patronal = 7,87 % (hors CEG).",
+    "reference": "ANI AGIRC-ARRCO ; Paramètres 2026",
+    "piege": "Ajouter la CEG (2,15 %) dans le taux de la cotisation de retraite elle-même."
+  },
+  {
+    "id": "REF-M03-12",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Cotisations sociales",
+    "enonce": "Salaire brut 3 000 € (sous le plafond). Quel est le montant de la cotisation AGIRC-ARRCO salariale de tranche 1 ?",
+    "choix": [
+      "A. 25,80 €",
+      "B. 236,10 €",
+      "C. 141,60 €",
+      "D. 94,50 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "3 000 × 3,15 % = 94,50 €.",
+    "reference": "ANI AGIRC-ARRCO ; Paramètres 2026",
+    "piege": "Appliquer le taux patronal (4,72 %)."
+  },
+  {
+    "id": "REF-M03-13",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Quand la contribution d'équilibre technique (CET) est-elle due ?",
+    "choix": [
+      "A. Uniquement pour les cadres",
+      "B. Uniquement au-delà de 8 PMSS",
+      "C. Pour les salariés dont la rémunération dépasse le PMSS, sur la rémunération jusqu'à 8 PMSS",
+      "D. Pour tous les salariés, sur la tranche 1"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La CET (0,14 % salarial, 0,21 % patronal) est due par les salariés dont la rémunération excède le plafond, sur l'ensemble de la rémunération dans la limite de 8 PMSS.",
+    "reference": "ANI AGIRC-ARRCO ; Paramètres 2026",
+    "piege": "La limiter à la seule fraction au-delà du plafond."
+  },
+  {
+    "id": "REF-M03-14",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Cotisations sociales",
+    "enonce": "Comment s'applique la contribution FNAL dans une entreprise de 50 salariés et plus ?",
+    "choix": [
+      "A. Elle n'est pas due",
+      "B. 0,50 % dans la limite du plafond",
+      "C. 0,50 % sur la totalité de la rémunération",
+      "D. 0,10 % dans la limite du plafond"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "FNAL : 0,10 % dans la limite du plafond pour les entreprises de moins de 50 salariés ; 0,50 % sur la totalité de la rémunération à partir de 50 salariés.",
+    "reference": "CSS art. L834-1 ; Paramètres 2026",
+    "piege": "Inverser les deux régimes."
+  },
+  {
+    "id": "REF-M03-15",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Cotisations sociales",
+    "enonce": "Quelles contributions sont exclusivement à la charge de l'employeur ?",
+    "choix": [
+      "A. Contribution solidarité autonomie",
+      "B. FNAL",
+      "C. CRDS",
+      "D. Allocations familiales"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explication": "Allocations familiales, FNAL et CSA sont patronales. La CRDS est supportée par le salarié.",
+    "reference": "CSS art. L241-6, L834-1, L137-40 ; ordonnance n° 96-50 (CRDS)",
+    "piege": "Classer la CRDS parmi les charges patronales."
+  },
+  {
+    "id": "REF-M03-16",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Réduction générale",
+    "enonce": "Sur quelles cotisations s'impute la réduction générale des cotisations patronales ?",
+    "choix": [
+      "A. Sur les cotisations et contributions patronales entrant dans son périmètre",
+      "B. Sur le prélèvement à la source",
+      "C. Sur la CSG et la CRDS",
+      "D. Sur les cotisations salariales"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La réduction générale allège uniquement des cotisations patronales (périmètre fixé par la loi). Les paramètres 2026 sont à vérifier sur urssaf.fr.",
+    "reference": "CSS art. L241-13",
+    "piege": "Croire qu'elle augmente le net du salarié."
+  },
+  {
+    "id": "REF-M03-17",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Plafond et tranches",
+    "enonce": "Salaire brut mensuel 5 000 € (temps plein, mois complet). Quel est le montant de la cotisation AGIRC-ARRCO salariale de tranche 2 ?",
+    "choix": [
+      "A. 108,70 €",
+      "B. 432,00 €",
+      "C. 126,16 €",
+      "D. 85,97 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Tranche 2 = 5 000 − 4 005 = 995 € ; cotisation = 995 × 8,64 % = 85,97 €.",
+    "reference": "ANI AGIRC-ARRCO ; Paramètres 2026",
+    "piege": "Appliquer le taux de tranche 2 sur la totalité du salaire."
+  },
+  {
+    "id": "REF-M03-18",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "CSG/CRDS",
+    "enonce": "Salaire brut 3 000 €. Quel est le montant de la CSG déductible ?",
+    "choix": [
+      "A. 70,74 €",
+      "B. 200,43 €",
+      "C. 271,17 €",
+      "D. 204,00 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Assiette = 3 000 × 98,25 % = 2 947,50 € ; CSG déductible = 2 947,50 × 6,80 % = 200,43 €.",
+    "reference": "CSS art. L136-1-1 et L136-8",
+    "piege": "Oublier l'abattement de 1,75 % (204,00 €)."
+  },
+  {
+    "id": "REF-M03-19",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Régularisation",
+    "enonce": "Temps plein. Janvier : 3 500 € ; février : 4 500 €. Avec la régularisation progressive des plafonds, quelle est l'assiette de vieillesse plafonnée de février ?",
+    "choix": [
+      "A. 4 500 €",
+      "B. 4 010 €",
+      "C. 3 500 €",
+      "D. 4 005 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Cumul des salaires = 8 000 € ; cumul des plafonds = 8 010 €. Le cumul ne dépasse pas les plafonds : tout le salaire de février (4 500 €) est soumis, ce qui récupère la marge non utilisée en janvier.",
+    "reference": "CSS art. R242-2 ; BOSS Assiette générale (régularisation progressive des plafonds)",
+    "piege": "Plafonner février à 4 005 € sans tenir compte du cumul."
+  },
+  {
+    "id": "REF-M03-20",
+    "module": 3,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "CSG/CRDS",
+    "enonce": "Comment s'applique l'abattement de 1,75 % pour un cadre dont la rémunération annuelle atteint 250 000 € ?",
+    "choix": [
+      "A. Dans la limite de 4 PASS, soit 192 240 € en 2026",
+      "B. Il ne s'applique pas aux cadres",
+      "C. Dans la limite de 8 PASS",
+      "D. Sur la totalité des 250 000 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'abattement ne s'applique que sur la fraction n'excédant pas 4 PASS (4 × 48 060 = 192 240 €) ; au-delà, la CSG/CRDS porte sur 100 % de la rémunération.",
+    "reference": "CSS art. L136-1-1",
+    "piege": "Appliquer 98,25 % sur toute la rémunération."
+  },
+  {
+    "id": "REF-M04-01",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Maladie et IJSS",
+    "enonce": "Quel est le délai de carence applicable aux indemnités journalières de Sécurité sociale en cas de maladie non professionnelle ?",
+    "choix": [
+      "A. Aucun",
+      "B. 1 jour",
+      "C. 7 jours",
+      "D. 3 jours"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les IJSS maladie sont versées à partir du 4e jour d'arrêt : 3 jours de carence.",
+    "reference": "CSS art. R323-1",
+    "piege": "Confondre avec la carence de 7 jours du maintien de salaire légal."
+  },
+  {
+    "id": "REF-M04-02",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Maladie et IJSS",
+    "enonce": "Quel pourcentage du salaire journalier de base représente l'indemnité journalière maladie ?",
+    "choix": [
+      "A. 50 %",
+      "B. 40 %",
+      "C. 90 %",
+      "D. 66,66 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'IJSS maladie est égale à 50 % du salaire journalier de base, dans la limite d'un plafond (montant à vérifier chaque année).",
+    "reference": "CSS art. R323-5",
+    "piege": "Confondre avec le maintien de salaire à 90 %."
+  },
+  {
+    "id": "REF-M04-03",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Combien de jours ouvrables de congés payés acquiert-on par mois de travail effectif ?",
+    "choix": [
+      "A. 2,08 jours",
+      "B. 2 jours",
+      "C. 3 jours",
+      "D. 2,5 jours"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le salarié acquiert 2,5 jours ouvrables par mois de travail effectif, soit 30 jours ouvrables par an.",
+    "reference": "C. trav. art. L3141-3",
+    "piege": "Confondre jours ouvrables (2,5) et jours ouvrés (2,08)."
+  },
+  {
+    "id": "REF-M04-04",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Quel est le nombre maximal de jours ouvrables de congés payés acquis sur une année de référence complète ?",
+    "choix": [
+      "A. 24",
+      "B. 25",
+      "C. 35",
+      "D. 30"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "30 jours ouvrables, soit 5 semaines.",
+    "reference": "C. trav. art. L3141-3",
+    "piege": "Répondre 25 : c'est l'équivalent en jours ouvrés."
+  },
+  {
+    "id": "REF-M04-05",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Maternité et congés familiaux",
+    "enonce": "Quelle est la durée du congé de maternité pour une première naissance (enfant unique) ?",
+    "choix": [
+      "A. 14 semaines",
+      "B. 26 semaines",
+      "C. 10 semaines",
+      "D. 16 semaines"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "16 semaines : 6 semaines avant et 10 semaines après l'accouchement.",
+    "reference": "C. trav. art. L1225-17",
+    "piege": "Retenir 26 semaines, réservées à partir du troisième enfant."
+  },
+  {
+    "id": "REF-M04-06",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Maternité et congés familiaux",
+    "enonce": "Quelle est la durée du congé de paternité et d'accueil de l'enfant (naissance unique), en plus des 3 jours de congé de naissance ?",
+    "choix": [
+      "A. 14 jours calendaires",
+      "B. 28 jours ouvrés",
+      "C. 11 jours calendaires",
+      "D. 25 jours calendaires"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "25 jours calendaires (32 en cas de naissances multiples), dont 4 jours obligatoires pris immédiatement après le congé de naissance.",
+    "reference": "C. trav. art. L1225-35",
+    "piege": "Ajouter les 3 jours de naissance et répondre 25 jours en tout."
+  },
+  {
+    "id": "REF-M04-07",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Maladie et IJSS",
+    "enonce": "Qu'est-ce que la subrogation ?",
+    "choix": [
+      "A. L'employeur rembourse la CPAM",
+      "B. L'employeur maintient le salaire et perçoit à sa place les IJSS",
+      "C. Le salarié perçoit directement les IJSS et l'employeur ne verse rien",
+      "D. La CPAM verse le salaire complet"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Avec la subrogation, l'employeur maintient tout ou partie du salaire et encaisse directement les IJSS dues au salarié.",
+    "reference": "CSS art. R323-11",
+    "piege": "Déduire les IJSS du bulletin alors qu'elles n'ont pas été encaissées (pas de subrogation)."
+  },
+  {
+    "id": "REF-M04-08",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "AT/MP",
+    "enonce": "En cas d'accident du travail, qui rémunère la journée au cours de laquelle l'accident survient ?",
+    "choix": [
+      "A. La CPAM, avec carence de 3 jours",
+      "B. La mutuelle",
+      "C. L'employeur, intégralement",
+      "D. Personne"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La journée de l'accident est intégralement payée par l'employeur ; les IJ AT sont versées dès le lendemain, sans délai de carence.",
+    "reference": "CSS art. L433-1",
+    "piege": "Appliquer la carence de 3 jours de la maladie ordinaire."
+  },
+  {
+    "id": "REF-M04-09",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Maintien de salaire",
+    "enonce": "À partir de quel jour d'absence débute le maintien de salaire légal en cas de maladie non professionnelle ?",
+    "choix": [
+      "A. Le 11e jour",
+      "B. Le 1er jour",
+      "C. Le 4e jour",
+      "D. Le 8e jour"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Après un délai de carence de 7 jours, le maintien légal commence le 8e jour, pour les salariés ayant au moins un an d'ancienneté.",
+    "reference": "C. trav. art. L1226-1 et D1226-3",
+    "piege": "Confondre avec la carence de la Sécurité sociale (3 jours)."
+  },
+  {
+    "id": "REF-M04-10",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Maintien de salaire",
+    "enonce": "Pour un salarié de 3 ans d'ancienneté, quel est le maintien de salaire légal ?",
+    "choix": [
+      "A. 66,66 % pendant 90 jours",
+      "B. 100 % pendant 30 jours",
+      "C. 90 % pendant 30 jours puis 66,66 % pendant 30 jours",
+      "D. 90 % pendant 60 jours"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le salarié perçoit 90 % de sa rémunération brute pendant 30 jours, puis les deux tiers pendant 30 jours (IJSS comprises).",
+    "reference": "C. trav. art. D1226-1",
+    "piege": "Oublier que les IJSS sont incluses dans le maintien."
+  },
+  {
+    "id": "REF-M04-11",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Combien de jours de congés payés acquiert un salarié en arrêt de maladie non professionnelle ?",
+    "choix": [
+      "A. Aucun",
+      "B. 1 jour par mois",
+      "C. 2 jours ouvrables par mois, dans la limite de 24 par an",
+      "D. 2,5 jours ouvrables par mois sans limite"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Depuis la loi du 22 avril 2024, l'arrêt maladie non professionnel ouvre droit à 2 jours ouvrables par mois, dans la limite de 24 jours par période de référence.",
+    "reference": "C. trav. art. L3141-5-1",
+    "piege": "Appliquer l'ancienne règle (aucun droit pendant la maladie)."
+  },
+  {
+    "id": "REF-M04-12",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Comment calcule-t-on l'indemnité de congés payés ?",
+    "choix": [
+      "A. Toujours par la règle du dixième",
+      "B. Au choix de l'employeur",
+      "C. Toujours par le maintien de salaire",
+      "D. En retenant la plus favorable des deux méthodes"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'indemnité est la plus avantageuse entre le maintien de salaire et le dixième de la rémunération brute totale de la période de référence.",
+    "reference": "C. trav. art. L3141-24",
+    "piege": "Ne calculer qu'une seule méthode."
+  },
+  {
+    "id": "REF-M04-13",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Congés payés",
+    "enonce": "Rémunération brute de la période de référence : 30 000 € pour 30 jours acquis. Selon la règle du dixième, quelle indemnité pour 12 jours ouvrables pris ?",
+    "choix": [
+      "A. 1 200 €",
+      "B. 1 000 €",
+      "C. 1 500 €",
+      "D. 3 000 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Dixième = 30 000 / 10 = 3 000 € pour 30 jours ; 12 jours = 3 000 × 12 / 30 = 1 200 €.",
+    "reference": "C. trav. art. L3141-24",
+    "piege": "Verser le dixième en entier pour quelques jours pris."
+  },
+  {
+    "id": "REF-M04-14",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Maladie et IJSS",
+    "enonce": "Salaires bruts des 3 mois précédant l'arrêt : 2 400 € par mois (sous le plafond). Quel est le montant de l'IJSS maladie journalière ?",
+    "choix": [
+      "A. 39,45 €",
+      "B. 40,00 €",
+      "C. 26,30 €",
+      "D. 78,90 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Salaire journalier de base = 7 200 / 91,25 = 78,90 € ; IJSS = 50 % = 39,45 €.",
+    "reference": "CSS art. R323-4 et R323-5",
+    "piege": "Diviser par 90 jours au lieu de 91,25."
+  },
+  {
+    "id": "REF-M04-15",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Sauf accord collectif, quelle est la période de référence pour l'acquisition des congés payés ?",
+    "choix": [
+      "A. Du 1er janvier au 31 décembre",
+      "B. Du 1er juin au 31 mai",
+      "C. Du 1er septembre au 31 août",
+      "D. Du 1er mai au 30 avril"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "À défaut d'accord, la période de référence court du 1er juin de l'année précédente au 31 mai de l'année en cours.",
+    "reference": "C. trav. art. R3141-4",
+    "piege": "Supposer l'année civile, qui nécessite un accord."
+  },
+  {
+    "id": "REF-M04-16",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "AT/MP",
+    "enonce": "Quelles affirmations sur l'accident du travail sont exactes ?",
+    "choix": [
+      "A. Les IJ AT sont versées sans délai de carence",
+      "B. L'employeur déclare l'accident à la CPAM dans les 48 heures",
+      "C. Le salarié ne peut jamais être licencié pendant l'arrêt, quel que soit le motif",
+      "D. Le contrat de travail est suspendu"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explication": "Déclaration dans les 48 h (hors dimanches et jours fériés), pas de carence, suspension du contrat. Le licenciement reste possible pour faute grave ou impossibilité de maintenir le contrat sans lien avec l'accident.",
+    "reference": "CSS art. R441-3 et L433-1 ; C. trav. art. L1226-9",
+    "piege": "Croire à une interdiction absolue de licencier."
+  },
+  {
+    "id": "REF-M04-17",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Maintien de salaire",
+    "enonce": "Un salarié a 11 ans d'ancienneté. Quelle est la durée de chaque période de maintien de salaire légal ?",
+    "choix": [
+      "A. 40 jours",
+      "B. 60 jours",
+      "C. 30 jours",
+      "D. 50 jours"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Chaque période (90 %, puis 66,66 %) est allongée de 10 jours par période entière de 5 ans d'ancienneté au-delà de la première année : 11 − 1 = 10 ans, soit 2 × 10 jours → 30 + 20 = 50 jours.",
+    "reference": "C. trav. art. D1226-2",
+    "piege": "Compter 11 ans au lieu de 10 ans au-delà de la première année."
+  },
+  {
+    "id": "REF-M04-18",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix multiple",
+    "theme": "Congés payés",
+    "enonce": "Quelles absences sont assimilées à du travail effectif pour l'acquisition des congés payés ?",
+    "choix": [
+      "A. Une absence pour grève",
+      "B. L'arrêt pour accident du travail",
+      "C. Le congé de maternité",
+      "D. Les congés payés pris l'année précédente"
+    ],
+    "bonne_reponse": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explication": "Maternité, AT/MP et congés payés sont assimilés à du travail effectif. La grève suspend le contrat et n'ouvre pas de droit.",
+    "reference": "C. trav. art. L3141-5",
+    "piege": "Assimiler la grève à du travail effectif."
+  },
+  {
+    "id": "REF-M04-19",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Congés payés",
+    "enonce": "Un salarié n'a pas pu prendre ses congés en raison d'une maladie. De quelle période de report dispose-t-il ?",
+    "choix": [
+      "A. 6 mois",
+      "B. Aucune, les congés sont perdus",
+      "C. 3 mois",
+      "D. 15 mois"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les congés non pris pour cause de maladie ou d'accident bénéficient d'une période de report de 15 mois, à compter de l'information délivrée par l'employeur.",
+    "reference": "C. trav. art. L3141-19-1 et L3141-19-3",
+    "piege": "Considérer que les congés non pris au 31 mai sont perdus."
+  },
+  {
+    "id": "REF-M04-20",
+    "module": 4,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Maintien de salaire",
+    "enonce": "Mois complet d'arrêt indemnisé en subrogation : maintien légal à 90 % = 1 800 € brut ; IJSS brutes encaissées par l'employeur = 600 €. Quel complément employeur figure sur le bulletin ?",
+    "choix": [
+      "A. 1 200 €",
+      "B. 2 400 €",
+      "C. 1 800 €",
+      "D. 600 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le maintien légal s'entend IJSS comprises : complément employeur = 1 800 − 600 = 1 200 €, les IJSS étant reversées au salarié par la subrogation.",
+    "reference": "C. trav. art. D1226-5",
+    "piege": "Ajouter les IJSS au maintien et payer 2 400 €."
+  },
+  {
+    "id": "REF-M05-01",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "À défaut d'accord, quelle est la majoration des 8 premières heures supplémentaires de la semaine ?",
+    "choix": [
+      "A. 100 %",
+      "B. 25 %",
+      "C. 50 %",
+      "D. 10 %"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "De la 36e à la 43e heure, majoration de 25 % ; au-delà, 50 %.",
+    "reference": "C. trav. art. L3121-36",
+    "piege": "Appliquer 25 % à toutes les heures supplémentaires."
+  },
+  {
+    "id": "REF-M05-02",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "À défaut d'accord, quelle est la majoration des heures supplémentaires au-delà de la 43e heure ?",
+    "choix": [
+      "A. 75 %",
+      "B. 35 %",
+      "C. 50 %",
+      "D. 25 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les heures au-delà de la 43e sont majorées de 50 %.",
+    "reference": "C. trav. art. L3121-36",
+    "piege": "Oublier de changer de taux après la 8e heure supplémentaire."
+  },
+  {
+    "id": "REF-M05-03",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Quel est le taux minimal de majoration des heures supplémentaires qu'un accord collectif peut fixer ?",
+    "choix": [
+      "A. 10 %",
+      "B. 15 %",
+      "C. 25 %",
+      "D. 5 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Un accord d'entreprise (ou, à défaut, de branche) peut prévoir un taux différent, qui ne peut être inférieur à 10 %.",
+    "reference": "C. trav. art. L3121-33",
+    "piege": "Penser qu'un accord peut supprimer toute majoration."
+  },
+  {
+    "id": "REF-M05-04",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Quel est le contingent annuel d'heures supplémentaires à défaut d'accord ?",
+    "choix": [
+      "A. 220 heures",
+      "B. 180 heures",
+      "C. 300 heures",
+      "D. 130 heures"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "À défaut d'accord, le contingent est fixé à 220 heures par salarié et par an.",
+    "reference": "C. trav. art. D3121-24",
+    "piege": "Croire que le contingent limite le paiement : il déclenche la contrepartie en repos."
+  },
+  {
+    "id": "REF-M05-05",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures complémentaires",
+    "enonce": "Sans accord, dans quelle limite un salarié à temps partiel peut-il effectuer des heures complémentaires ?",
+    "choix": [
+      "A. Jusqu'à 35 heures",
+      "B. 1/3 de la durée prévue au contrat",
+      "C. Sans limite",
+      "D. 1/10 de la durée prévue au contrat"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La limite légale est de 1/10 de la durée contractuelle ; un accord peut la porter jusqu'au tiers.",
+    "reference": "C. trav. art. L3123-28 et L3123-20",
+    "piege": "Appliquer d'office la limite du tiers."
+  },
+  {
+    "id": "REF-M05-06",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures complémentaires",
+    "enonce": "Quelle est la majoration des heures complémentaires effectuées dans la limite du dixième ?",
+    "choix": [
+      "A. 10 %",
+      "B. 25 %",
+      "C. 50 %",
+      "D. 0 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Chaque heure complémentaire dans la limite du dixième est majorée de 10 % ; au-delà, 25 % (sauf accord, minimum 10 %).",
+    "reference": "C. trav. art. L3123-29 et L3123-21",
+    "piege": "Ne pas majorer les premières heures complémentaires."
+  },
+  {
+    "id": "REF-M05-07",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Épargne salariale et primes",
+    "enonce": "Quel est le plafond d'exonération de la prime de partage de la valeur dans le cas général ?",
+    "choix": [
+      "A. 10 000 €",
+      "B. 6 000 €",
+      "C. 3 000 €",
+      "D. 1 000 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "3 000 € par bénéficiaire et par an, porté à 6 000 € sous conditions (accord d'intéressement ou de participation…).",
+    "reference": "Loi n° 2022-1158 art. 1 ; Paramètres 2026",
+    "piege": "Retenir 6 000 € sans vérifier les conditions du plafond majoré."
+  },
+  {
+    "id": "REF-M05-08",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Sur quelle période les heures supplémentaires sont-elles décomptées (hors aménagement du temps de travail) ?",
+    "choix": [
+      "A. L'année",
+      "B. Le mois",
+      "C. La semaine civile",
+      "D. Le jour"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les heures supplémentaires se décomptent par semaine civile, du lundi 0 h au dimanche 24 h, sauf accord d'aménagement.",
+    "reference": "C. trav. art. L3121-29 et L3121-35",
+    "piege": "Compenser les heures d'une semaine avec une autre semaine."
+  },
+  {
+    "id": "REF-M05-09",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Heures supplémentaires",
+    "enonce": "Taux horaire 15,00 €. Le salarié effectue 4 heures supplémentaires majorées à 25 %. Quel montant brut ?",
+    "choix": [
+      "A. 90,00 €",
+      "B. 15,00 €",
+      "C. 75,00 €",
+      "D. 60,00 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "4 × 15,00 × 1,25 = 75,00 €.",
+    "reference": "C. trav. art. L3121-36",
+    "piege": "Ne payer que la majoration (15,00 €)."
+  },
+  {
+    "id": "REF-M05-10",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Heures supplémentaires",
+    "enonce": "Taux horaire 14,00 €. Le salarié effectue 10 heures supplémentaires dans la semaine (sans accord). Quel montant brut ?",
+    "choix": [
+      "A. 210,00 €",
+      "B. 168,00 €",
+      "C. 182,00 €",
+      "D. 175,00 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "8 × 14 × 1,25 = 140,00 € ; 2 × 14 × 1,50 = 42,00 € ; total = 182,00 €.",
+    "reference": "C. trav. art. L3121-36",
+    "piege": "Majorer les 10 heures à 25 % (175,00 €)."
+  },
+  {
+    "id": "REF-M05-11",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Quel est le plafond annuel de l'exonération d'impôt sur le revenu des heures supplémentaires ?",
+    "choix": [
+      "A. 7 500 €",
+      "B. Il n'y a pas de plafond",
+      "C. 10 000 €",
+      "D. 5 000 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La rémunération des heures supplémentaires et complémentaires est exonérée d'impôt dans la limite annuelle de 7 500 €.",
+    "reference": "CGI art. 81 quater ; Paramètres 2026",
+    "piege": "Oublier que cette exonération porte sur la rémunération nette imposable, pas sur le brut."
+  },
+  {
+    "id": "REF-M05-12",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Quel est le taux maximal de la réduction de cotisations salariales sur les heures supplémentaires ?",
+    "choix": [
+      "A. 21,40 %",
+      "B. 9,70 %",
+      "C. 11,31 %",
+      "D. 6,90 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La réduction est égale au taux des cotisations salariales d'assurance vieillesse, dans la limite de 11,31 %.",
+    "reference": "CSS art. L241-17 et D241-21 ; Paramètres 2026",
+    "piege": "Confondre avec la CSG/CRDS (9,70 %), qui reste due."
+  },
+  {
+    "id": "REF-M05-13",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "Dans une entreprise de moins de 20 salariés, quelle déduction forfaitaire de cotisations patronales s'applique par heure supplémentaire ?",
+    "choix": [
+      "A. 1,50 €",
+      "B. Aucune",
+      "C. 3,00 €",
+      "D. 0,50 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La déduction forfaitaire patronale est de 1,50 € par heure supplémentaire dans les entreprises de moins de 20 salariés.",
+    "reference": "CSS art. L241-18 ; Paramètres 2026",
+    "piege": "L'étendre aux heures complémentaires des salariés à temps partiel."
+  },
+  {
+    "id": "REF-M05-14",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Épargne salariale et primes",
+    "enonce": "Quel est le plafond individuel annuel de la prime d'intéressement en 2026 (75 % du PASS) ?",
+    "choix": [
+      "A. 36 045 €",
+      "B. 48 060 €",
+      "C. 38 448 €",
+      "D. 24 030 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "75 % × 48 060 = 36 045 €.",
+    "reference": "C. trav. art. L3314-8 ; Paramètres 2026",
+    "piege": "Calculer sur le PMSS au lieu du PASS."
+  },
+  {
+    "id": "REF-M05-15",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "À quoi ouvrent droit les heures supplémentaires effectuées au-delà du contingent annuel ?",
+    "choix": [
+      "A. À une prime de fin d'année",
+      "B. À une contrepartie obligatoire en repos",
+      "C. À un congé sans solde",
+      "D. À rien de plus que la majoration"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Au-delà du contingent, chaque heure supplémentaire ouvre droit, en plus de la majoration, à une contrepartie obligatoire en repos.",
+    "reference": "C. trav. art. L3121-30 et L3121-38",
+    "piege": "Croire que les heures au-delà du contingent sont interdites."
+  },
+  {
+    "id": "REF-M05-16",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Épargne salariale et primes",
+    "enonce": "Quels éléments sont soumis aux cotisations sociales comme du salaire ?",
+    "choix": [
+      "A. Une prime de partage de la valeur respectant les conditions d'exonération",
+      "B. Une commission sur ventes",
+      "C. Une prime d'ancienneté",
+      "D. Une prime d'objectifs"
+    ],
+    "bonne_reponse": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explication": "Primes d'objectifs, commissions et prime d'ancienneté sont des éléments de salaire. La prime de partage de la valeur, dans ses conditions et limites, est exonérée de cotisations (mais soumise à CSG/CRDS).",
+    "reference": "CSS art. L242-1 ; loi n° 2022-1158",
+    "piege": "Penser que la prime de partage de la valeur est totalement exonérée, CSG/CRDS comprises."
+  },
+  {
+    "id": "REF-M05-17",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Heures complémentaires",
+    "enonce": "Contrat de 24 h par semaine ; un accord porte la limite des heures complémentaires au tiers. Le salarié travaille 27 h dans la semaine. Taux horaire 13,00 €. Montant des heures complémentaires ?",
+    "choix": [
+      "A. 42,90 €",
+      "B. 44,07 €",
+      "C. 48,75 €",
+      "D. 39,00 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Dixième = 2,4 h à 10 % : 2,4 × 13 × 1,10 = 34,32 € ; 0,6 h au-delà à 25 % : 0,6 × 13 × 1,25 = 9,75 € ; total 44,07 €.",
+    "reference": "C. trav. art. L3123-21 et L3123-29",
+    "piege": "Majorer les 3 heures à 10 %."
+  },
+  {
+    "id": "REF-M05-18",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Heures supplémentaires",
+    "enonce": "Heures supplémentaires payées 200,00 € brut. Les cotisations salariales d'assurance vieillesse du salarié atteignent 11,31 %. Quel est le montant de la réduction de cotisations salariales ?",
+    "choix": [
+      "A. 22,62 €",
+      "B. 20,00 €",
+      "C. 19,40 €",
+      "D. 11,31 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "200,00 × 11,31 % = 22,62 €, dans la limite des cotisations salariales réellement dues.",
+    "reference": "CSS art. L241-17 et D241-21",
+    "piege": "Appliquer la réduction à la CSG/CRDS."
+  },
+  {
+    "id": "REF-M05-19",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Épargne salariale et primes",
+    "enonce": "Quel plafond collectif s'applique au montant global des primes d'intéressement distribuées ?",
+    "choix": [
+      "A. 50 % du PASS",
+      "B. 30 % du bénéfice net",
+      "C. 20 % du total des salaires bruts versés aux bénéficiaires",
+      "D. 10 % des salaires bruts"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le montant global des primes ne peut excéder 20 % du total des salaires bruts versés aux personnes concernées.",
+    "reference": "C. trav. art. L3314-8",
+    "piege": "Confondre le plafond collectif (20 %) et le plafond individuel (75 % du PASS)."
+  },
+  {
+    "id": "REF-M05-20",
+    "module": 5,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Heures supplémentaires",
+    "enonce": "La branche prévoit une majoration de 25 % pour les heures supplémentaires ; un accord d'entreprise prévoit 10 %. Quel taux s'applique ?",
+    "choix": [
+      "A. Le taux légal, 25 %",
+      "B. La moyenne, 17,5 %",
+      "C. 10 %, l'accord d'entreprise prime sur ce point",
+      "D. 25 %, la branche prime toujours"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le taux de majoration des heures supplémentaires relève de l'accord d'entreprise, qui prime sur l'accord de branche (dans la limite minimale de 10 %).",
+    "reference": "C. trav. art. L3121-33",
+    "piege": "Appliquer le principe de faveur entre branche et entreprise."
+  },
+  {
+    "id": "REF-M06-01",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Indemnités",
+    "enonce": "Quelle ancienneté ininterrompue minimale ouvre droit à l'indemnité légale de licenciement ?",
+    "choix": [
+      "A. 2 ans",
+      "B. 8 mois",
+      "C. 6 mois",
+      "D. 1 an"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "L'indemnité légale est due au salarié en CDI comptant 8 mois d'ancienneté ininterrompus, sauf faute grave ou lourde.",
+    "reference": "C. trav. art. L1234-9",
+    "piege": "Retenir l'ancien seuil d'un an."
+  },
+  {
+    "id": "REF-M06-02",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Indemnités",
+    "enonce": "Jusqu'à 10 ans d'ancienneté, quelle fraction de mois de salaire l'indemnité légale de licenciement prévoit-elle par année ?",
+    "choix": [
+      "A. 1/2",
+      "B. 1/4",
+      "C. 1/5",
+      "D. 1/3"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "1/4 de mois par année jusqu'à 10 ans, puis 1/3 de mois par année au-delà.",
+    "reference": "C. trav. art. R1234-2",
+    "piege": "Appliquer 1/3 dès la première année."
+  },
+  {
+    "id": "REF-M06-03",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Préavis",
+    "enonce": "Quelle est la durée légale du préavis de licenciement d'un salarié ayant au moins 2 ans d'ancienneté ?",
+    "choix": [
+      "A. 2 mois",
+      "B. Aucun",
+      "C. 1 mois",
+      "D. 3 mois"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le préavis légal est d'un mois entre 6 mois et 2 ans d'ancienneté, de deux mois au-delà, sauf dispositions plus favorables.",
+    "reference": "C. trav. art. L1234-1",
+    "piege": "Oublier les durées plus favorables de la convention collective."
+  },
+  {
+    "id": "REF-M06-04",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Modes de rupture",
+    "enonce": "Quel est le délai de rétractation après la signature d'une rupture conventionnelle ?",
+    "choix": [
+      "A. 10 jours ouvrables",
+      "B. 1 mois",
+      "C. 7 jours calendaires",
+      "D. 15 jours calendaires"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Chaque partie dispose de 15 jours calendaires pour se rétracter à compter de la signature.",
+    "reference": "C. trav. art. L1237-13",
+    "piege": "Confondre avec le délai d'instruction de l'administration (15 jours ouvrables)."
+  },
+  {
+    "id": "REF-M06-05",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Modes de rupture",
+    "enonce": "Quelle administration homologue la rupture conventionnelle d'un salarié non protégé ?",
+    "choix": [
+      "A. L'URSSAF",
+      "B. France Travail",
+      "C. La DREETS",
+      "D. Le conseil de prud'hommes"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La demande d'homologation est adressée à la DREETS (via le téléservice dédié).",
+    "reference": "C. trav. art. L1237-14",
+    "piege": "Penser à France Travail, qui intervient seulement pour l'indemnisation."
+  },
+  {
+    "id": "REF-M06-06",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Documents de fin de contrat",
+    "enonce": "Lequel de ces documents n'est pas obligatoirement remis en fin de contrat ?",
+    "choix": [
+      "A. Une lettre de recommandation",
+      "B. Le certificat de travail",
+      "C. L'attestation France Travail",
+      "D. Le reçu pour solde de tout compte"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Certificat de travail, attestation France Travail et reçu pour solde de tout compte sont établis par l'employeur. Une lettre de recommandation est facultative.",
+    "reference": "C. trav. art. L1234-19, L1234-20 et R1234-9",
+    "piege": "Oublier le reçu pour solde de tout compte."
+  },
+  {
+    "id": "REF-M06-07",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Indemnités",
+    "enonce": "Quel est le taux de l'indemnité de fin de contrat (précarité) d'un CDD ?",
+    "choix": [
+      "A. 12 %",
+      "B. 5 %",
+      "C. 8 %",
+      "D. 10 %"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "10 % de la rémunération brute totale versée, sauf taux conventionnel limité à 6 % avec contreparties en formation.",
+    "reference": "C. trav. art. L1243-8 et L1243-9",
+    "piege": "L'appliquer aux contrats saisonniers ou d'usage."
+  },
+  {
+    "id": "REF-M06-08",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Modes de rupture",
+    "enonce": "Quelle indemnité n'est jamais due en cas de démission ?",
+    "choix": [
+      "A. L'indemnité compensatrice de congés payés",
+      "B. L'indemnité légale de licenciement",
+      "C. Le solde des heures supplémentaires",
+      "D. Le salaire du préavis effectué"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "La démission ne donne pas droit à l'indemnité de licenciement. Les congés non pris et le préavis effectué restent dus.",
+    "reference": "C. trav. art. L1237-1",
+    "piege": "Supprimer aussi l'indemnité compensatrice de congés payés."
+  },
+  {
+    "id": "REF-M06-09",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Indemnités",
+    "enonce": "Ancienneté 6 ans, salaire de référence 2 400 €. Quelle est l'indemnité légale de licenciement ?",
+    "choix": [
+      "A. 3 600 €",
+      "B. 2 400 €",
+      "C. 6 000 €",
+      "D. 4 800 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "2 400 × 1/4 × 6 = 3 600 €.",
+    "reference": "C. trav. art. R1234-2",
+    "piege": "Appliquer 1/3 (4 800 €)."
+  },
+  {
+    "id": "REF-M06-10",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Indemnités",
+    "enonce": "Ancienneté 12 ans, salaire de référence 3 000 €. Quelle est l'indemnité légale de licenciement ?",
+    "choix": [
+      "A. 9 000 €",
+      "B. 9 500 €",
+      "C. 12 000 €",
+      "D. 10 000 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "10 premières années : 3 000 × 1/4 × 10 = 7 500 € ; 2 années suivantes : 3 000 × 1/3 × 2 = 2 000 € ; total 9 500 €.",
+    "reference": "C. trav. art. R1234-2",
+    "piege": "Appliquer 1/3 à toute l'ancienneté (12 000 €)."
+  },
+  {
+    "id": "REF-M06-11",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Indemnités",
+    "enonce": "Quel salaire de référence retient-on pour l'indemnité légale de licenciement ?",
+    "choix": [
+      "A. La moyenne la plus favorable entre les 12 et les 3 derniers mois",
+      "B. Le dernier salaire de base",
+      "C. Le SMIC",
+      "D. La moyenne des 6 derniers mois"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La formule la plus avantageuse : moyenne des 12 derniers mois, ou tiers des 3 derniers mois (primes annuelles proratisées).",
+    "reference": "C. trav. art. R1234-4",
+    "piege": "Ne retenir que le salaire de base, sans les primes."
+  },
+  {
+    "id": "REF-M06-12",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Documents de fin de contrat",
+    "enonce": "Dans quel délai le salarié peut-il dénoncer le reçu pour solde de tout compte ?",
+    "choix": [
+      "A. 1 mois",
+      "B. 3 mois",
+      "C. 1 an",
+      "D. 6 mois"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le reçu peut être dénoncé dans les 6 mois suivant sa signature ; au-delà, il devient libératoire pour les sommes qui y sont mentionnées.",
+    "reference": "C. trav. art. L1234-20",
+    "piege": "Croire que la signature empêche toute contestation."
+  },
+  {
+    "id": "REF-M06-13",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Régime social",
+    "enonce": "Comment est traitée l'indemnité compensatrice de congés payés versée en fin de contrat ?",
+    "choix": [
+      "A. Exonérée d'impôt",
+      "B. Soumise à cotisations et imposable comme du salaire",
+      "C. Exonérée de cotisations",
+      "D. Soumise à la seule CSG"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "L'indemnité compensatrice de congés payés a la nature d'un salaire : cotisations, CSG/CRDS et impôt.",
+    "reference": "CSS art. L242-1",
+    "piege": "La traiter comme une indemnité de rupture exonérée."
+  },
+  {
+    "id": "REF-M06-14",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Préavis",
+    "enonce": "L'employeur dispense le salarié licencié d'effectuer son préavis. Que doit-il verser ?",
+    "choix": [
+      "A. Une indemnité compensatrice de préavis",
+      "B. Une indemnité forfaitaire d'un mois",
+      "C. Rien",
+      "D. La moitié du préavis"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La dispense à l'initiative de l'employeur ne prive pas le salarié de la rémunération du préavis : une indemnité compensatrice est due, soumise à cotisations.",
+    "reference": "C. trav. art. L1234-5",
+    "piege": "Confondre avec la dispense demandée par le salarié."
+  },
+  {
+    "id": "REF-M06-15",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Indemnités",
+    "enonce": "Dans quels cas l'indemnité de fin de CDD n'est-elle pas due ?",
+    "choix": [
+      "A. Fin normale d'un CDD de remplacement",
+      "B. Refus par le salarié d'un CDI pour un emploi similaire",
+      "C. CDD saisonnier",
+      "D. Embauche en CDI à l'issue du CDD"
+    ],
+    "bonne_reponse": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explication": "Exclusions : contrats saisonniers et d'usage, refus d'un CDI similaire, poursuite en CDI, rupture anticipée à l'initiative du salarié, faute grave, jeunes pendant leurs vacances. La fin normale d'un CDD de remplacement y ouvre droit.",
+    "reference": "C. trav. art. L1243-10",
+    "piege": "Exclure tous les CDD de remplacement."
+  },
+  {
+    "id": "REF-M06-16",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Modes de rupture",
+    "enonce": "Que se passe-t-il si la DREETS ne répond pas dans les 15 jours ouvrables suivant la réception de la demande d'homologation ?",
+    "choix": [
+      "A. Le salarié doit relancer",
+      "B. La rupture est homologuée",
+      "C. La rupture est refusée",
+      "D. Le délai est prolongé d'un mois"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "À défaut de notification dans le délai d'instruction de 15 jours ouvrables, l'homologation est réputée acquise.",
+    "reference": "C. trav. art. L1237-14",
+    "piege": "Croire que le silence vaut refus."
+  },
+  {
+    "id": "REF-M06-17",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Régime social",
+    "enonce": "Quel est, en 2026, le montant au-delà duquel une indemnité de licenciement est soumise à cotisations dès le premier euro (10 PASS) ?",
+    "choix": [
+      "A. 96 120 €",
+      "B. 240 300 €",
+      "C. 400 500 €",
+      "D. 480 600 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "10 × 48 060 = 480 600 € : au-delà, l'indemnité est entièrement assujettie.",
+    "reference": "CSS art. L242-1 ; Paramètres 2026",
+    "piege": "Confondre avec la limite d'exonération de 2 PASS (96 120 €)."
+  },
+  {
+    "id": "REF-M06-18",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Régime social",
+    "enonce": "Quelle est, en 2026, la limite d'exonération de cotisations sociales des indemnités de rupture (2 PASS) ?",
+    "choix": [
+      "A. 8 010 €",
+      "B. 48 060 €",
+      "C. 96 120 €",
+      "D. 192 240 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "2 × 48 060 = 96 120 €, dans le respect des autres limites (montant légal ou conventionnel, fraction exonérée d'impôt).",
+    "reference": "CSS art. L242-1 ; Paramètres 2026",
+    "piege": "Calculer sur le PMSS (8 010 €)."
+  },
+  {
+    "id": "REF-M06-19",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Indemnités",
+    "enonce": "CDD : rémunération brute totale 12 000 €. L'indemnité de fin de contrat est due et aucun congé n'a été pris. Quelle est l'indemnité compensatrice de congés payés (règle du dixième) ?",
+    "choix": [
+      "A. 1 200 €",
+      "B. 2 400 €",
+      "C. 1 320 €",
+      "D. 1 100 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Indemnité de fin de contrat = 1 200 € ; l'indemnité de congés payés porte sur la rémunération totale, indemnité de fin de contrat comprise : 10 % × 13 200 = 1 320 €.",
+    "reference": "C. trav. art. L1242-16 et L3141-24",
+    "piege": "Calculer le dixième sur 12 000 € seulement."
+  },
+  {
+    "id": "REF-M06-20",
+    "module": 6,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Préavis",
+    "enonce": "Le salarié démissionnaire demande à être dispensé de son préavis et l'employeur accepte. Une indemnité compensatrice de préavis est-elle due ?",
+    "choix": [
+      "A. Oui, toujours",
+      "B. Seulement si la convention collective l'impose",
+      "C. Non, la dispense est demandée par le salarié",
+      "D. Oui, pour moitié"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Lorsque la dispense est accordée à la demande du salarié, l'employeur n'est pas tenu de verser d'indemnité compensatrice.",
+    "reference": "C. trav. art. L1234-5 (a contrario) ; jurisprudence constante",
+    "piege": "Verser l'indemnité comme en cas de dispense à l'initiative de l'employeur."
+  },
+  {
+    "id": "REF-M07-01",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Par quel canal la DSN est-elle transmise ?",
+    "choix": [
+      "A. Sur net-entreprises.fr (ou par machine-to-machine depuis le logiciel de paie)",
+      "B. Par e-mail à la DGFiP",
+      "C. Sur le site de France Travail uniquement",
+      "D. Par courrier à l'URSSAF"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La DSN est déposée sur net-entreprises.fr (ou transmise directement par le logiciel en machine-to-machine).",
+    "reference": "CSS art. L133-5-3",
+    "piege": "Croire qu'il faut une déclaration distincte pour chaque organisme."
+  },
+  {
+    "id": "REF-M07-02",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Échéances",
+    "enonce": "Une entreprise d'au moins 50 salariés verse les salaires du mois M au cours du mois M. Quelle est l'échéance de sa DSN ?",
+    "choix": [
+      "A. Le dernier jour du mois M",
+      "B. Le 15 du mois M+1",
+      "C. Le 10 du mois M+1",
+      "D. Le 5 du mois M+1"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Échéance au 5 M+1 pour les employeurs d'au moins 50 salariés dont la paie est versée dans le mois ; au 15 M+1 dans les autres cas.",
+    "reference": "CSS art. R133-14 et R243-6",
+    "piege": "Appliquer le 15 à toutes les entreprises."
+  },
+  {
+    "id": "REF-M07-03",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Échéances",
+    "enonce": "Quelle est l'échéance de DSN d'une entreprise de 12 salariés ?",
+    "choix": [
+      "A. Le 1er du mois M+1",
+      "B. Le 25 du mois M+1",
+      "C. Le 15 du mois M+1",
+      "D. Le 5 du mois M+1"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les entreprises de moins de 50 salariés déposent leur DSN au plus tard le 15 du mois suivant la période d'emploi.",
+    "reference": "CSS art. R243-6",
+    "piege": "Se tromper de seuil d'effectif (50 et non 11)."
+  },
+  {
+    "id": "REF-M07-04",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Prélèvement à la source",
+    "enonce": "Comment l'employeur reçoit-il le taux de prélèvement à la source de chaque salarié ?",
+    "choix": [
+      "A. Par un courrier annuel de l'URSSAF",
+      "B. Il le calcule lui-même",
+      "C. Par le compte rendu métier (CRM) de l'administration fiscale, en retour de la DSN",
+      "D. Le salarié le communique sur papier"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La DGFiP transmet le taux personnalisé dans un compte rendu métier en retour de la DSN.",
+    "reference": "CGI art. 204 H",
+    "piege": "Demander au salarié son avis d'imposition."
+  },
+  {
+    "id": "REF-M07-05",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Prélèvement à la source",
+    "enonce": "Sur quelle base s'applique le taux de prélèvement à la source ?",
+    "choix": [
+      "A. Le net social",
+      "B. Le net imposable",
+      "C. Le net à payer",
+      "D. Le brut"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le taux s'applique au montant net imposable du mois.",
+    "reference": "CGI art. 204 F",
+    "piege": "L'appliquer au net à payer."
+  },
+  {
+    "id": "REF-M07-06",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Quelle déclaration annuelle la DSN a-t-elle remplacée ?",
+    "choix": [
+      "A. La déclaration de résultats",
+      "B. La liasse fiscale",
+      "C. La DADS (déclaration annuelle des données sociales)",
+      "D. La déclaration de TVA"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La DSN a remplacé la DADS, les DUCS, les attestations de salaire pour les IJ et les attestations employeur, entre autres.",
+    "reference": "CSS art. L133-5-3",
+    "piege": "Croire qu'une DADS reste à produire en fin d'année."
+  },
+  {
+    "id": "REF-M07-07",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Prélèvement à la source",
+    "enonce": "Quand l'employeur applique-t-il le taux non personnalisé (grille de taux neutre) ?",
+    "choix": [
+      "A. Lorsqu'aucun taux personnalisé ne lui a été transmis",
+      "B. Sur demande de l'URSSAF",
+      "C. Uniquement en décembre",
+      "D. Toujours, pour les salariés en CDD"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "À défaut de taux transmis (nouvel embauché, première année…), l'employeur applique la grille de taux non personnalisé (grille à vérifier chaque année).",
+    "reference": "CGI art. 204 H, III",
+    "piege": "Appliquer un taux nul faute de taux transmis."
+  },
+  {
+    "id": "REF-M07-08",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Dans quel délai le signalement d'un arrêt de travail doit-il être effectué en DSN événementielle ?",
+    "choix": [
+      "A. Dans le mois",
+      "B. Dans les 5 jours suivant la connaissance de l'arrêt",
+      "C. À la DSN mensuelle suivante",
+      "D. Dans les 48 heures"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le signalement d'arrêt de travail est transmis dans les 5 jours suivant la date à laquelle l'employeur a connaissance de l'arrêt.",
+    "reference": "CSS art. R133-14 ; cahier technique DSN",
+    "piege": "Attendre la DSN mensuelle."
+  },
+  {
+    "id": "REF-M07-09",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Quel signalement événementiel permet l'établissement de l'attestation employeur destinée à France Travail ?",
+    "choix": [
+      "A. La DSN mensuelle de janvier",
+      "B. Le signalement d'arrêt de travail",
+      "C. Le signalement de reprise anticipée",
+      "D. Le signalement de fin de contrat de travail (FCT)"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le signalement de fin de contrat de travail transmet les données nécessaires à l'attestation employeur dématérialisée.",
+    "reference": "Cahier technique DSN",
+    "piege": "Envoyer une attestation papier en plus."
+  },
+  {
+    "id": "REF-M07-10",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Que se passe-t-il en cas d'anomalie bloquante dans une DSN ?",
+    "choix": [
+      "A. Rien jusqu'au contrôle",
+      "B. La DSN est rejetée et doit être corrigée puis renvoyée",
+      "C. L'URSSAF corrige d'office",
+      "D. La DSN est acceptée avec un avertissement"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Une anomalie bloquante entraîne le rejet : il faut corriger et redéposer avant l'échéance pour éviter les pénalités.",
+    "reference": "Cahier technique DSN ; CSS art. R133-14",
+    "piege": "Confondre anomalies bloquantes et non bloquantes."
+  },
+  {
+    "id": "REF-M07-11",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "DSN",
+    "enonce": "Quelles informations transitent par la DSN mensuelle ?",
+    "choix": [
+      "A. Le prélèvement à la source",
+      "B. Les cotisations de retraite complémentaire AGIRC-ARRCO",
+      "C. La TVA collectée",
+      "D. Les cotisations URSSAF"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explication": "La DSN alimente l'URSSAF, la retraite complémentaire, les organismes de prévoyance, France Travail et la DGFiP pour le PAS. La TVA relève de déclarations fiscales distinctes.",
+    "reference": "CSS art. L133-5-3",
+    "piege": "Y inclure des données purement fiscales de l'entreprise."
+  },
+  {
+    "id": "REF-M07-12",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Prélèvement à la source",
+    "enonce": "Net imposable 2 000 €, taux personnalisé 3,5 %. Quel est le prélèvement à la source ?",
+    "choix": [
+      "A. 70,00 €",
+      "B. 87,50 €",
+      "C. 35,00 €",
+      "D. 66,50 €"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "2 000 × 3,5 % = 70,00 €.",
+    "reference": "CGI art. 204 F",
+    "piege": "Appliquer le taux au brut."
+  },
+  {
+    "id": "REF-M07-13",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Une erreur de rémunération a été déclarée dans la DSN du mois précédent, déjà échue. Comment la corriger ?",
+    "choix": [
+      "A. Ce n'est pas possible",
+      "B. En régularisant dans une DSN ultérieure",
+      "C. En supprimant la DSN précédente",
+      "D. Par courrier à l'URSSAF"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Après l'échéance, l'erreur est régularisée dans une DSN suivante ; une DSN « annule et remplace » n'est possible qu'avant l'échéance.",
+    "reference": "Cahier technique DSN",
+    "piege": "Envoyer une DSN « annule et remplace » après l'échéance."
+  },
+  {
+    "id": "REF-M07-14",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Comment s'appelle le cahier technique qui fixe la norme de la DSN ?",
+    "choix": [
+      "A. DUCS-EDI",
+      "B. DADS-U",
+      "C. SIRENE",
+      "D. NEODeS"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La norme NEODeS décrit la structure des blocs et rubriques de la DSN, mise à jour chaque année.",
+    "reference": "net-entreprises.fr — documentation DSN",
+    "piege": "Citer la DADS-U, ancienne norme."
+  },
+  {
+    "id": "REF-M07-15",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Quel identifiant de l'établissement employeur est indispensable dans la DSN ?",
+    "choix": [
+      "A. Le code APE seul",
+      "B. Le numéro RCS",
+      "C. Le SIRET",
+      "D. Le numéro de TVA intracommunautaire"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La DSN est établie par établissement, identifié par son SIRET ; le salarié est identifié par son NIR.",
+    "reference": "Cahier technique DSN",
+    "piege": "Confondre SIREN (entreprise) et SIRET (établissement)."
+  },
+  {
+    "id": "REF-M07-16",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Échéances",
+    "enonce": "Le 5 tombe un dimanche. Quand la DSN des entreprises concernées doit-elle être déposée ?",
+    "choix": [
+      "A. Le vendredi 3 impérativement",
+      "B. Le 15",
+      "C. Le lundi 6 (premier jour ouvré suivant)",
+      "D. Le samedi 4"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Lorsque l'échéance tombe un samedi, un dimanche ou un jour férié, elle est reportée au premier jour ouvré suivant.",
+    "reference": "CSS art. R243-6 ; calendrier URSSAF",
+    "piege": "Avancer l'échéance au vendredi."
+  },
+  {
+    "id": "REF-M07-17",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix multiple",
+    "theme": "DSN",
+    "enonce": "Quels sont des signalements événementiels de la DSN ?",
+    "choix": [
+      "A. Fin de contrat de travail",
+      "B. Augmentation de salaire",
+      "C. Reprise anticipée d'arrêt de travail",
+      "D. Arrêt de travail"
+    ],
+    "bonne_reponse": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explication": "Les signalements événementiels portent sur l'arrêt de travail, la reprise anticipée et la fin de contrat. Une augmentation passe par la DSN mensuelle.",
+    "reference": "Cahier technique DSN",
+    "piege": "Faire un signalement pour chaque modification de salaire."
+  },
+  {
+    "id": "REF-M07-18",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Prélèvement à la source",
+    "enonce": "En cas de subrogation, l'employeur doit-il appliquer le prélèvement à la source sur les IJSS maladie qu'il reverse au salarié ?",
+    "choix": [
+      "A. Uniquement au-delà de 3 mois d'arrêt",
+      "B. Seulement si le salarié le demande",
+      "C. Oui, sur leur part imposable",
+      "D. Non, jamais"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les IJSS maladie subrogées sont imposables : l'employeur les intègre dans l'assiette du prélèvement à la source.",
+    "reference": "CGI art. 204 A et 204 F",
+    "piege": "Les exclure de l'assiette parce qu'elles proviennent de la CPAM."
+  },
+  {
+    "id": "REF-M07-19",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Prélèvement à la source",
+    "enonce": "Net imposable du mois hors heures supplémentaires : 2 100 € ; rémunération nette des heures supplémentaires exonérées : 150 € (sous le plafond annuel). Taux 4 %. Quel est le prélèvement à la source ?",
+    "choix": [
+      "A. 96,00 €",
+      "B. 90,00 €",
+      "C. 78,00 €",
+      "D. 84,00 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les heures supplémentaires exonérées n'entrent pas dans le net imposable : 2 100 × 4 % = 84,00 €.",
+    "reference": "CGI art. 81 quater et 204 F",
+    "piege": "Ajouter les heures supplémentaires exonérées à la base (90,00 €)."
+  },
+  {
+    "id": "REF-M07-20",
+    "module": 7,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "DSN",
+    "enonce": "Une DSN est déposée en retard. Quelle conséquence est prévue ?",
+    "choix": [
+      "A. Une amende fixe de 10 000 €",
+      "B. Une pénalité par salarié concerné",
+      "C. La fermeture de l'entreprise",
+      "D. Aucune"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le défaut ou le retard de DSN expose à une pénalité calculée par salarié (montant fixé par les textes, à vérifier).",
+    "reference": "CSS art. L133-5-4 et R133-14",
+    "piege": "Croire qu'un retard sans erreur n'est pas sanctionné."
+  },
+  {
+    "id": "REF-M08-01",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Apprentis",
+    "enonce": "Quel est le salaire minimal d'un apprenti de 18 à 20 ans en 1re année (en % du SMIC) ?",
+    "choix": [
+      "A. 53 %",
+      "B. 27 %",
+      "C. 43 %",
+      "D. 100 %"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "18-20 ans, 1re année : 43 % du SMIC (sauf dispositions conventionnelles plus favorables).",
+    "reference": "C. trav. art. D6222-26 ; Paramètres 2026",
+    "piege": "Appliquer la grille des 16-17 ans (27 %)."
+  },
+  {
+    "id": "REF-M08-02",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Apprentis",
+    "enonce": "Quel est le salaire minimal d'un apprenti de 26 ans et plus ?",
+    "choix": [
+      "A. 53 % du SMIC",
+      "B. 100 % du SMIC ou du minimum conventionnel s'il est plus élevé",
+      "C. 78 % du SMIC",
+      "D. Aucun minimum"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "À partir de 26 ans : 100 % du SMIC ou du salaire minimum conventionnel s'il est plus favorable.",
+    "reference": "C. trav. art. D6222-26",
+    "piege": "Oublier le minimum conventionnel."
+  },
+  {
+    "id": "REF-M08-03",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Stagiaires",
+    "enonce": "À partir de quelle durée de stage une gratification est-elle obligatoire ?",
+    "choix": [
+      "A. 1 mois",
+      "B. 3 mois",
+      "C. Plus de 2 mois au cours de la même année d'enseignement",
+      "D. 6 mois"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La gratification est obligatoire lorsque le stage dure plus de 2 mois, consécutifs ou non, au cours d'une même année d'enseignement.",
+    "reference": "C. éduc. art. L124-6",
+    "piege": "Ne compter que les mois consécutifs."
+  },
+  {
+    "id": "REF-M08-04",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Stagiaires",
+    "enonce": "À combien s'élève la gratification minimale de stage ?",
+    "choix": [
+      "A. 50 % du SMIC",
+      "B. 10 % du plafond horaire de la Sécurité sociale",
+      "C. 15 % du plafond horaire de la Sécurité sociale",
+      "D. 100 % du SMIC"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Gratification minimale : 15 % du plafond horaire de la Sécurité sociale par heure de stage (montant horaire à vérifier chaque année).",
+    "reference": "C. éduc. art. D124-6 ; Paramètres 2026",
+    "piege": "La calculer en pourcentage du SMIC."
+  },
+  {
+    "id": "REF-M08-05",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Saisies et acomptes",
+    "enonce": "Un salarié mensualisé demande un acompte. À quoi a-t-il droit ?",
+    "choix": [
+      "A. À une somme correspondant à une quinzaine, soit la moitié de la rémunération mensuelle",
+      "B. À rien",
+      "C. À la totalité du salaire",
+      "D. À 10 % du salaire"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le salarié mensualisé peut demander un acompte correspondant, pour une quinzaine, à la moitié de sa rémunération mensuelle.",
+    "reference": "C. trav. art. L3242-1",
+    "piege": "Confondre acompte et avance."
+  },
+  {
+    "id": "REF-M08-06",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Saisies et acomptes",
+    "enonce": "Quelle somme doit toujours être laissée au salarié en cas de saisie sur salaire ?",
+    "choix": [
+      "A. Le SMIC",
+      "B. Le montant forfaitaire du RSA pour une personne seule",
+      "C. La moitié du salaire",
+      "D. Rien"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Une somme égale au montant forfaitaire du RSA pour une personne seule reste toujours insaisissable.",
+    "reference": "C. trav. art. R3252-5",
+    "piege": "Laisser le SMIC entier."
+  },
+  {
+    "id": "REF-M08-07",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Frais professionnels",
+    "enonce": "Comment sont traitées les allocations forfaitaires de frais professionnels respectant les barèmes ?",
+    "choix": [
+      "A. Exonérées de cotisations dans les limites fixées par arrêté",
+      "B. Soumises à cotisations",
+      "C. Toujours imposables",
+      "D. Interdites"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Elles sont exonérées dans la limite des montants forfaitaires fixés par arrêté (barèmes à vérifier chaque année sur urssaf.fr).",
+    "reference": "Arrêté du 20 décembre 2002 ; BOSS Frais professionnels",
+    "piege": "Exonérer un montant supérieur au barème sans justificatif."
+  },
+  {
+    "id": "REF-M08-08",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Cadres et dirigeants",
+    "enonce": "Quelle cotisation est spécifique aux cadres ?",
+    "choix": [
+      "A. La contribution APEC",
+      "B. La CSG",
+      "C. La CRDS",
+      "D. Le FNAL"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "La contribution APEC (0,024 % salarial et 0,036 % patronal) est due pour les cadres et assimilés.",
+    "reference": "ANI du 12 juillet 2011 ; Paramètres 2026",
+    "piege": "Penser que tous les salariés cotisent à l'APEC."
+  },
+  {
+    "id": "REF-M08-09",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Apprentis",
+    "enonce": "Apprenti de 22 ans en 2e année. Quel est son salaire minimal légal en 2026 (sur la base du SMIC mensuel de 1 823,03 €) ?",
+    "choix": [
+      "A. 1 221,43 €",
+      "B. 1 112,05 €",
+      "C. 966,21 €",
+      "D. 1 422,96 €"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "21-25 ans, 2e année : 61 % × 1 823,03 = 1 112,05 €.",
+    "reference": "C. trav. art. D6222-26 ; Paramètres 2026",
+    "piege": "Utiliser la 1re année (53 %, soit 966,21 €)."
+  },
+  {
+    "id": "REF-M08-10",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Apprentis",
+    "enonce": "Apprenti de 17 ans en 1re année. Quel est son salaire minimal légal en 2026 ?",
+    "choix": [
+      "A. 710,98 €",
+      "B. 783,90 €",
+      "C. 492,22 €",
+      "D. 1 823,03 €"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "16-17 ans, 1re année : 27 % × 1 823,03 = 492,22 €.",
+    "reference": "C. trav. art. D6222-26 ; Paramètres 2026",
+    "piege": "Appliquer 43 %, taux des 18-20 ans."
+  },
+  {
+    "id": "REF-M08-11",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Cadres et dirigeants",
+    "enonce": "Quelle est la cotisation patronale minimale de prévoyance des cadres sur la tranche 1 ?",
+    "choix": [
+      "A. 1,50 %",
+      "B. 1,00 %",
+      "C. 0,50 %",
+      "D. 2,00 %"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'employeur doit consacrer au moins 1,50 % de la tranche 1 au financement de la prévoyance des cadres, dont plus de la moitié pour le décès.",
+    "reference": "ANI du 17 novembre 2017 art. 7",
+    "piege": "Faire supporter cette cotisation au salarié."
+  },
+  {
+    "id": "REF-M08-12",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Cadres et dirigeants",
+    "enonce": "Quel est le taux global (salarial + patronal) de la contribution APEC ?",
+    "choix": [
+      "A. 0,036 %",
+      "B. 0,06 %",
+      "C. 0,024 %",
+      "D. 0,6 %"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "0,024 % + 0,036 % = 0,06 %, sur la rémunération dans la limite de 4 PMSS.",
+    "reference": "ANI du 12 juillet 2011 ; Paramètres 2026",
+    "piege": "Ne retenir qu'une des deux parts."
+  },
+  {
+    "id": "REF-M08-13",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Saisies et acomptes",
+    "enonce": "Comment l'employeur récupère-t-il une avance en espèces consentie au salarié ?",
+    "choix": [
+      "A. En une seule fois sur le salaire suivant",
+      "B. Par un titre exécutoire",
+      "C. Par retenues successives limitées au dixième du salaire exigible",
+      "D. Il ne peut pas la récupérer"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Une avance en espèces ne peut être remboursée que par retenues successives ne dépassant pas le dixième du salaire exigible.",
+    "reference": "C. trav. art. L3251-3",
+    "piege": "Retenir la totalité d'un coup."
+  },
+  {
+    "id": "REF-M08-14",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Stagiaires",
+    "enonce": "Comment est traitée socialement une gratification de stage égale au minimum légal ?",
+    "choix": [
+      "A. Soumise à toutes les cotisations",
+      "B. Soumise à la seule CSG",
+      "C. Exonérée de cotisations et contributions sociales",
+      "D. Soumise au forfait social"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La gratification n'est pas soumise aux cotisations dans la limite de la franchise (15 % du plafond horaire) ; seule la fraction excédentaire est assujettie.",
+    "reference": "CSS art. L242-4-1",
+    "piege": "Soumettre toute la gratification dès le premier euro."
+  },
+  {
+    "id": "REF-M08-15",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Frais professionnels",
+    "enonce": "À quelles conditions un remboursement de frais réels est-il exonéré de cotisations ?",
+    "choix": [
+      "A. Ils sont exposés pour l'activité professionnelle",
+      "B. Les frais ont été réellement engagés par le salarié",
+      "C. Ils sont justifiés",
+      "D. Le salarié en fait la demande verbale, sans justificatif"
+    ],
+    "bonne_reponse": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explication": "Le remboursement de frais réels est exonéré s'il correspond à des dépenses réellement engagées, justifiées et liées à l'activité professionnelle.",
+    "reference": "Arrêté du 20 décembre 2002 art. 2 ; BOSS",
+    "piege": "Exonérer un remboursement non justifié."
+  },
+  {
+    "id": "REF-M08-16",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Frais professionnels",
+    "enonce": "L'employeur peut-il verser une allocation forfaitaire de télétravail exonérée sans justificatif ?",
+    "choix": [
+      "A. Non, jamais",
+      "B. Oui, sans limite",
+      "C. Oui, dans les limites fixées par l'URSSAF",
+      "D. Seulement aux cadres"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Une allocation forfaitaire est réputée utilisée conformément à son objet, dans les limites admises par l'URSSAF (montants à vérifier).",
+    "reference": "BOSS Frais professionnels — télétravail",
+    "piege": "Exonérer une allocation supérieure aux limites sans justificatifs."
+  },
+  {
+    "id": "REF-M08-17",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Saisies et acomptes",
+    "enonce": "Une pension alimentaire est recouvrée par paiement direct sur le salaire. Peut-elle être prélevée au-delà des fractions saisissables du barème ?",
+    "choix": [
+      "A. Non, jamais",
+      "B. Oui, y compris sur la fraction insaisissable, dans le respect du montant du RSA laissé au salarié",
+      "C. Oui, sur la totalité du salaire",
+      "D. Seulement avec l'accord du salarié"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Les créances alimentaires peuvent être recouvrées sur la fraction insaisissable, le salarié conservant toujours la somme équivalente au RSA pour une personne seule.",
+    "reference": "C. trav. art. L3252-5 et R3252-5",
+    "piege": "Appliquer le barème des saisies ordinaires."
+  },
+  {
+    "id": "REF-M08-18",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Cadres et dirigeants",
+    "enonce": "Un cadre en forfait annuel en jours travaille certaines semaines 45 heures. Ces heures sont-elles des heures supplémentaires majorées ?",
+    "choix": [
+      "A. Oui, au-delà de 39 h",
+      "B. Oui, au-delà de 35 h",
+      "C. Non, les dispositions sur la durée légale et les heures supplémentaires ne lui sont pas applicables",
+      "D. Seulement au-delà de 48 h"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le salarié en forfait jours n'est pas soumis à la durée légale hebdomadaire ni au régime des heures supplémentaires ; il reste soumis aux repos quotidien et hebdomadaire.",
+    "reference": "C. trav. art. L3121-62",
+    "piege": "Majorer ses heures au-delà de 35 h."
+  },
+  {
+    "id": "REF-M08-19",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Frais professionnels",
+    "enonce": "À quelles conditions s'applique la déduction forfaitaire spécifique (DFS) pour frais professionnels ?",
+    "choix": [
+      "A. À tous les salariés, automatiquement",
+      "B. Aux professions listées, sur option de l'employeur, avec accord ou consultation des représentants et information des salariés",
+      "C. Uniquement aux cadres",
+      "D. Au choix du salarié seul"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "La DFS concerne certaines professions limitativement listées ; l'employeur peut l'appliquer selon une procédure (accord collectif, avis du CSE ou accord des salariés).",
+    "reference": "Arrêté du 20 décembre 2002 art. 9 ; BOSS Frais professionnels",
+    "piege": "L'appliquer à une profession qui ne figure pas sur la liste."
+  },
+  {
+    "id": "REF-M08-20",
+    "module": 8,
+    "bloc": "BC02",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Cadres et dirigeants",
+    "enonce": "Le président d'une SAS, sans contrat de travail, perçoit une rémunération au titre de son mandat. Quelles cotisations sont dues ?",
+    "choix": [
+      "A. Les cotisations du régime général et de retraite complémentaire, hors assurance chômage et AGS",
+      "B. Aucune",
+      "C. Toutes les cotisations, chômage compris",
+      "D. Uniquement la CSG/CRDS"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le président de SAS est assimilé salarié : régime général et AGIRC-ARRCO, mais pas d'assurance chômage ni d'AGS faute de contrat de travail.",
+    "reference": "CSS art. L311-3, 23°",
+    "piege": "Le faire cotiser à l'assurance chômage."
+  },
+  {
+    "id": "REF-M09-01",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Quel compte du plan comptable enregistre la dette de salaires nets envers le personnel ?",
+    "choix": [
+      "A. 641 Rémunérations du personnel",
+      "B. 411 Clients",
+      "C. 431 Sécurité sociale",
+      "D. 421 Personnel – rémunérations dues"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le compte 421 enregistre les rémunérations nettes dues au personnel, soldé lors du paiement des salaires.",
+    "reference": "Plan comptable général (PCG) — classe 4",
+    "piege": "Confondre 421 (dette) et 641 (charge)."
+  },
+  {
+    "id": "REF-M09-02",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Dans quel compte est enregistré le salaire brut ?",
+    "choix": [
+      "A. 641",
+      "B. 421",
+      "C. 645",
+      "D. 431"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Le salaire brut est une charge de personnel enregistrée au débit du compte 641.",
+    "reference": "PCG — compte 641",
+    "piege": "Enregistrer le net au 641 au lieu du brut."
+  },
+  {
+    "id": "REF-M09-03",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Quel compte enregistre les cotisations patronales de Sécurité sociale et de prévoyance ?",
+    "choix": [
+      "A. 641",
+      "B. 437",
+      "C. 431",
+      "D. 645"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les charges patronales sont enregistrées au débit du compte 645 « Charges de sécurité sociale et de prévoyance ».",
+    "reference": "PCG — compte 645",
+    "piege": "Débiter un compte de tiers (431) pour la charge."
+  },
+  {
+    "id": "REF-M09-04",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Quel compte de tiers enregistre la dette envers l'URSSAF ?",
+    "choix": [
+      "A. 512",
+      "B. 421",
+      "C. 4421",
+      "D. 431"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le compte 431 « Sécurité sociale » enregistre les cotisations dues à l'URSSAF.",
+    "reference": "PCG — compte 431",
+    "piege": "Utiliser le 437, réservé aux autres organismes sociaux."
+  },
+  {
+    "id": "REF-M09-05",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Quel compte enregistre le prélèvement à la source retenu sur les salaires ?",
+    "choix": [
+      "A. 421 Personnel",
+      "B. 4421 Prélèvements à la source (impôt sur le revenu)",
+      "C. 431 Sécurité sociale",
+      "D. 445 État – TVA"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Le PAS retenu est une dette envers l'État enregistrée au crédit du compte 4421, soldé lors du reversement à la DGFiP.",
+    "reference": "PCG — compte 4421",
+    "piege": "Le laisser au 421 et le verser au salarié."
+  },
+  {
+    "id": "REF-M09-06",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Quel compte enregistre les acomptes versés aux salariés ?",
+    "choix": [
+      "A. 425 Personnel – avances et acomptes",
+      "B. 467 Débiteurs divers",
+      "C. 641 Rémunérations",
+      "D. 421 Personnel – rémunérations dues"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Les avances et acomptes sont enregistrés au débit du compte 425, puis soldés lors de la paie.",
+    "reference": "PCG — compte 425",
+    "piege": "Les passer directement en charge (641)."
+  },
+  {
+    "id": "REF-M09-07",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Contrôle URSSAF",
+    "enonce": "Sauf travail dissimulé, que doit recevoir l'employeur avant un contrôle URSSAF ?",
+    "choix": [
+      "A. Une mise en demeure",
+      "B. Une lettre d'observations",
+      "C. Rien",
+      "D. Un avis de contrôle"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Tout contrôle est précédé d'un avis de contrôle, sauf recherche d'infractions de travail dissimulé.",
+    "reference": "CSS art. R243-59",
+    "piege": "Confondre l'avis de contrôle (avant) et la lettre d'observations (après)."
+  },
+  {
+    "id": "REF-M09-08",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Contrôle URSSAF",
+    "enonce": "Sur quelle période l'URSSAF peut-elle réclamer des cotisations, hors travail dissimulé ?",
+    "choix": [
+      "A. Les 10 dernières années",
+      "B. Les 5 dernières années",
+      "C. Les 12 derniers mois",
+      "D. Les 3 années civiles précédentes et l'année en cours"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les cotisations se prescrivent par 3 ans à compter de la fin de l'année civile au titre de laquelle elles sont dues.",
+    "reference": "CSS art. L244-3",
+    "piege": "Appliquer le délai de 5 ans, réservé au travail dissimulé."
+  },
+  {
+    "id": "REF-M09-09",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Lors de la comptabilisation des cotisations patronales, quelle est l'écriture ?",
+    "choix": [
+      "A. Débit 421 / Crédit 645",
+      "B. Débit 641 / Crédit 421",
+      "C. Débit 431 / Crédit 645",
+      "D. Débit 645 / Crédit 431 et 437"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La charge (645) est débitée, la dette envers les organismes (431, 437) est créditée.",
+    "reference": "PCG",
+    "piege": "Inverser débit et crédit."
+  },
+  {
+    "id": "REF-M09-10",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Provisions de congés payés",
+    "enonce": "Quel compte enregistre la dette provisionnée pour congés payés acquis non pris à la clôture ?",
+    "choix": [
+      "A. 681 Dotations aux provisions",
+      "B. 421 Personnel",
+      "C. 4282 Dettes provisionnées pour congés à payer",
+      "D. 151 Provisions pour risques"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les congés acquis non pris sont une charge à payer : débit 641, crédit 4282.",
+    "reference": "PCG — compte 4282",
+    "piege": "Utiliser un compte de provision pour risques (151)."
+  },
+  {
+    "id": "REF-M09-11",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Provisions de congés payés",
+    "enonce": "Quel compte enregistre les charges sociales sur les congés payés à payer ?",
+    "choix": [
+      "A. 431",
+      "B. 4286",
+      "C. 4382 Charges sociales sur congés à payer",
+      "D. 645 seulement"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Les charges sociales afférentes sont enregistrées : débit 645, crédit 4382.",
+    "reference": "PCG — compte 4382",
+    "piege": "Oublier de provisionner les charges sociales."
+  },
+  {
+    "id": "REF-M09-12",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Provisions de congés payés",
+    "enonce": "À la clôture, l'indemnité de congés payés acquis non pris est estimée à 1 500 € ; taux moyen de charges patronales : 42 %. Quel montant de charges sociales sur congés payés faut-il comptabiliser ?",
+    "choix": [
+      "A. 1 500 €",
+      "B. 420 €",
+      "C. 2 130 €",
+      "D. 630 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "1 500 × 42 % = 630 €, en crédit du compte 4382.",
+    "reference": "PCG — comptes 4282 et 4382",
+    "piege": "Provisionner les charges sur le brut annuel."
+  },
+  {
+    "id": "REF-M09-13",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Rapprochements",
+    "enonce": "Quel rapprochement de cohérence est attendu chaque mois ?",
+    "choix": [
+      "A. Cotisations salariales = compte 645",
+      "B. Total des bruts du livre de paie = total des bruts déclarés en DSN = mouvements du compte 641",
+      "C. PAS = compte 431",
+      "D. Net à payer = compte 641"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Les bruts du journal de paie, de la DSN et de la comptabilité (641) doivent concorder ; tout écart est à expliquer.",
+    "reference": "Méthodologie de révision de paie",
+    "piege": "Rapprocher des montants de nature différente (net et brut)."
+  },
+  {
+    "id": "REF-M09-14",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Contrôle URSSAF",
+    "enonce": "De combien de temps l'employeur dispose-t-il pour répondre à la lettre d'observations ?",
+    "choix": [
+      "A. 8 jours",
+      "B. 30 jours",
+      "C. 3 mois",
+      "D. 15 jours"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "L'employeur dispose de 30 jours pour répondre ; ce délai peut être prolongé sur demande, dans les conditions prévues par les textes.",
+    "reference": "CSS art. R243-59",
+    "piege": "Croire que le redressement est définitif dès la lettre d'observations."
+  },
+  {
+    "id": "REF-M09-15",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Écritures de paie",
+    "enonce": "Lors de la comptabilisation des salaires, quel compte reçoit les cotisations salariales retenues ?",
+    "choix": [
+      "A. 421 au débit",
+      "B. 641 au débit",
+      "C. 645 au débit",
+      "D. 431 et 437 au crédit"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les cotisations salariales sont retenues sur le brut et constituent une dette envers les organismes : crédit 431 et 437.",
+    "reference": "PCG",
+    "piege": "Les débiter en charge 645 (ce sont des retenues, pas des charges patronales)."
+  },
+  {
+    "id": "REF-M09-16",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix multiple",
+    "theme": "Contrôle URSSAF",
+    "enonce": "Quelles affirmations sur le contrôle URSSAF sont exactes ?",
+    "choix": [
+      "A. L'URSSAF peut redresser sans aucune procédure contradictoire",
+      "B. Un avis de contrôle précède le contrôle, sauf travail dissimulé",
+      "C. L'employeur peut se faire assister du conseil de son choix",
+      "D. Les constats sont notifiés par une lettre d'observations"
+    ],
+    "bonne_reponse": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explication": "La procédure est contradictoire : avis préalable, assistance possible (charte du cotisant contrôlé), lettre d'observations, réponse de l'employeur, puis mise en demeure.",
+    "reference": "CSS art. R243-59",
+    "piege": "Oublier le caractère contradictoire de la procédure."
+  },
+  {
+    "id": "REF-M09-17",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Contrôle URSSAF",
+    "enonce": "Quel est le délai de reprise des cotisations en cas de travail dissimulé ?",
+    "choix": [
+      "A. 3 ans",
+      "B. 10 ans",
+      "C. 6 ans",
+      "D. 5 ans"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "En cas de travail dissimulé, la prescription des cotisations est portée à 5 ans.",
+    "reference": "CSS art. L244-3",
+    "piege": "Appliquer le délai ordinaire de 3 ans."
+  },
+  {
+    "id": "REF-M09-18",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Écritures de paie",
+    "enonce": "Brut 3 000 € ; cotisations salariales 690 € ; PAS 90 €. Quel montant est crédité au compte 421 ?",
+    "choix": [
+      "A. 2 400 €",
+      "B. 2 310 €",
+      "C. 3 000 €",
+      "D. 2 220 €"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Débit 641 : 3 000 € ; crédit 431/437 : 690 € ; crédit 4421 : 90 € ; crédit 421 : 3 000 − 690 − 90 = 2 220 €.",
+    "reference": "PCG",
+    "piege": "Créditer le net avant impôt (2 310 €) et oublier le PAS."
+  },
+  {
+    "id": "REF-M09-19",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Provisions de congés payés",
+    "enonce": "Quelle est l'écriture de provision des charges sociales sur congés payés à la clôture ?",
+    "choix": [
+      "A. Débit 641 / Crédit 431",
+      "B. Débit 681 / Crédit 151",
+      "C. Débit 4382 / Crédit 645",
+      "D. Débit 645 / Crédit 4382"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La charge est constatée au débit du 645 et la dette provisionnée au crédit du 4382 ; l'écriture est extournée à l'ouverture de l'exercice suivant.",
+    "reference": "PCG — comptes 645 et 4382",
+    "piege": "Utiliser des comptes de provisions pour risques."
+  },
+  {
+    "id": "REF-M09-20",
+    "module": 9,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Contrôle URSSAF",
+    "enonce": "Lors d'un précédent contrôle, l'URSSAF a examiné une pratique de l'entreprise sans la redresser. Que peut invoquer l'employeur lors d'un nouveau contrôle ?",
+    "choix": [
+      "A. La nullité automatique du contrôle",
+      "B. Une prescription spéciale",
+      "C. Rien",
+      "D. Un accord tacite, si l'URSSAF s'est prononcée en connaissance de cause"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'absence d'observations, en connaissance de cause, sur une pratique vérifiée vaut accord tacite, opposable tant que la législation ou les circonstances n'ont pas changé.",
+    "reference": "CSS art. R243-59-7",
+    "piege": "Croire qu'un simple silence suffit sans examen de la pratique."
+  },
+  {
+    "id": "REF-M10-01",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Masse salariale",
+    "enonce": "Qu'appelle-t-on la masse salariale brute ?",
+    "choix": [
+      "A. La somme des salaires nets versés",
+      "B. Le chiffre d'affaires",
+      "C. Le total des cotisations patronales",
+      "D. La somme des rémunérations brutes versées sur la période"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "La masse salariale brute est la somme des rémunérations brutes ; ajoutée des charges patronales, elle donne le coût salarial.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Confondre masse salariale et coût total employeur."
+  },
+  {
+    "id": "REF-M10-02",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Indicateurs",
+    "enonce": "Comment calcule-t-on le taux d'absentéisme ?",
+    "choix": [
+      "A. Heures supplémentaires / heures travaillées",
+      "B. Jours de congés / jours ouvrés",
+      "C. Heures d'absence / heures théoriques de travail",
+      "D. Nombre d'arrêts / effectif"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Taux d'absentéisme = heures (ou jours) d'absence / heures (ou jours) théoriques de travail sur la période.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Inclure les congés payés dans les absences."
+  },
+  {
+    "id": "REF-M10-03",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Masse salariale",
+    "enonce": "Qu'est-ce que l'effet de noria ?",
+    "choix": [
+      "A. L'effet des heures supplémentaires",
+      "B. L'effet de l'inflation",
+      "C. La hausse de la masse salariale liée aux augmentations",
+      "D. La baisse liée au remplacement de salariés partants par des entrants moins rémunérés"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les salariés partants, souvent plus anciens et mieux payés, sont remplacés par des entrants moins rémunérés : la masse salariale baisse.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Le confondre avec le GVT."
+  },
+  {
+    "id": "REF-M10-04",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Masse salariale",
+    "enonce": "Que signifie GVT ?",
+    "choix": [
+      "A. Garantie de valeur du travail",
+      "B. Grille de valorisation des tâches",
+      "C. Gestion des variations de temps",
+      "D. Glissement vieillesse technicité"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le GVT mesure l'évolution de la masse salariale due à l'ancienneté (vieillesse) et aux promotions ou qualifications (technicité).",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Y inclure les augmentations générales."
+  },
+  {
+    "id": "REF-M10-05",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "À partir de quel effectif l'index de l'égalité professionnelle doit-il être calculé et publié ?",
+    "choix": [
+      "A. 250 salariés",
+      "B. 50 salariés",
+      "C. 11 salariés",
+      "D. 20 salariés"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "Les entreprises d'au moins 50 salariés calculent et publient chaque année leur index de l'égalité professionnelle.",
+    "reference": "C. trav. art. L1142-8",
+    "piege": "Répondre 250, seuil de certaines obligations renforcées."
+  },
+  {
+    "id": "REF-M10-06",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "Avant quelle date l'index de l'égalité professionnelle doit-il être publié chaque année ?",
+    "choix": [
+      "A. 30 juin",
+      "B. 1er janvier",
+      "C. 31 décembre",
+      "D. 1er mars"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'index est publié au plus tard le 1er mars de chaque année.",
+    "reference": "C. trav. art. D1142-4",
+    "piege": "Le publier avec la DSN de décembre."
+  },
+  {
+    "id": "REF-M10-07",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Épreuve du titre",
+    "enonce": "Quelle est la durée de la mise en situation professionnelle à l'épreuve du titre professionnel Gestionnaire de paie ?",
+    "choix": [
+      "A. 2 heures",
+      "B. 4 heures",
+      "C. 6 heures",
+      "D. 3 heures"
+    ],
+    "bonne_reponse": [
+      "B"
+    ],
+    "explication": "La mise en situation professionnelle dure 4 heures ; elle est suivie d'un entretien technique (30 min) et d'un entretien final (20 min).",
+    "reference": "Référentiel d'évaluation du TP Gestionnaire de paie (RNCP37948) — à vérifier sur votre convocation",
+    "piege": "Confondre la durée de la mise en situation et celle des entretiens."
+  },
+  {
+    "id": "REF-M10-08",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "facile",
+    "type": "choix unique",
+    "theme": "Épreuve du titre",
+    "enonce": "Quelle est la durée de l'entretien technique de l'épreuve du titre ?",
+    "choix": [
+      "A. 30 minutes",
+      "B. 15 minutes",
+      "C. 1 heure",
+      "D. 20 minutes"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "L'entretien technique dure 30 minutes ; l'entretien final dure 20 minutes.",
+    "reference": "Référentiel d'évaluation du TP Gestionnaire de paie (RNCP37948) — à vérifier sur votre convocation",
+    "piege": "Inverser entretien technique (30 min) et entretien final (20 min)."
+  },
+  {
+    "id": "REF-M10-09",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Masse salariale",
+    "enonce": "Effectifs constants. Augmentation générale de 2 % au 1er juillet N, aucune autre en N+1. Quel effet report sur la masse salariale de N+1 ?",
+    "choix": [
+      "A. Environ 2 %",
+      "B. Environ 0 %",
+      "C. Environ 4 %",
+      "D. Environ 1 %"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Masse N : 6 mois à 100 + 6 mois à 102 = 1 212 ; masse N+1 : 12 × 102 = 1 224 ; hausse ≈ 1224 / 1212 − 1 ≈ 0,99 %, soit environ 1 %.",
+    "reference": "Notions de contrôle de gestion sociale (effet report)",
+    "piege": "Répondre 2 % en confondant effet niveau et effet report."
+  },
+  {
+    "id": "REF-M10-10",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "calcul",
+    "theme": "Indicateurs",
+    "enonce": "1 200 heures d'absence pour 40 000 heures théoriques de travail. Quel est le taux d'absentéisme ?",
+    "choix": [
+      "A. 4 %",
+      "B. 1,2 %",
+      "C. 30 %",
+      "D. 3 %"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "1 200 / 40 000 = 3 %.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Diviser par les heures réellement travaillées."
+  },
+  {
+    "id": "REF-M10-11",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Indicateurs",
+    "enonce": "Quelle formule usuelle donne le taux de rotation du personnel (turnover) ?",
+    "choix": [
+      "A. ((entrées + sorties) / 2) / effectif moyen",
+      "B. Effectif de fin / effectif de début",
+      "C. Entrées / effectif de fin d'année",
+      "D. Sorties / entrées"
+    ],
+    "bonne_reponse": [
+      "A"
+    ],
+    "explication": "Turnover = moyenne des entrées et des sorties de la période, rapportée à l'effectif moyen.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Ne retenir que les sorties."
+  },
+  {
+    "id": "REF-M10-12",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "En dessous de quelle note globale l'index de l'égalité professionnelle impose-t-il des mesures de correction ?",
+    "choix": [
+      "A. 50 points",
+      "B. 100 points",
+      "C. 85 points",
+      "D. 75 points"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Si l'index est inférieur à 75 points, l'entreprise doit mettre en œuvre des mesures de correction (et fixer des objectifs de progression sous 85 points).",
+    "reference": "C. trav. art. L1142-9 et L1142-9-1",
+    "piege": "Confondre le seuil de 75 points (mesures correctives) et celui de 85 points (objectifs de progression)."
+  },
+  {
+    "id": "REF-M10-13",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Masse salariale",
+    "enonce": "Comment obtient-on le coût total employeur d'un salarié ?",
+    "choix": [
+      "A. Net imposable + PAS",
+      "B. Net à payer + cotisations salariales",
+      "C. Salaire brut − cotisations salariales",
+      "D. Salaire brut + cotisations et contributions patronales − allègements"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Coût employeur = brut + charges patronales, diminuées des allègements et exonérations.",
+    "reference": "Notions de paie",
+    "piege": "Oublier de déduire les allègements."
+  },
+  {
+    "id": "REF-M10-14",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "Que désigne la BDESE ?",
+    "choix": [
+      "A. Une base de données de l'URSSAF",
+      "B. Un logiciel de paie",
+      "C. Une base de données économiques, sociales et environnementales mise à disposition du CSE",
+      "D. Un bulletin de déclaration des salaires"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "La BDESE rassemble les informations économiques, sociales et environnementales mises à disposition du CSE dans les entreprises d'au moins 50 salariés.",
+    "reference": "C. trav. art. L2312-18",
+    "piege": "La confondre avec la DSN."
+  },
+  {
+    "id": "REF-M10-15",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Épreuve du titre",
+    "enonce": "Quel est l'intitulé du bloc de compétences BC02 du titre professionnel Gestionnaire de paie ?",
+    "choix": [
+      "A. Comptabilité générale",
+      "B. Gestion des ressources humaines",
+      "C. Gestion administrative, juridique et présentation des bulletins de paie",
+      "D. Valoriser en paie les événements de la vie professionnelle"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "BC01 : gestion administrative, juridique et présentation des bulletins de paie ; BC02 : valoriser en paie les événements de la vie professionnelle.",
+    "reference": "Référentiel RNCP37948",
+    "piege": "Inverser les intitulés des deux blocs."
+  },
+  {
+    "id": "REF-M10-16",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "moyen",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "Quel site publie la doctrine administrative opposable en matière de cotisations sociales ?",
+    "choix": [
+      "A. france-travail.fr",
+      "B. impots.gouv.fr",
+      "C. boss.gouv.fr (Bulletin officiel de la Sécurité sociale)",
+      "D. legifrance.gouv.fr"
+    ],
+    "bonne_reponse": [
+      "C"
+    ],
+    "explication": "Le BOSS rassemble la doctrine administrative en matière de cotisations, opposable par les cotisants.",
+    "reference": "CSS art. L243-6-2 ; boss.gouv.fr",
+    "piege": "Croire que Légifrance publie la doctrine : il publie les textes."
+  },
+  {
+    "id": "REF-M10-17",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "calcul",
+    "theme": "Masse salariale",
+    "enonce": "Augmentations de +1 % au 1er janvier et de +2 % au 1er juillet de N. Quel est l'effet niveau (salaire de décembre N comparé à décembre N−1) ?",
+    "choix": [
+      "A. 2,00 %",
+      "B. 1,50 %",
+      "C. 3,00 %",
+      "D. 3,02 %"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Les augmentations se cumulent : 1,01 × 1,02 = 1,0302, soit +3,02 %.",
+    "reference": "Notions de contrôle de gestion sociale (effet niveau)",
+    "piege": "Additionner les taux (3,00 %)."
+  },
+  {
+    "id": "REF-M10-18",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Veille et éthique",
+    "enonce": "Un manager demande au gestionnaire de paie le salaire d'un collègue pour « comparer ». Quelle attitude adopter ?",
+    "choix": [
+      "A. Le communiquer, il est manager",
+      "B. Le communiquer oralement seulement",
+      "C. Transmettre le bulletin complet",
+      "D. Refuser : les données de paie sont confidentielles et l'accès est limité aux personnes habilitées"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le gestionnaire de paie est tenu à la confidentialité ; l'accès aux données doit être justifié par les fonctions et autorisé.",
+    "reference": "RGPD art. 5 et 32 ; obligation de discrétion professionnelle",
+    "piege": "Penser qu'un lien hiérarchique suffit à justifier l'accès."
+  },
+  {
+    "id": "REF-M10-19",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Indicateurs",
+    "enonce": "Comment le franchissement à la hausse d'un seuil d'effectif est-il pris en compte pour les obligations sociales ?",
+    "choix": [
+      "A. Après 12 mois consécutifs",
+      "B. Dès le premier mois de dépassement",
+      "C. Uniquement si l'URSSAF le notifie",
+      "D. Lorsque le seuil est atteint ou dépassé pendant 5 années civiles consécutives"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "Le franchissement à la hausse n'est pris en compte que si le seuil est atteint ou dépassé pendant 5 années civiles consécutives.",
+    "reference": "CSS art. L130-1",
+    "piege": "Appliquer immédiatement les obligations du nouveau seuil."
+  },
+  {
+    "id": "REF-M10-20",
+    "module": 10,
+    "bloc": "BC01",
+    "niveau": "difficile",
+    "type": "choix unique",
+    "theme": "Masse salariale",
+    "enonce": "Quel effet traduit la variation de la masse salariale due au changement de répartition des effectifs entre catégories (ouvriers, cadres…) ?",
+    "choix": [
+      "A. L'effet report",
+      "B. L'effet de noria",
+      "C. L'effet niveau",
+      "D. L'effet de structure"
+    ],
+    "bonne_reponse": [
+      "D"
+    ],
+    "explication": "L'effet de structure mesure l'impact des changements de composition des effectifs (qualifications, catégories) sur la rémunération moyenne.",
+    "reference": "Notions de contrôle de gestion sociale",
+    "piege": "Le confondre avec l'effet de noria (entrées et sorties à poste équivalent)."
+  }
+]

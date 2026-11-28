@@ -42,8 +42,10 @@ Ouvrir ensuite http://localhost:8000/site/
 | Apprendre › Cours | Module 1 avec sommaire, suivi de lecture, impression PDF (modules 2 à 10 en préparation) |
 | Apprendre › Fiches | 10 fiches synthèse transverses, impression PDF |
 | Apprendre › Glossaire | 65 termes et sigles, filtre, liens vers les modules |
-| S'entraîner › QCM | Questions corrigées, filtres par niveau, thème ou dernières erreurs |
-| S'entraîner › Examen blanc | 60 questions / 90 min (réduit au prorata tant que la banque est incomplète), temps majoré +1/3, correction détaillée |
+| S'entraîner › QCM du référentiel | **200 questions** couvrant les 10 modules et les blocs BC01 / BC02 (40 % faciles, 40 % moyennes, 20 % difficiles, 34 calculs), filtres par bloc, module, thème, niveau ; séries de 10 / 20 / 40 au hasard — [packages/contenu/qcm-referentiel.json](packages/contenu/qcm-referentiel.json) |
+| S'entraîner › QCM du module 1 | Questions corrigées, filtres par niveau, thème ou dernières erreurs |
+| S'entraîner › Examen blanc | 60 questions / 90 min tirées de toute la banque, temps majoré +1/3, correction détaillée |
+| Mon suivi › Mes badges | Niveau (Stagiaire → Légende de la paie), XP, 15 badges, barème d'XP |
 | S'entraîner › Flashcards | Répétition espacée (SM-2), paquets module 1 et glossaire, raccourcis clavier |
 | Outils › Simulateur | Bulletin de paie complet calculé par le moteur, impression / PDF |
 | Outils › Calculateurs | Heures sup., heures compl., congés payés, licenciement, fin de CDD, maintien de salaire, plafond, coût employeur |
@@ -52,7 +54,8 @@ Ouvrir ensuite http://localhost:8000/site/
 | Rechercher | Recherche plein texte dans le cours, les fiches, le glossaire et les QCM |
 
 La progression est enregistrée dans le navigateur de l'apprenant (`localStorage`). Un compte Supabase facultatif la synchronise entre appareils ; sans configuration, le site reste 100 % statique.
-Mode clair / sombre (préférence mémorisée, sinon celle du système) ; animations désactivées si le système demande moins de mouvement.
+Quatre thèmes (Néon violet, Océan cyan, Aurore rose, Clair) ou « Automatique » (suit le système) ; animations désactivées si le système demande moins de mouvement.
+Gamification : XP, niveaux avec « LEVEL UP ! », série de jours 🔥, statuts à faire / en cours / maîtrisé sur chaque module, fiche et cas pratique, avatar 3D.
 
 ## Publication
 

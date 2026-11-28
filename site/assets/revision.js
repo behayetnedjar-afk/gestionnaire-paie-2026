@@ -177,6 +177,7 @@
       main.querySelector('h1').focus();
       main.querySelector('#refaire').onclick = function () { window.Pages.examen(main); };
       if (window.Anim) { Anim.activer(main); if (pct >= 80) Anim.confettis(); }
+      if (window.Jeu) { Jeu.gagner('examen', { discret: true }); if (pct >= 70) Jeu.gagner('examenReussi'); }
     }
 
     tic();
@@ -249,6 +250,32 @@
     }).catch(function () { return 0; });
   }
   window.Revision = { paquets: function () { return paquets(); }, statsPaquet: statsPaquet, leitner: leitner, cartesDues: cartesDues };
+
+  /** Données nécessaires au calcul des badges (partagé entre le tableau de bord et la page « Mes badges »). */
+  window.Pages.contexteBadges = function () {
+    return Promise.all([
+      paquets(),
+      window.Pages.statsOral ? window.Pages.statsOral() : Promise.resolve({ acquis: 0 })
+    ]).then(function (r) {
+      var stats = Stock.lire('reponses', {}), lecture = Stock.lire('lecture', {}), historique = Stock.lire('historique', []), etats = Stock.lire('flashcards', {});
+      var maitrisees = 0;
+      r[0].forEach(function (p) { maitrisees += statsPaquet(p, etats).maitrisees; });
+      var qcms = historique.filter(function (h) { return h.type === 'qcm'; });
+      var bloc = function (code) {
+        var mods = A().MODULES.map(function (m, i) { return { m: m, n: i + 1 }; }).filter(function (x) { return x.m.bloc === code; });
+        return { total: mods.length, maitrises: mods.filter(function (x) { return window.Jeu && Jeu.statut('module-' + x.n) === 'maitrise'; }).length };
+      };
+      return {
+        questions: Object.keys(stats).reduce(function (s, k) { return s + stats[k].vus; }, 0),
+        serieMax: Math.max(Suivi.serie(), Suivi.meilleureSerie()),
+        modulesLus: A().MODULES.filter(function (m, i) { var l = lecture[i + 1]; return m.dispo && l && l.total && Object.keys(l.sections).length >= l.total; }).length,
+        meilleurExamen: historique.filter(function (h) { return h.type === 'examen'; }).reduce(function (m, h) { return Math.max(m, h.pct); }, 0),
+        cartesMaitrisees: maitrisees, oralAcquis: r[1].acquis, joursObjectif: Suivi.joursObjectifAtteint(), secondes: Suivi.tempsTotal(),
+        qcmTermines: qcms.length, qcmParfaits: qcms.filter(function (h) { return h.pct === 100; }).length,
+        bc1: bloc('BC01'), bc2: bloc('BC02')
+      };
+    });
+  };
 
   window.Pages.flashcards = function (main) {
     return paquets().then(function (liste) {
@@ -333,6 +360,7 @@
       main.querySelector('h1').focus();
       main.querySelector('#retour').onclick = function () { window.Pages.flashcards(main); };
       if (window.Anim) Anim.activer(main);
+      if (window.Jeu && vues) Jeu.gagner('flashcards');
     }
     clavier = function (e) {
       if (e.target && e.target.matches && e.target.matches('input, select, textarea')) return;
@@ -354,9 +382,10 @@
       A().toutesLesQuestions(),
       paquets(),
       window.Pages.prochainesEcheances ? window.Pages.prochainesEcheances(4) : Promise.resolve([]),
-      window.Pages.statsOral ? window.Pages.statsOral() : Promise.resolve({ total: 0, acquis: 0, revoir: 0, jamais: 0 })
+      window.Pages.statsOral ? window.Pages.statsOral() : Promise.resolve({ total: 0, acquis: 0, revoir: 0, jamais: 0 }),
+      window.Pages.contexteBadges()
     ]).then(function (r) {
-      var banque = r[0], liste = r[1], echeances = r[2], oral = r[3];
+      var banque = r[0], liste = r[1], echeances = r[2], oral = r[3], ctxBadges = r[4];
       var stats = Stock.lire('reponses', {});
       var lecture = Stock.lire('lecture', {});
       var scores = Stock.lire('qcm', {});
@@ -411,7 +440,7 @@
       var moyenne = function (l) { return l.length ? Math.round(l.reduce(function (s, x) { return s + x.pct; }, 0) / l.length) : null; };
       var dispo = parModule.filter(function (x) { return x.dispo; });
       var global = moyenne(dispo);
-      var blocs = [['BC01', 'Bulletin, brut, cotisations, net', 'bc1'], ['BC02', 'Événements de la vie professionnelle', 'bc2']].map(function (b) {
+      var blocs = Object.keys(A().BLOCS).map(function (k) { var b = A().BLOCS[k]; return [b.code, b.titre, b.cls]; }).map(function (b) {
         var mods = parModule.filter(function (x) { return x.bloc === b[0]; });
         var pub = mods.filter(function (x) { return x.dispo; });
         return { code: b[0], titre: b[1], cls: b[2], pct: moyenne(pub), publies: pub.length, total: mods.length };
@@ -421,13 +450,8 @@
       var serie = Suivi.serie(), meilleure = Suivi.meilleureSerie();
       var avancement = Suivi.avancementJour();
       var obj = avancement.objectif;
-      var lus = A().MODULES.filter(function (m, i) { var l = lecture[i + 1]; return m.dispo && l && l.total && Object.keys(l.sections).length >= l.total; }).length;
-      var meilleurExamen = historique.filter(function (h) { return h.type === 'examen'; }).reduce(function (m, h) { return Math.max(m, h.pct); }, 0);
-      var listeBadges = Suivi.badges({
-        questions: Object.keys(stats).reduce(function (s, k) { return s + stats[k].vus; }, 0),
-        serieMax: Math.max(serie, meilleure), modulesLus: lus, meilleurExamen: meilleurExamen,
-        cartesMaitrisees: cartes.maitrisees, oralAcquis: oral.acquis, joursObjectif: Suivi.joursObjectifAtteint(), secondes: Suivi.tempsTotal()
-      });
+      var listeBadges = Suivi.badges(ctxBadges);
+      var niv = window.Jeu ? Jeu.niveau(Jeu.xp().total) : null;
       var obtenus = listeBadges.filter(function (b) { return b.obtenu; }).length;
 
       // Compte à rebours et programme du jour
@@ -441,7 +465,7 @@
       var examens = historique.filter(function (h) { return h.type === 'examen'; }).slice(0, 5);
       var date = function (iso) { return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' }); };
       var libelleHisto = function (h) {
-        if (h.type === 'qcm') return 'QCM module ' + h.module + ' : ' + h.bons + ' / ' + h.total + ' (' + h.pct + ' %)';
+        if (h.type === 'qcm') return (h.module === 'ref' ? 'QCM du référentiel' : 'QCM module ' + h.module) + ' : ' + h.bons + ' / ' + h.total + ' (' + h.pct + ' %)';
         if (h.type === 'examen') return 'Examen blanc : ' + h.bons + ' / ' + h.total + ' (' + h.pct + ' %)';
         if (h.type === 'flashcards') return 'Flashcards — ' + h.paquet + ' : ' + h.cartes + ' réponses';
         if (h.type === 'oral') return 'Oral : ' + h.acquis + ' acquise(s) sur ' + h.questions + ' question(s)';
@@ -456,7 +480,7 @@
         return '<li><div class="ligne-prog"><span>' + lib + '</span><span>' + v + ' / ' + o + ' ' + unite + '</span></div>' + jauge(pct, pct >= 100 ? 'ok' : '', lib) + '</li>';
       };
 
-      main.innerHTML = '<h1>' + Icone('graphique', 'ico-titre') + ' Tableau de bord</h1>' +
+      main.innerHTML = '<h1>📊 Ma progression</h1>' +
         '<p class="intro">' + (connecte
           ? 'Votre progression est <strong>synchronisée avec votre compte</strong> et reste disponible hors connexion.'
           : 'Votre progression est enregistrée <strong>dans ce navigateur</strong>. Pour la retrouver sur un autre appareil, ' +
@@ -475,11 +499,14 @@
         }).join('') + (cartes.dues ? '<li><span>' + cartes.dues + ' flashcard(s) à revoir</span><span class="liens"><a href="#/flashcards">Réviser</a></span></li>' : '') + '</ul>'
           : '<p>Plus de jour de révision avant l\'épreuve. Bon courage !</p>') +
         '<div class="ligne-prog"><span>Objectif du jour</span><span>' + avancement.pct + ' %</span></div>' + jauge(avancement.pct, avancement.atteint ? 'ok' : '', 'Objectif du jour') +
+        '<p class="astuce"><span aria-hidden="true">💡</span> <strong>Astuce du jour :</strong> ' + esc(Jeu.astuceDuJour()) + '</p>' +
+        '<p class="encouragement">' + esc(Jeu.encouragement()) + '</p>' +
         '<div class="qcm-actions"><a class="bouton petit" href="#/planning">' + Icone('planning') + ' Planning complet</a></div></div></section>' +
 
         '<div class="chiffres">' +
         '<div class="chiffre"><b>' + (global === null ? '—' : global + ' %') + '</b><span>Progression globale (modules publiés)</span></div>' +
-        '<div class="chiffre chiffre-serie"><b>' + serie + ' j</b><span>' + Icone('flamme') + ' Série en cours (record ' + Math.max(serie, meilleure) + ' j)</span></div>' +
+        '<div class="chiffre chiffre-niveau"><b>' + niv.total + ' XP</b><span><span aria-hidden="true">' + niv.emoji + '</span> Niveau ' + niv.rang + ' — ' + esc(niv.nom) + '</span></div>' +
+        '<div class="chiffre chiffre-serie"><b>' + serie + ' j</b><span><span class="flamme' + (serie ? ' vive' : '') + '" aria-hidden="true">🔥</span> Série en cours (record ' + Math.max(serie, meilleure) + ' j)</span></div>' +
         '<div class="chiffre"><b>' + Suivi.duree(Suivi.tempsSemaine()) + '</b><span>Étude sur 7 jours (total ' + Suivi.duree(Suivi.tempsTotal()) + ')</span></div>' +
         '<div class="chiffre"><b>' + repondues.length + ' / ' + ids.length + '</b><span>Questions déjà travaillées</span></div>' +
         '<div class="chiffre"><b>' + (vus ? Math.round(bons / vus * 100) + ' %' : '—') + '</b><span>Taux de réussite global</span></div>' +
@@ -495,6 +522,14 @@
             (b.pct === null ? 'en préparation' : b.pct + ' %') + '</span></div>' + jauge(b.pct || 0, b.cls, 'Progression ' + b.code) +
             '<p class="param-note">' + b.publies + ' module(s) publié(s) sur ' + b.total + '</p></li>';
         }).join('') + '</ul><p class="param-note">Progression d\'un module = moyenne entre la part du cours lue et la part de ses questions réussies à la dernière tentative.</p></section>' +
+        '<section class="bloc" id="tdbChapitres"><h2>Par chapitre</h2><ul class="liste-chapitres">' +
+        parModule.map(function (x) {
+          var st = Jeu.statut('module-' + x.n), m = A().MODULES[x.n - 1];
+          var lib = { 'a-faire': 'À faire', 'en-cours': 'En cours', maitrise: 'Maîtrisé' }[st];
+          return '<li><span class="pastille-statut st-' + st + '">' + lib + '</span><span class="chap-titre">' +
+            (m.dispo ? '<a href="#/module/' + x.n + '">Module ' + x.n + '</a>' : 'Module ' + x.n) + ' — ' + esc(m.titre) + '</span>' +
+            '<span class="chap-pct">' + (x.dispo ? x.pct + ' %' : 'bientôt') + '</span></li>';
+        }).join('') + '</ul></section>' +
         '<section class="bloc"><h2>Progression de lecture</h2><ul class="liste-prog">' + progression + '</ul></section>' +
         '<section class="bloc"><h2>Points faibles</h2>' +
         (lignesThemes.length
@@ -538,11 +573,9 @@
         '<div class="champ"><label for="oQ">Questions par jour</label><input type="text" inputmode="numeric" id="oQ" value="' + obj.questions + '"></div>' +
         '<div class="champ"><label for="oC">Flashcards par jour</label><input type="text" inputmode="numeric" id="oC" value="' + obj.cartes + '"></div>' +
         '<div class="champ champ-check"><button class="bouton petit" type="submit">Enregistrer</button></div></form></details></section>' +
-        '<section class="bloc bloc-large" id="tdbBadges"><h2>' + Icone('badge') + ' Badges <small class="param-note">' + obtenus + ' / ' + listeBadges.length + '</small></h2>' +
-        '<ul class="badges">' + listeBadges.map(function (b) {
-          return '<li class="badge-carte' + (b.obtenu ? ' obtenu' : '') + '"><span class="badge-ico">' + Icone(b.icone) + '</span><b>' + esc(b.titre) + '</b>' +
-            '<span class="param-note">' + esc(b.desc) + '</span>' + (b.obtenu ? '<span class="sr-only">Obtenu</span>' : jauge(b.pct, '', 'Avancement du badge ' + b.titre)) + '</li>';
-        }).join('') + '</ul></section>' +
+        '<section class="bloc bloc-large" id="tdbBadges"><h2>🏆 Badges <small class="param-note">' + obtenus + ' / ' + listeBadges.length + '</small></h2>' +
+        '<ul class="badges">' + listeBadges.map(Jeu.carteBadge).join('') + '</ul>' +
+        '<div class="qcm-actions"><a class="bouton petit secondaire" href="#/badges">Tous mes badges et mon niveau</a></div></section>' +
         '<section class="bloc" id="tdbRappel"><h2>' + Icone('cloche') + ' Rappel quotidien</h2>' +
         '<p class="param-note">Le site étant statique, deux solutions complémentaires : une notification à la première ouverture du jour, ' +
         'et un rappel récurrent dans votre agenda (téléphone ou ordinateur) jusqu\'à la veille de l\'épreuve.</p>' +

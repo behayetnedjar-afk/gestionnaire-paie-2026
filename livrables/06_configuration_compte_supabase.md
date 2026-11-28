@@ -121,9 +121,18 @@ Contenu de `donnees`, identique à l'export JSON du tableau de bord :
   "objectif":   { "minutes": 45, "questions": 20, "cartes": 20 },
   "planning":   { "2026-11-28": { "m1-0": 1, "cartes": 1 } },
   "rappel":     { "actif": true, "heure": "19:00", "dernier": "2026-11-28" },
-  "oral-config":{ "bloc": "tous", "theme": "tous", "minutes": 10 }
+  "oral-config":{ "bloc": "tous", "theme": "tous", "minutes": 30 },
+  "xp":         { "total": 385, "journal": [ { "d": "2026-11-28T18:00:00.000Z", "m": "QCM réussi (80 % et plus)", "p": 40 } ],
+                  "recompenses": { "chapitre:1": 1, "section:1:a-objectifs": 1 } },
+  "statuts":    { "module-1": "en-cours", "fiche-fiche-1-le-bulletin": "maitrise", "exo-1-g-cas-pratique": "a-faire" },
+  "profil":     { "prenom": "Nadia" }
 }
 ```
+
+Avec un compte, le prénom est aussi enregistré dans les métadonnées Supabase (`user_metadata.prenom`) à l'inscription.
+Fusion entre deux appareils :
+- **xp** : on garde le total le plus élevé, et les récompenses déjà accordées sont réunies (pas de double gain) ;
+- **statuts** : l'état le plus avancé l'emporte.
 
 La boîte « type Leitner » d'une flashcard n'est pas stockée. Elle est calculée à partir de `intervalle` :
 

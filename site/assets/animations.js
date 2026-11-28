@@ -144,5 +144,23 @@
     setTimeout(function () { t.remove(); }, 3100);
   }
 
+  /** Inclinaison 3D au survol (cartes d'outils : 6° max ; avatar : 18° max). Un seul écouteur pour tout le document. */
+  function inclinaison(e) {
+    if (reduit() || e.pointerType === 'touch') return;
+    var el = e.target.closest && e.target.closest('.carte-outil, .avatar3d');
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    var max = el.classList.contains('avatar3d') ? 18 : 6;
+    var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    var vX = el.classList.contains('avatar3d') ? '--ax' : '--rx', vY = el.classList.contains('avatar3d') ? '--ay' : '--ry';
+    el.style.setProperty(vX, (-y * max).toFixed(2) + 'deg');
+    el.style.setProperty(vY, (x * max).toFixed(2) + 'deg');
+  }
+  document.addEventListener('pointermove', inclinaison, { passive: true });
+  document.addEventListener('pointerout', function (e) {
+    var el = e.target.closest && e.target.closest('.carte-outil, .avatar3d');
+    if (el && !el.contains(e.relatedTarget)) ['--rx', '--ry', '--ax', '--ay'].forEach(function (v) { el.style.removeProperty(v); });
+  });
+
   window.Anim = { reduit: reduit, activer: activer, entreePage: entreePage, confettis: confettis, toast: toast };
 })();

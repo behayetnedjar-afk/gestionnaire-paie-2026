@@ -14,6 +14,13 @@
   function dateExamen() { return new Date((CFG.dateExamen || '2027-01-27') + 'T00:00:00'); }
   /** Nombre de jours entre aujourd'hui et l'épreuve (0 = c'est aujourd'hui). */
   function joursRestants() { return Math.round((dateExamen() - minuit(new Date())) / JOUR_MS); }
+  /** Instant de l'épreuve pour le compte à rebours détaillé (heure de convocation réglable dans config.js). */
+  function instantExamen() { return new Date((CFG.dateExamen || '2027-01-27') + 'T' + (CFG.heureExamen || '00:00') + ':00'); }
+  /** Temps restant découpé en jours, heures, minutes, secondes. */
+  function decompte() {
+    var s = Math.max(0, Math.floor((instantExamen() - new Date()) / 1000));
+    return { j: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60, fini: s === 0 };
+  }
   function esc(s) { return window.App ? App.esc(s) : String(s); }
 
   /* ------------------------------------------------------------------ */
@@ -93,22 +100,26 @@
   /* Badges : calculés à partir des données, rien de plus à stocker.     */
   /* ------------------------------------------------------------------ */
   function badges(ctx) {
+    // [id, titre, description, icône SVG, émoji, valeur, cible]
     var L = [
-      ['premiers-pas', 'Premiers pas', 'Répondre à une première question', 'eclair', ctx.questions, 1],
-      ['cent', 'Centurion', '100 réponses à des questions', 'quiz', ctx.questions, 100],
-      ['cinq-cents', 'Infatigable', '500 réponses à des questions', 'quiz', ctx.questions, 500],
-      ['serie-3', 'Régularité', '3 jours de révision d\'affilée', 'flamme', ctx.serieMax, 3],
-      ['serie-7', 'Une semaine pleine', '7 jours d\'affilée', 'flamme', ctx.serieMax, 7],
-      ['serie-21', 'Habitude installée', '21 jours d\'affilée', 'flamme', ctx.serieMax, 21],
-      ['lecteur', 'Lecteur assidu', 'Lire un module en entier', 'livre', ctx.modulesLus, 1],
-      ['examen', 'Examen réussi', 'Obtenir au moins 70 % à un examen blanc', 'chrono', ctx.meilleurExamen, 70],
-      ['memoire', 'Mémoire d\'éléphant', '25 flashcards maîtrisées', 'cartes', ctx.cartesMaitrisees, 25],
-      ['oral', 'Prêt pour l\'oral', '10 questions d\'oral acquises', 'micro', ctx.oralAcquis, 10],
-      ['objectif', 'Objectif tenu', 'Atteindre l\'objectif quotidien 5 jours', 'cible', ctx.joursObjectif, 5],
-      ['heures', 'Dix heures de travail', '10 heures d\'étude cumulées', 'horloge', Math.floor(ctx.secondes / 3600), 10]
+      ['premier-quiz', 'Premier quiz', 'Terminer un premier QCM', 'quiz', '🥇', ctx.qcmTermines, 1],
+      ['quiz-100', 'Sans faute', 'Obtenir 100 % à un QCM', 'cible', '🎯', ctx.qcmParfaits, 1],
+      ['serie-7', '7 jours de suite', 'Réviser 7 jours d\'affilée', 'flamme', '🔥', ctx.serieMax, 7],
+      ['bc01', 'BC01 terminé', 'Tous les modules du bloc BC01 maîtrisés', 'livre', '📘', ctx.bc1.maitrises, ctx.bc1.total],
+      ['bc02', 'BC02 terminé', 'Tous les modules du bloc BC02 maîtrisés', 'livre', '📗', ctx.bc2.maitrises, ctx.bc2.total],
+      ['oral', 'Oral validé', '10 questions d\'oral acquises', 'micro', '🎤', ctx.oralAcquis, 10],
+      ['premiers-pas', 'Premiers pas', 'Répondre à une première question', 'eclair', '⚡', ctx.questions, 1],
+      ['cent', 'Centurion', '100 réponses à des questions', 'quiz', '💯', ctx.questions, 100],
+      ['serie-3', 'Régularité', '3 jours de révision d\'affilée', 'flamme', '🕯️', ctx.serieMax, 3],
+      ['serie-21', 'Habitude installée', '21 jours d\'affilée', 'flamme', '🌋', ctx.serieMax, 21],
+      ['lecteur', 'Lecteur assidu', 'Lire un module en entier', 'livre', '📖', ctx.modulesLus, 1],
+      ['examen', 'Examen réussi', 'Au moins 70 % à un examen blanc', 'chrono', '📝', ctx.meilleurExamen, 70],
+      ['memoire', 'Mémoire d\'éléphant', '25 flashcards maîtrisées', 'cartes', '🐘', ctx.cartesMaitrisees, 25],
+      ['objectif', 'Objectif tenu', 'Objectif quotidien atteint 5 jours', 'cible', '✅', ctx.joursObjectif, 5],
+      ['heures', 'Dix heures de travail', '10 heures d\'étude cumulées', 'horloge', '⏳', Math.floor(ctx.secondes / 3600), 10]
     ];
     return L.map(function (b) {
-      return { id: b[0], titre: b[1], desc: b[2], icone: b[3], obtenu: b[4] >= b[5], pct: Math.min(100, Math.round((b[4] || 0) / b[5] * 100)) };
+      return { id: b[0], titre: b[1], desc: b[2], icone: b[3], emoji: b[4], obtenu: b[6] > 0 && b[5] >= b[6], pct: Math.min(100, Math.round((b[5] || 0) / b[6] * 100)) };
     });
   }
 
@@ -162,7 +173,10 @@
       return {
         cle: 'faible-' + f.module + '-' + App.slug(f.theme), titre: 'Point faible : ' + f.theme + ' (' + f.taux + ' %)', module: f.module,
         bloc: M[f.module - 1] ? M[f.module - 1].bloc : '', faible: true,
-        liens: [['QCM ciblé', '#/qcm/' + f.module + '/theme:' + encodeURIComponent(f.theme)], ['Cours', '#/module/' + f.module]]
+        // Thème faible d'un module publié → QCM du module ; sinon → QCM du référentiel filtré sur le thème.
+        liens: M[f.module - 1] && M[f.module - 1].dispo
+          ? [['QCM ciblé', '#/qcm/' + f.module + '/theme:' + encodeURIComponent(f.theme)], ['Cours', '#/module/' + f.module]]
+          : [['QCM ciblé', '#/qcm/ref/theme:' + encodeURIComponent(f.theme)], ['Fiches', '#/fiches']]
       };
     });
 
@@ -277,7 +291,7 @@
     var legende = '<div class="legende-courbe"><span><i class="cle s1"></i>QCM</span><span><i class="cle s2 carre"></i>Examen blanc</span></div>';
     var table = '<details class="vue-table"><summary>Voir les données en tableau</summary><div class="table-wrap"><table class="tableau"><thead><tr><th scope="col">Date</th><th scope="col">Activité</th><th scope="col">Score</th></tr></thead><tbody>' +
       points.slice().reverse().map(function (p) {
-        return '<tr><td>' + date(p.date) + '</td><td>' + (p.type === 'qcm' ? 'QCM module ' + p.module : 'Examen blanc') + '</td><td>' + p.pct + ' %</td></tr>';
+        return '<tr><td>' + date(p.date) + '</td><td>' + (p.type === 'qcm' ? (p.module === 'ref' ? 'QCM du référentiel' : 'QCM module ' + p.module) : 'Examen blanc') + '</td><td>' + p.pct + ' %</td></tr>';
       }).join('') + '</tbody></table></div></details>';
     return legende + '<div class="courbe-zone"></div>' + table;
   }
@@ -304,7 +318,7 @@
       if (!pts.length) return;
       if (pts.length > 1) svg += '<polyline class="ligne ' + s.cls + '" points="' + pts.map(function (o) { return x(o.k) + ',' + y(o.p.pct); }).join(' ') + '"/>';
       pts.forEach(function (o) {
-        var lib = s.nom + (o.p.module ? ' module ' + o.p.module : '') + ' — ' + date(o.p.date) + ' : ' + o.p.pct + ' % (' + o.p.bons + '/' + o.p.total + ')';
+        var lib = s.nom + (o.p.module === 'ref' ? ' du référentiel' : o.p.module ? ' module ' + o.p.module : '') + ' — ' + date(o.p.date) + ' : ' + o.p.pct + ' % (' + o.p.bons + '/' + o.p.total + ')';
         var cx = x(o.k), cy = y(o.p.pct);
         svg += '<g class="point" tabindex="0" role="img" aria-label="' + esc(lib) + '" data-info="' + esc(lib) + '" data-x="' + cx + '" data-y="' + cy + '">' +
           '<circle class="cible-survol" cx="' + cx + '" cy="' + cy + '" r="12"/>' +
@@ -415,7 +429,7 @@
   };
 
   window.Suivi = {
-    joursRestants: joursRestants, dateExamen: dateExamen, iso: iso,
+    joursRestants: joursRestants, dateExamen: dateExamen, iso: iso, decompte: decompte,
     serie: serie, meilleureSerie: meilleureSerie, objectif: objectif, avancementJour: avancementJour,
     joursObjectifAtteint: joursObjectifAtteint, tempsTotal: tempsTotal, tempsSemaine: tempsSemaine, duree: duree,
     badges: badges, construirePlanning: construirePlanning, planningFait: planningFait, cocher: cocher,

@@ -65,6 +65,35 @@ Le test automatisé de bout en bout (Edge sans fenêtre) couvre les points marqu
 - [ ] [auto] Tirage, chronomètre 10 / 20 min, réponse-modèle, points clés, piège, Acquis / À revoir, bilan.
 - [ ] Remplacer `packages/contenu/oral.json` par le vrai fichier : les filtres bloc et thème se remplissent seuls.
 
+## Thèmes, gamification, QCM du référentiel
+
+- [ ] [auto] Néon violet, Océan cyan et Aurore rose appliqués et mémorisés ; « Automatique » revient au réglage du système.
+- [ ] Contrastes AA vérifiés par calcul : en-têtes en dégradé ≥ 5,2:1, couleurs d'univers ≥ 4,8:1, statuts ≥ 4,8:1, dans les quatre thèmes.
+- [ ] [auto] Accueil :
+  - 10 cartes d'outils réparties en 6 univers de couleur ;
+  - décompte en jours / heures / minutes / secondes ;
+  - faux terminal ;
+  - astuce du jour.
+- [ ] [auto] Recherche depuis l'en-tête ; bouton Connexion, puis avatar 3D dès qu'un prénom est enregistré.
+- [ ] [auto] Cours :
+  - barre de lecture ;
+  - coches dans le sommaire ;
+  - statut passé automatiquement à « en cours », puis « maîtrisé » ;
+  - statut à 3 états sur chaque fiche et sur le cas pratique.
+- [ ] [auto] XP : visite du jour, QCM ; « LEVEL UP ! » au passage de niveau (vérifié à 250 XP).
+- [ ] [auto] Page « Mes badges » : 15 badges, niveau, barème d'XP.
+- [ ] [auto] QCM du référentiel :
+  - 200 questions ;
+  - filtres par bloc, module et thème, y compris depuis l'adresse ;
+  - séries tirées au hasard ;
+  - historique.
+- [ ] [auto] Examen blanc au format complet : 60 questions, 90 min.
+- [ ] Banque contrôlée à l'assemblage :
+  - 20 questions par module ;
+  - 80 faciles, 80 moyennes, 40 difficiles ;
+  - pas de doublon ;
+  - bonnes réponses réparties sur A, B, C et D.
+
 ## Compte (après configuration de Supabase)
 
 - [ ] [auto] Sans configuration : page « Mode local » ; [auto] fusion de deux progressions.

@@ -17,7 +17,7 @@
   window.Pages.oral = function (main) {
     return chargerOral().then(function (banque) {
       var suivi = Stock.lire('oral', {});
-      var cfg = Stock.lire('oral-config', { bloc: 'tous', theme: 'tous', minutes: 10 });
+      var cfg = Stock.lire('oral-config', { bloc: 'tous', theme: 'tous', minutes: 30 });
       var exemples = banque.some(function (q) { return q.exemple; });
       var acquises = banque.filter(function (q) { return suivi[q.id] && suivi[q.id].dernier === 'acquis'; }).length;
       var aRevoir = banque.filter(function (q) { return suivi[q.id] && suivi[q.id].dernier === 'a_revoir'; });
@@ -27,9 +27,9 @@
           .map(function (q) { return q.theme; }).filter(function (t, i, a) { return t && a.indexOf(t) === i; }).sort();
       }
 
-      main.innerHTML = '<div class="qcm"><h1>' + Icone('micro', 'ico-titre') + ' Entraînement oral</h1>' +
-        '<p>Simulez l\'<strong>entretien technique</strong> : une question tirée au sort, vous répondez à voix haute comme devant le jury, ' +
-        'puis vous comparez avec la réponse-modèle et vous vous évaluez.</p>' +
+      main.innerHTML = '<div class="qcm"><h1>🎤 Entraînement oral</h1>' +
+        '<p>Simulez l\'<strong>entretien technique</strong> (30 min) ou l\'<strong>entretien final</strong> (20 min) : une question tirée au sort, ' +
+        'vous répondez à voix haute comme devant le jury, puis vous comparez avec la réponse-modèle et vous vous évaluez.</p>' +
         (exemples ? '<div class="alerte">Banque d\'exemples : remplacez <code>packages/contenu/oral.json</code> par votre propre fichier (même structure).</div>' : '') +
         '<div class="chiffres">' +
         '<div class="chiffre"><b>' + banque.length + '</b><span>Questions disponibles</span></div>' +
@@ -37,10 +37,12 @@
         '<div class="chiffre"><b>' + aRevoir.length + '</b><span>À revoir</span></div></div>' +
         '<form id="cfgOral" class="question" novalidate><fieldset><legend>Préparer la session</legend><div class="form-grille">' +
         '<div class="champ"><label for="oBloc">Bloc de compétences</label><select id="oBloc">' +
-        '<option value="tous">Tous les blocs</option><option value="BC01">BC01 — Bulletin, brut, cotisations, net</option><option value="BC02">BC02 — Vie professionnelle</option></select></div>' +
+        '<option value="tous">Tous les blocs</option>' +
+        Object.keys(A().BLOCS).map(function (k) { return '<option value="' + k + '">' + k + ' — ' + esc(A().BLOCS[k].titre) + '</option>'; }).join('') + '</select></div>' +
         '<div class="champ"><label for="oTheme">Thème</label><select id="oTheme"></select></div>' +
-        '<div class="champ"><label for="oDuree">Durée de l\'entretien</label><select id="oDuree">' +
-        '<option value="10">10 minutes</option><option value="20">20 minutes</option><option value="0">Sans chronomètre</option></select></div>' +
+        '<div class="champ"><label for="oDuree">Durée</label><select id="oDuree">' +
+        '<option value="30">30 minutes — entretien technique</option><option value="20">20 minutes — entretien final</option>' +
+        '<option value="10">10 minutes — séance courte</option><option value="0">Sans chronomètre</option></select></div>' +
         '</div></fieldset><p class="param-note" id="oInfo" aria-live="polite"></p>' +
         '<div class="qcm-actions"><button class="bouton" type="submit">Commencer la session</button>' +
         (aRevoir.length ? '<button class="bouton secondaire" type="button" id="oRevoir">Revoir mes ' + aRevoir.length + ' question(s) à revoir</button>' : '') +
@@ -153,7 +155,7 @@
       Stock.ecrire('oral', suivi);
       Stock.compterJour('oral');
       bilan.push({ q: q, acquis: acquis, cites: cites, total: total });
-      if (acquis && window.Anim) Anim.toast('Question acquise');
+      if (acquis && window.Jeu) Jeu.gagner('oral');
       suivante();
     }
     function terminer() {

@@ -1,7 +1,7 @@
 [
   {
     "id": "OR-EX-01",
-    "bloc": "BC02",
+    "bloc": "BC01",
     "theme": "Sources du droit",
     "question": "Expliquez la hiérarchie des normes en droit du travail et l'articulation entre accord de branche et accord d'entreprise depuis 2017.",
     "reponse_attendue": "Les normes s'ordonnent du bloc de constitutionnalité et des traités jusqu'au contrat de travail, en passant par la loi, le règlement, les conventions et accords collectifs et les usages. Depuis les ordonnances de septembre 2017, l'articulation branche / entreprise repose sur trois blocs : la branche prime dans les matières du bloc 1, elle peut verrouiller celles du bloc 2, et l'accord d'entreprise prime pour tout le reste (bloc 3). Le contrat de travail reste soumis au principe de faveur.",
@@ -16,7 +16,7 @@
   },
   {
     "id": "OR-EX-02",
-    "bloc": "BC02",
+    "bloc": "BC01",
     "theme": "Contrats de travail",
     "question": "Dans quels cas peut-on recourir au CDD et quand l'indemnité de fin de contrat n'est-elle pas due ?",
     "reponse_attendue": "Le CDD ne peut pourvoir durablement un emploi lié à l'activité normale et permanente de l'entreprise. Il est réservé aux cas listés par la loi : remplacement d'un salarié absent, accroissement temporaire d'activité, emplois saisonniers ou d'usage, notamment. À l'échéance, le salarié perçoit une indemnité de fin de contrat de 10 % de la rémunération brute totale, sauf exceptions : contrat saisonnier ou d'usage, emploi d'un jeune pendant ses vacances scolaires ou universitaires, refus d'un CDI pour un emploi similaire, rupture anticipée à l'initiative du salarié ou pour faute grave, poursuite en CDI.",
@@ -31,7 +31,7 @@
   },
   {
     "id": "OR-EX-03",
-    "bloc": "BC02",
+    "bloc": "BC01",
     "theme": "Obligations de l'employeur",
     "question": "Qu'est-ce que la DPAE, quand doit-elle être effectuée et à quoi sert-elle ?",
     "reponse_attendue": "La déclaration préalable à l'embauche est adressée à l'URSSAF (ou à la MSA) avant toute embauche, au plus tôt dans les huit jours qui précèdent la date prévisible d'embauche. Elle regroupe plusieurs formalités (immatriculation, affiliation au service de prévention et de santé au travail, etc.) et sert à lutter contre le travail dissimulé. L'employeur remet au salarié une copie ou l'accusé de réception.",
@@ -76,7 +76,7 @@
   },
   {
     "id": "OR-EX-06",
-    "bloc": "BC01",
+    "bloc": "BC02",
     "theme": "Temps de travail et rémunération",
     "question": "Comment sont majorées et traitées socialement les heures supplémentaires ?",
     "reponse_attendue": "Les heures accomplies au-delà de 35 heures par semaine sont des heures supplémentaires. À défaut d'accord, elles sont majorées de 25 % pour les huit premières (de la 36e à la 43e) et de 50 % au-delà ; un accord collectif peut prévoir un taux différent, sans descendre sous 10 %. Elles ouvrent droit à une réduction de cotisations salariales d'assurance vieillesse et à une exonération d'impôt sur le revenu dans une limite annuelle (voir Paramètres 2026).",
