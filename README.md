@@ -34,8 +34,11 @@ Ouvrir ensuite http://localhost:8000/site/
 
 | Page | Contenu |
 |---|---|
-| Programme | Les 10 modules, chiffres clés 2026, accès aux outils |
-| Tableau de bord | Lecture par module, scores, points faibles par thème, examens, flashcards, prochaines échéances, export/import de la progression |
+| Programme | Compte à rebours jusqu'à l'épreuve (27/01/2027), « À réviser aujourd'hui », 10 modules colorés par bloc (BC01 / BC02), chiffres clés 2026 |
+| Tableau de bord | Progression globale et par bloc, courbe des scores, points faibles, série de jours, temps d'étude, objectif quotidien, badges, boîtes de flashcards, oral, rappel quotidien (notification + agenda .ics), export/import |
+| Planning de révision | Thèmes répartis jusqu'à l'épreuve, points faibles en priorité, examen blanc hebdomadaire, cases « fait » |
+| S'entraîner › Oral | Entretien technique : tirage par bloc et thème, chronomètre 10 / 20 min, réponse-modèle, points clés, auto-évaluation |
+| Compte | Inscription / connexion e-mail via Supabase (facultatif), synchronisation de la progression — voir [livrables/06_configuration_compte_supabase.md](livrables/06_configuration_compte_supabase.md) |
 | Apprendre › Cours | Module 1 avec sommaire, suivi de lecture, impression PDF (modules 2 à 10 en préparation) |
 | Apprendre › Fiches | 10 fiches synthèse transverses, impression PDF |
 | Apprendre › Glossaire | 65 termes et sigles, filtre, liens vers les modules |
@@ -48,7 +51,8 @@ Ouvrir ensuite http://localhost:8000/site/
 | Outils › Paramètres 2026 | Toutes les valeurs légales, filtre « À VÉRIFIER » |
 | Rechercher | Recherche plein texte dans le cours, les fiches, le glossaire et les QCM |
 
-La progression est enregistrée dans le navigateur de l'apprenant (`localStorage`), sans compte ni serveur.
+La progression est enregistrée dans le navigateur de l'apprenant (`localStorage`). Un compte Supabase facultatif la synchronise entre appareils ; sans configuration, le site reste 100 % statique.
+Mode clair / sombre (préférence mémorisée, sinon celle du système) ; animations désactivées si le système demande moins de mouvement.
 
 ## Publication
 

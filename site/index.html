@@ -4,9 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestionnaire de Paie — Référentiel 2026</title>
-  <meta name="description" content="Plateforme d'apprentissage de la paie : cours, fiches de révision, QCM corrigés, examen blanc, flashcards, simulateur de bulletin et paramètres légaux 2026.">
+  <meta name="description" content="Plateforme de révision du titre professionnel Gestionnaire de paie : cours, fiches, QCM corrigés, examen blanc, oral, flashcards, planning, simulateur de bulletin et paramètres légaux 2026.">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/style.css">
   <script>
+    // Appliqué avant l'affichage pour éviter un flash de mauvais thème.
     try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
 </head>
@@ -30,6 +35,7 @@
                 <li><a href="#/module/1" data-nav="module">Cours</a></li>
                 <li><a href="#/fiches" data-nav="fiches">Fiches synthèse</a></li>
                 <li><a href="#/glossaire" data-nav="glossaire">Glossaire</a></li>
+                <li><a href="#/planning" data-nav="planning">Planning de révision</a></li>
               </ul>
             </details>
           </li>
@@ -39,6 +45,7 @@
               <ul>
                 <li><a href="#/qcm/1" data-nav="qcm">QCM</a></li>
                 <li><a href="#/examen" data-nav="examen">Examen blanc</a></li>
+                <li><a href="#/oral" data-nav="oral">Oral (entretien technique)</a></li>
                 <li><a href="#/flashcards" data-nav="flashcards">Flashcards</a></li>
               </ul>
             </details>
@@ -57,7 +64,11 @@
           <li><a href="#/recherche" data-nav="recherche"><span aria-hidden="true">⌕ </span>Rechercher</a></li>
         </ul>
       </nav>
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Basculer le mode sombre">◐</button>
+      <div class="entete-actions">
+        <a class="rebours-chip" id="jRebours" href="#/planning" data-nav="planning-chip"><b>J-…</b><span>Épreuve</span></a>
+        <a class="compte-chip" id="lienCompte" href="#/compte" data-nav="compte" aria-label="Mon compte"><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Compte</span></a>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Mode sombre" aria-pressed="false">◐</button>
+      </div>
     </div>
   </header>
 
@@ -65,19 +76,27 @@
     <p class="chargement">Chargement…</p>
   </main>
 
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
   <footer class="pied">
     <p><strong>Avertissement.</strong> Contenu pédagogique en cours de rédaction. Il ne remplace pas les sources officielles.
       Les valeurs marquées <span class="badge badge-verif">À VÉRIFIER</span> doivent être confirmées sur
       urssaf.fr, boss.gouv.fr, service-public.fr, legifrance.gouv.fr ou agirc-arrco.fr avant tout usage professionnel.
-      Votre progression est enregistrée uniquement dans ce navigateur.</p>
+      <span id="piedStockage">Votre progression est enregistrée dans ce navigateur.</span></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-  <script src="assets/moteur.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/icones.js"></script>
   <script src="assets/stock.js"></script>
+  <script src="assets/animations.js"></script>
+  <script src="assets/suivi.js"></script>
+  <script src="assets/compte.js"></script>
+  <script src="assets/moteur.js"></script>
   <script src="assets/outils.js"></script>
   <script src="assets/revision.js"></script>
   <script src="assets/ressources.js"></script>
+  <script src="assets/oral.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

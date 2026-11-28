@@ -33,7 +33,7 @@ jobs:
 
       - name: Vérifier les fichiers JSON
         run: |
-          for f in parametres/*.json packages/contenu/modules/*/qcm.json; do
+          for f in parametres/*.json packages/contenu/*.json packages/contenu/modules/*/*.json; do
             node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "JSON invalide : $f"; exit 1; }
           done
 

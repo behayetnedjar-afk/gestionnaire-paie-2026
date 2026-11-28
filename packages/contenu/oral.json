@@ -1,0 +1,92 @@
+[
+  {
+    "id": "OR-EX-01",
+    "bloc": "BC02",
+    "theme": "Sources du droit",
+    "question": "Expliquez la hiérarchie des normes en droit du travail et l'articulation entre accord de branche et accord d'entreprise depuis 2017.",
+    "reponse_attendue": "Les normes s'ordonnent du bloc de constitutionnalité et des traités jusqu'au contrat de travail, en passant par la loi, le règlement, les conventions et accords collectifs et les usages. Depuis les ordonnances de septembre 2017, l'articulation branche / entreprise repose sur trois blocs : la branche prime dans les matières du bloc 1, elle peut verrouiller celles du bloc 2, et l'accord d'entreprise prime pour tout le reste (bloc 3). Le contrat de travail reste soumis au principe de faveur.",
+    "points_cles": [
+      "Citer l'ordre : Constitution et traités, loi, règlement, accords collectifs, usages, contrat",
+      "Les trois blocs de matières (C. trav., art. L2253-1 à L2253-3)",
+      "Primauté de l'accord d'entreprise hors blocs 1 et 2",
+      "Principe de faveur maintenu pour le contrat de travail"
+    ],
+    "piege": "Dire que le principe de faveur s'applique encore systématiquement entre accord de branche et accord d'entreprise.",
+    "exemple": true
+  },
+  {
+    "id": "OR-EX-02",
+    "bloc": "BC02",
+    "theme": "Contrats de travail",
+    "question": "Dans quels cas peut-on recourir au CDD et quand l'indemnité de fin de contrat n'est-elle pas due ?",
+    "reponse_attendue": "Le CDD ne peut pourvoir durablement un emploi lié à l'activité normale et permanente de l'entreprise. Il est réservé aux cas listés par la loi : remplacement d'un salarié absent, accroissement temporaire d'activité, emplois saisonniers ou d'usage, notamment. À l'échéance, le salarié perçoit une indemnité de fin de contrat de 10 % de la rémunération brute totale, sauf exceptions : contrat saisonnier ou d'usage, emploi d'un jeune pendant ses vacances scolaires ou universitaires, refus d'un CDI pour un emploi similaire, rupture anticipée à l'initiative du salarié ou pour faute grave, poursuite en CDI.",
+    "points_cles": [
+      "Principe : pas d'emploi durable lié à l'activité permanente (C. trav., art. L1242-1)",
+      "Cas de recours limitatifs (art. L1242-2)",
+      "Indemnité de fin de contrat de 10 % (art. L1243-8)",
+      "Au moins trois cas d'exclusion de l'indemnité (art. L1243-10)"
+    ],
+    "piege": "Oublier que la poursuite de la relation en CDI supprime l'indemnité de fin de contrat.",
+    "exemple": true
+  },
+  {
+    "id": "OR-EX-03",
+    "bloc": "BC02",
+    "theme": "Obligations de l'employeur",
+    "question": "Qu'est-ce que la DPAE, quand doit-elle être effectuée et à quoi sert-elle ?",
+    "reponse_attendue": "La déclaration préalable à l'embauche est adressée à l'URSSAF (ou à la MSA) avant toute embauche, au plus tôt dans les huit jours qui précèdent la date prévisible d'embauche. Elle regroupe plusieurs formalités (immatriculation, affiliation au service de prévention et de santé au travail, etc.) et sert à lutter contre le travail dissimulé. L'employeur remet au salarié une copie ou l'accusé de réception.",
+    "points_cles": [
+      "Avant l'embauche, au plus tôt 8 jours avant (C. trav., art. L1221-10 et R1221-5)",
+      "Destinataire : URSSAF ou MSA",
+      "Lutte contre le travail dissimulé",
+      "Information du salarié (copie ou accusé de réception)"
+    ],
+    "piege": "Penser que la DPAE peut être faite dans les jours qui suivent la prise de poste.",
+    "exemple": true
+  },
+  {
+    "id": "OR-EX-04",
+    "bloc": "BC01",
+    "theme": "Bulletin de paie",
+    "question": "Distinguez le net à payer, le net imposable et le montant net social.",
+    "reponse_attendue": "Le net à payer est la somme versée au salarié après déduction des cotisations, de la CSG/CRDS, du prélèvement à la source et des éventuels acomptes ou saisies. Le net imposable est la base du prélèvement à la source : il réintègre notamment la CSG non déductible et la CRDS. Le montant net social, mention obligatoire du bulletin depuis juillet 2023, sert de référence aux organismes sociaux pour le calcul de certaines prestations (prime d'activité, RSA).",
+    "points_cles": [
+      "Net à payer = ce que le salarié reçoit effectivement",
+      "Net imposable = assiette du prélèvement à la source",
+      "CSG non déductible et CRDS réintégrées dans le net imposable",
+      "Montant net social : mention obligatoire, utilisé pour les prestations sociales"
+    ],
+    "piege": "Confondre net imposable et net à payer, ou oublier que le prélèvement à la source est calculé sur le net imposable.",
+    "exemple": true
+  },
+  {
+    "id": "OR-EX-05",
+    "bloc": "BC01",
+    "theme": "Cotisations et plafond",
+    "question": "Qu'est-ce que le plafond mensuel de la Sécurité sociale et comment le proratise-t-on ?",
+    "reponse_attendue": "Le PMSS sert à délimiter les assiettes de certaines cotisations : vieillesse plafonnée, tranches 1 et 2 de la retraite complémentaire AGIRC-ARRCO. Il est fixé à 4 005 € par mois pour 2026. Il se proratise pour un salarié à temps partiel (au prorata de la durée contractuelle par rapport à la durée légale ou conventionnelle) et en cas d'entrée ou de sortie en cours de mois (jours calendaires de présence / 30).",
+    "points_cles": [
+      "PMSS 2026 : 4 005 € (voir Paramètres 2026)",
+      "Tranche 1 jusqu'à 1 PMSS, tranche 2 de 1 à 8 PMSS",
+      "Proratisation temps partiel : durée contractuelle / durée légale",
+      "Proratisation entrée ou sortie : jours calendaires / 30"
+    ],
+    "piege": "Proratiser le plafond en jours ouvrés au lieu de jours calendaires.",
+    "exemple": true
+  },
+  {
+    "id": "OR-EX-06",
+    "bloc": "BC01",
+    "theme": "Temps de travail et rémunération",
+    "question": "Comment sont majorées et traitées socialement les heures supplémentaires ?",
+    "reponse_attendue": "Les heures accomplies au-delà de 35 heures par semaine sont des heures supplémentaires. À défaut d'accord, elles sont majorées de 25 % pour les huit premières (de la 36e à la 43e) et de 50 % au-delà ; un accord collectif peut prévoir un taux différent, sans descendre sous 10 %. Elles ouvrent droit à une réduction de cotisations salariales d'assurance vieillesse et à une exonération d'impôt sur le revenu dans une limite annuelle (voir Paramètres 2026).",
+    "points_cles": [
+      "Décompte à la semaine au-delà de 35 h",
+      "25 % puis 50 % à défaut d'accord (C. trav., art. L3121-36)",
+      "Taux conventionnel minimum de 10 % (art. L3121-33)",
+      "Réduction de cotisations salariales et exonération d'impôt plafonnée"
+    ],
+    "piege": "Décompter les heures supplémentaires au mois au lieu de la semaine.",
+    "exemple": true
+  }
+]

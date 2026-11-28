@@ -6,18 +6,26 @@
   var BASE = /\/site\/?/.test(location.pathname) ? '../' : './';
   var CONTENU = BASE + 'packages/contenu/';
 
+  /* Blocs de compétences (couleurs du site) :
+   *   BC01 — bulletin, brut, cotisations, net (bleu / violet)
+   *   BC02 — événements de la vie professionnelle (orange / vert)
+   * Le rattachement d'un module à un bloc se modifie ici uniquement (champ « bloc »). */
+  var BLOCS = {
+    BC01: { code: 'BC01', titre: 'Bulletin, brut, cotisations, net', cls: 'bc1' },
+    BC02: { code: 'BC02', titre: 'Événements de la vie professionnelle', cls: 'bc2' }
+  };
   var MODULES = [
-    { titre: 'Cadre juridique et environnement de la paie', dossier: 'm01-cadre-juridique', dispo: true,
+    { titre: 'Cadre juridique et environnement de la paie', dossier: 'm01-cadre-juridique', dispo: true, bloc: 'BC02', icone: 'livre',
       themes: ['Sources du droit, hiérarchie des normes', 'Contrats : CDI, CDD, temps partiel, intérim, apprentissage', 'Durée du travail, HS, forfaits jours', 'DPAE, registre du personnel', 'Archivage et RGPD'] },
-    { titre: 'Le bulletin de paie', themes: ['Mentions obligatoires, bulletin clarifié', 'Brut, net social, net imposable, net à payer', 'Lecture et contrôle', 'Avantages en nature, primes'] },
-    { titre: 'Cotisations et contributions sociales', themes: ['PMSS, tranches A/B/C', 'Sécurité sociale, chômage, AGIRC-ARRCO', 'CSG/CRDS', 'Réduction générale 2026, taux réduits', 'Régularisation des plafonds'] },
-    { titre: 'Absences et suspension du contrat', themes: ['Maladie : IJSS, maintien, subrogation', 'AT/MP', 'Maternité, paternité, congés familiaux', 'Congés payés : 1/10e et maintien'] },
-    { titre: 'Temps de travail et rémunération variable', themes: ['HS et heures complémentaires', 'Astreintes, nuit, dimanche', 'Primes et commissions', 'Épargne salariale, PPV'] },
-    { titre: 'Fin de contrat et solde de tout compte', themes: ['Démission, licenciement, rupture conventionnelle', 'Préavis, indemnités', 'Régime social et fiscal', 'Documents de fin de contrat'] },
-    { titre: 'DSN et déclaratif', themes: ['DSN mensuelle et événementielle', 'Anomalies et rejets', 'Prélèvement à la source', 'Échéances de paiement'] },
-    { titre: 'Cas particuliers', themes: ['Apprentis, stagiaires', 'Cadres, dirigeants, mandataires', 'Détachés, expatriés, frontaliers', 'Saisies, acomptes, frais professionnels'] },
-    { titre: 'Comptabilité de la paie, contrôle et audit', themes: ['Écritures de paie', 'Provisions de congés payés', 'Rapprochement DSN / compta / bulletins', 'Contrôle URSSAF'] },
-    { titre: 'Pilotage et relation sociale', themes: ['Masse salariale, indicateurs', 'Communication', 'Veille et éthique', 'Préparation à l\'épreuve'] }
+    { titre: 'Le bulletin de paie', bloc: 'BC01', icone: 'bulletin', themes: ['Mentions obligatoires, bulletin clarifié', 'Brut, net social, net imposable, net à payer', 'Lecture et contrôle', 'Avantages en nature, primes'] },
+    { titre: 'Cotisations et contributions sociales', bloc: 'BC01', icone: 'calcul', themes: ['PMSS, tranches A/B/C', 'Sécurité sociale, chômage, AGIRC-ARRCO', 'CSG/CRDS', 'Réduction générale 2026, taux réduits', 'Régularisation des plafonds'] },
+    { titre: 'Absences et suspension du contrat', bloc: 'BC02', icone: 'calendrier', themes: ['Maladie : IJSS, maintien, subrogation', 'AT/MP', 'Maternité, paternité, congés familiaux', 'Congés payés : 1/10e et maintien'] },
+    { titre: 'Temps de travail et rémunération variable', bloc: 'BC01', icone: 'horloge', themes: ['HS et heures complémentaires', 'Astreintes, nuit, dimanche', 'Primes et commissions', 'Épargne salariale, PPV'] },
+    { titre: 'Fin de contrat et solde de tout compte', bloc: 'BC02', icone: 'fiche', themes: ['Démission, licenciement, rupture conventionnelle', 'Préavis, indemnités', 'Régime social et fiscal', 'Documents de fin de contrat'] },
+    { titre: 'DSN et déclaratif', bloc: 'BC01', icone: 'eclair', themes: ['DSN mensuelle et événementielle', 'Anomalies et rejets', 'Prélèvement à la source', 'Échéances de paiement'] },
+    { titre: 'Cas particuliers', bloc: 'BC02', icone: 'utilisateur', themes: ['Apprentis, stagiaires', 'Cadres, dirigeants, mandataires', 'Détachés, expatriés, frontaliers', 'Saisies, acomptes, frais professionnels'] },
+    { titre: 'Comptabilité de la paie, contrôle et audit', bloc: 'BC01', icone: 'graphique', themes: ['Écritures de paie', 'Provisions de congés payés', 'Rapprochement DSN / compta / bulletins', 'Contrôle URSSAF'] },
+    { titre: 'Pilotage et relation sociale', bloc: 'BC01', icone: 'cible', themes: ['Masse salariale, indicateurs', 'Communication', 'Veille et éthique', 'Préparation à l\'épreuve'] }
   ];
 
   var CHEMINS = {
@@ -25,6 +33,7 @@
     fiches: CONTENU + 'fiches-synthese/fiches-synthese.md',
     glossaire: CONTENU + 'glossaire.json',
     calendrier: CONTENU + 'calendrier-social-2026.json',
+    oral: CONTENU + 'oral.json',
     module: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/module-' + String(n).padStart(2, '0') + '.md'; },
     qcm: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/qcm.json'; },
     flashcards: function (n) { return CONTENU + 'modules/' + MODULES[n - 1].dossier + '/flashcards.json'; }
@@ -75,7 +84,7 @@
     var cible = document.getElementById(id);
     if (!cible) return false;
     cible.setAttribute('tabindex', '-1');
-    cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    cible.scrollIntoView({ behavior: window.Anim && Anim.reduit() ? 'auto' : 'smooth', block: 'start' });
     cible.focus({ preventScroll: true });
     return true;
   }
@@ -174,30 +183,45 @@
         [fmt(c('smic.mensuel_35h')) + ' €', 'SMIC mensuel 35 h']
       ] : [];
       var scores = Stock.lire('qcm', {});
-      var carte = function (num, titre, items, actions) {
-        return '<article class="carte"><span class="num">' + esc(num) + '</span><h3>' + esc(titre) + '</h3><ul>' +
+      var carte = function (icone, num, titre, items, actions) {
+        return '<article class="carte carte-outil"><div class="carte-tete"><span class="carte-ico">' + Icone(icone) + '</span><span class="num">' + esc(num) + '</span></div>' +
+          '<h3>' + esc(titre) + '</h3><ul>' +
           items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><div class="actions">' + actions + '</div></article>';
       };
+      var jr = window.Suivi ? Suivi.joursRestants() : null;
+      var dateEx = window.Suivi ? Suivi.dateExamen().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : '';
       main.innerHTML =
-        '<section class="hero"><h1>Devenez gestionnaire de paie</h1>' +
-        '<p>Cours structurés, fiches de révision, QCM corrigés, simulateur de bulletin et paramètres légaux 2026. ' +
-        'Pour les étudiants, alternants, personnes en reconversion et candidats au titre professionnel.</p></section>' +
-        (chiffres.length ? '<div class="chiffres">' + chiffres.map(function (x) {
+        '<section class="hero"><div class="hero-texte"><span class="surtitre">Titre professionnel Gestionnaire de paie · RNCP37948</span>' +
+        '<h1>Devenez gestionnaire de paie</h1>' +
+        '<p>Cours structurés, fiches de révision, QCM corrigés, entraînement oral, simulateur de bulletin et paramètres légaux 2026. ' +
+        'Pour les étudiants, alternants, personnes en reconversion et candidats au titre professionnel.</p>' +
+        '<div class="hero-actions"><a class="bouton clair" href="#/planning">' + Icone('planning') + ' Mon planning</a>' +
+        '<a class="bouton contour-clair" href="#/module/1">' + Icone('livre') + ' Commencer le cours</a></div></div>' +
+        (jr !== null && jr >= 0 ? '<a class="hero-rebours" href="#/planning" aria-label="Épreuve dans ' + jr + ' jours, le ' + esc(dateEx) + ' — ouvrir le planning">' +
+          '<span class="rebours-n" data-compteur>' + jr + '</span><span class="rebours-l">jour' + (jr > 1 ? 's' : '') + ' avant l\'épreuve</span>' +
+          '<span class="rebours-d">' + esc(dateEx) + '</span></a>' : '') + '</section>' +
+        '<section class="aujourdhui" id="aujourdhui" aria-live="polite"><h2>' + Icone('cloche') + ' À réviser aujourd\'hui</h2><p class="chargement">Préparation de votre programme…</p></section>' +
+        (chiffres.length ? '<div class="chiffres chiffres-legaux">' + chiffres.map(function (x) {
           return '<div class="chiffre"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>';
         }).join('') + '</div>' : '') +
         '<h2>S\'entraîner et réviser</h2><div class="grille-modules" style="margin-bottom:32px">' +
-        carte('Suivi', 'Tableau de bord', ['Progression de lecture', 'Scores et points faibles', 'Prochaines échéances'], '<a class="bouton" href="#/tableau-de-bord">Ouvrir</a>') +
-        carte('Entraînement', 'QCM et examen blanc', ['Questions corrigées et référencées', 'Examen chronométré', 'Aménagement du temps (+1/3)'], '<a class="bouton" href="#/qcm/1">QCM</a><a class="bouton secondaire" href="#/examen">Examen blanc</a>') +
-        carte('Mémorisation', 'Flashcards', ['Répétition espacée', 'Cartes du module 1 et du glossaire'], '<a class="bouton" href="#/flashcards">Réviser</a>') +
-        carte('Application', 'Simulateur de bulletin', ['Saisie guidée', 'Bulletin détaillé ligne par ligne', 'Impression PDF'], '<a class="bouton" href="#/simulateur">Ouvrir</a>') +
-        carte('Application', 'Calculateurs rapides', ['HS, congés payés, licenciement', 'Fin de CDD, maintien de salaire', 'Plafond, coût employeur'], '<a class="bouton" href="#/calculateurs">Ouvrir</a>') +
-        carte('Ressources', 'Glossaire et calendrier', ['65 termes et sigles', 'Échéances DSN et sociales 2026'], '<a class="bouton" href="#/glossaire">Glossaire</a><a class="bouton secondaire" href="#/calendrier">Calendrier</a>') +
+        carte('graphique', 'Suivi', 'Tableau de bord', ['Progression globale et par bloc', 'Courbe des scores, badges', 'Objectif quotidien, série de jours'], '<a class="bouton" href="#/tableau-de-bord">Ouvrir</a>') +
+        carte('planning', 'Organisation', 'Planning de révision', ['Réparti jusqu\'au jour de l\'épreuve', 'Priorité aux points faibles', 'Rappel quotidien'], '<a class="bouton" href="#/planning">Voir le planning</a>') +
+        carte('quiz', 'Entraînement', 'QCM et examen blanc', ['Questions corrigées et référencées', 'Examen chronométré', 'Aménagement du temps (+1/3)'], '<a class="bouton" href="#/qcm/1">QCM</a><a class="bouton secondaire" href="#/examen">Examen blanc</a>') +
+        carte('micro', 'Entretien technique', 'Entraînement oral', ['Questions tirées au sort par thème', 'Chronomètre 10 ou 20 min', 'Réponse-modèle et auto-évaluation'], '<a class="bouton" href="#/oral">S\'entraîner</a>') +
+        carte('cartes', 'Mémorisation', 'Flashcards', ['Répétition espacée, boîtes type Leitner', 'Cartes du module 1 et du glossaire'], '<a class="bouton" href="#/flashcards">Réviser</a>') +
+        carte('bulletin', 'Application', 'Simulateur de bulletin', ['Saisie guidée', 'Bulletin détaillé ligne par ligne', 'Impression PDF'], '<a class="bouton" href="#/simulateur">Ouvrir</a>') +
+        carte('calcul', 'Application', 'Calculateurs rapides', ['HS, congés payés, licenciement', 'Fin de CDD, maintien de salaire', 'Plafond, coût employeur'], '<a class="bouton" href="#/calculateurs">Ouvrir</a>') +
+        carte('glossaire', 'Ressources', 'Glossaire et calendrier', ['65 termes et sigles', 'Échéances DSN et sociales 2026'], '<a class="bouton" href="#/glossaire">Glossaire</a><a class="bouton secondaire" href="#/calendrier">Calendrier</a>') +
         '</div>' +
-        '<h2>Les 10 modules</h2><div class="grille-modules">' +
+        '<div class="titre-modules"><h2>Les 10 modules</h2><p class="legende-blocs">' +
+        Object.keys(BLOCS).map(function (k) { var b = BLOCS[k]; return '<span><span class="pastille-bloc ' + b.cls + '">' + b.code + '</span> ' + esc(b.titre) + '</span>'; }).join('') +
+        '</p></div><div class="grille-modules">' +
         MODULES.map(function (m, i) {
-          var n = i + 1;
-          return '<article class="carte' + (m.dispo ? '' : ' a-venir') + '">' +
-            '<span class="num">Module ' + n + '</span><h3>' + esc(m.titre) + '</h3>' +
+          var n = i + 1, b = BLOCS[m.bloc] || {};
+          return '<article class="carte carte-module ' + (b.cls || '') + (m.dispo ? '' : ' a-venir') + '">' +
+            '<div class="carte-tete"><span class="carte-ico">' + Icone(m.icone || 'livre') + '</span><span class="num">Module ' + n + '</span>' +
+            '<span class="pastille-bloc ' + (b.cls || '') + '" title="' + esc(b.titre || '') + '">' + esc(m.bloc || '') + '</span></div><h3>' + esc(m.titre) + '</h3>' +
             '<ul>' + m.themes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
             '<div class="actions">' + (m.dispo
               ? '<a class="bouton" href="#/module/' + n + '">Cours</a><a class="bouton secondaire" href="#/qcm/' + n + '">QCM</a>' +
@@ -205,19 +229,38 @@
               : '<span class="etiquette">En préparation</span>') +
             '</div></article>';
         }).join('') + '</div>';
+
+      // Programme du jour (calculé à partir du planning, des flashcards dues et des points faibles).
+      if (window.Suivi) Suivi.aReviserAujourdhui().then(function (a) {
+        var zone = document.getElementById('aujourdhui');
+        if (!zone) return;
+        var serie = Suivi.serie();
+        zone.innerHTML = '<div class="aujourdhui-tete"><h2>' + Icone('cloche') + ' À réviser aujourd\'hui</h2>' +
+          '<span class="etiquette serie">' + Icone('flamme') + ' ' + serie + ' jour' + (serie > 1 ? 's' : '') + ' d\'affilée</span></div>' +
+          (a.jour ? '<ul class="a-faire">' + a.jour.items.map(function (it) {
+            return '<li><span>' + esc(it.titre) + '</span><span class="liens">' + (it.liens || []).map(function (l) { return '<a href="' + l[1] + '">' + esc(l[0]) + '</a>'; }).join(' · ') + '</span></li>';
+          }).join('') + (a.cartesDues ? '<li><span>' + a.cartesDues + ' flashcard(s) à revoir</span><span class="liens"><a href="#/flashcards">Réviser</a></span></li>' : '') + '</ul>'
+            : '<p>Bonne épreuve !</p>') +
+          '<div class="ligne-prog"><span>Objectif du jour</span><span>' + a.avancement.pct + ' %</span></div>' +
+          '<div class="jauge' + (a.avancement.atteint ? ' ok' : '') + '" role="progressbar" aria-label="Objectif du jour" aria-valuenow="' + a.avancement.pct + '" aria-valuemin="0" aria-valuemax="100"><i style="width:' + a.avancement.pct + '%"></i></div>';
+        if (window.Anim) Anim.activer(zone);
+      });
     });
   }
 
   /* ---------- QCM d'entraînement ---------- */
-  function pageQcm(n) {
+  /** QCM d'un module. filtreInitial (facultatif, depuis l'URL #/qcm/n/<filtre>) : facile, moyen, difficile, calcul, faibles ou theme:<nom>. */
+  function pageQcm(n, filtreInitial) {
     if (!MODULES[n - 1] || !MODULES[n - 1].dispo) { main.innerHTML = '<h1>QCM en préparation</h1>'; return Promise.resolve(); }
     return charger(CHEMINS.qcm(n), true).then(function (toutes) {
       titrePage('QCM module ' + n);
-      var etat = { filtre: 'tous', liste: [], i: 0, reponses: [] };
+      var etat = { filtre: 'tous', liste: [], i: 0, reponses: [], serie: 0 };
       var themes = toutes.map(function (q) { return q.theme; }).filter(function (t, i, a) { return t && a.indexOf(t) === i; });
+      var filtresValides = ['tous', 'facile', 'moyen', 'difficile', 'calcul', 'faibles'].concat(themes.map(function (t) { return 'theme:' + t; }));
+      if (filtreInitial && filtresValides.indexOf(filtreInitial) >= 0) etat.filtre = filtreInitial;
 
       function demarrer(liste) {
-        etat.liste = liste; etat.i = 0; etat.reponses = [];
+        etat.liste = liste; etat.i = 0; etat.reponses = []; etat.serie = 0;
         afficherQuestion();
       }
       function filtrer() {
@@ -252,9 +295,10 @@
         var q = etat.liste[etat.i];
         var multiple = q.type === 'choix multiple';
         var pct = Math.round(etat.i / etat.liste.length * 100);
-        main.innerHTML = '<div class="qcm">' +
+        main.innerHTML = '<div class="qcm qcm-en-cours">' +
           '<div class="qcm-entete"><h1 style="margin:0;font-size:22px">QCM — Module ' + n + '</h1>' +
-          '<span class="etiquette">Question ' + (etat.i + 1) + ' / ' + etat.liste.length + '</span></div>' +
+          '<span class="etiquette">Question ' + (etat.i + 1) + ' / ' + etat.liste.length + '</span>' +
+          (etat.serie >= 2 ? '<span class="etiquette serie">' + Icone('flamme') + ' Série : ' + etat.serie + '</span>' : '') + '</div>' +
           '<div class="progression" role="progressbar" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Progression"><div style="width:' + pct + '%"></div></div>' +
           '<form class="question" novalidate><div class="meta-q"><span class="etiquette">' + esc(q.id) + '</span>' +
           '<span class="etiquette">' + esc(q.niveau) + '</span><span class="etiquette">' + esc(q.type) + '</span>' +
@@ -286,6 +330,12 @@
             else if (choisies.indexOf(l) >= 0) lab.classList.add('faux');
           });
           form.querySelector('#retour').innerHTML = correctionHtml(q, ok, bonnes);
+          // Série de bonnes réponses : petite célébration toutes les 5 bonnes réponses d'affilée.
+          etat.serie = ok ? etat.serie + 1 : 0;
+          if (ok && etat.serie % 5 === 0 && window.Anim) {
+            Anim.confettis();
+            Anim.toast('Série de ' + etat.serie + ' bonnes réponses !');
+          }
           var btn = form.querySelector('#valider');
           btn.textContent = etat.i + 1 < etat.liste.length ? 'Question suivante' : 'Voir le résultat';
           btn.focus();
@@ -299,7 +349,10 @@
         var bons = etat.reponses.filter(function (r) { return r.ok; }).length;
         var pct = Math.round(bons / etat.reponses.length * 100);
         if (etat.liste.length === toutes.length) Stock.enregistrerScoreQcm(n, pct);
-        Stock.ajouterHistorique({ type: 'qcm', module: n, bons: bons, total: etat.reponses.length, pct: pct });
+        Stock.ajouterHistorique({
+          type: 'qcm', module: n, bons: bons, total: etat.reponses.length, pct: pct,
+          erreurs: etat.reponses.filter(function (r) { return !r.ok; }).map(function (r) { return r.q.id; })
+        });
         var parNiveau = ['facile', 'moyen', 'difficile'].map(function (niv) {
           var r = etat.reponses.filter(function (x) { return x.q.niveau === niv; });
           return r.length ? '<tr><td>' + niv + '</td><td>' + r.filter(function (x) { return x.ok; }).length + ' / ' + r.length + '</td></tr>' : '';
@@ -315,6 +368,7 @@
         main.querySelector('h1').focus();
         if (ratees.length) main.querySelector('#revoir').onclick = function () { demarrer(ratees); };
         main.querySelector('#recommencer').onclick = ecranAccueil;
+        if (window.Anim) { Anim.activer(main); if (pct >= 80 && etat.reponses.length >= 5) Anim.confettis(); }
       }
       ecranAccueil();
     });
@@ -443,7 +497,10 @@
         p = MODULES[n - 1] && MODULES[n - 1].dispo ? pageMarkdown(CHEMINS.module(n), 'Module ' + n, parts[2], n)
           : Promise.resolve(main.innerHTML = '<h1>Module en préparation</h1>');
         break;
-      case 'qcm': p = pageQcm(n); break;
+      case 'qcm': p = pageQcm(n, parts.slice(2).join('/')); break;
+      case 'oral': p = pageExterne('oral', 'Entraînement oral'); break;
+      case 'planning': p = pageExterne('planning', 'Planning de révision'); break;
+      case 'compte': p = pageExterne('compte', 'Mon compte', parts[1]); break;
       case 'fiches': p = pageMarkdown(CHEMINS.fiches, 'Fiches synthèse', parts[1]); break;
       case 'parametres': p = pageParametres(); break;
       case 'simulateur': case 'calculateurs': p = pageOutil(nav); break;
@@ -456,26 +513,57 @@
       default: p = pageAccueil();
     }
     p.catch(erreur).then(function (r) {
+      if (window.Anim) { Anim.entreePage(main); Anim.activer(main); }
+      if (window.Suivi) Suivi.majCompteRebours();
       if (r === 'garder-defilement') return; // la page défile elle-même vers l'ancre demandée
       window.scrollTo(0, 0);
       main.focus({ preventScroll: true });
     });
   }
 
-  document.getElementById('themeBtn').addEventListener('click', function () {
+  /* ---------- mode clair / sombre : préférence mémorisée, sinon celle du système ---------- */
+  var themeBtn = document.getElementById('themeBtn');
+  function estSombre() {
     var root = document.documentElement;
-    var sombre = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = sombre ? 'light' : 'dark';
+    return root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function majThemeBtn() {
+    var sombre = estSombre();
+    themeBtn.innerHTML = Icone(sombre ? 'soleil' : 'lune');
+    themeBtn.setAttribute('aria-pressed', String(sombre));
+    themeBtn.setAttribute('aria-label', 'Mode sombre');
+    themeBtn.title = sombre ? 'Passer en mode clair' : 'Passer en mode sombre';
+  }
+  themeBtn.addEventListener('click', function () {
+    var root = document.documentElement;
+    root.dataset.theme = estSombre() ? 'light' : 'dark';
     try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    majThemeBtn();
   });
+  if (window.matchMedia) {
+    var mqTheme = matchMedia('(prefers-color-scheme: dark)');
+    if (mqTheme.addEventListener) mqTheme.addEventListener('change', majThemeBtn);
+  }
+  majThemeBtn();
 
   window.App = {
-    MODULES: MODULES, CHEMINS: CHEMINS, charger: charger, esc: esc, slug: slug, fmt: fmt, melanger: melanger,
+    MODULES: MODULES, BLOCS: BLOCS, CHEMINS: CHEMINS, charger: charger, esc: esc, slug: slug, fmt: fmt, melanger: melanger,
     titrePage: titrePage, surDepart: surDepart, allerA: allerA, correctionHtml: correctionHtml,
     toutesLesQuestions: toutesLesQuestions, idsTitres: idsTitres
   };
 
   window.addEventListener('hashchange', router);
   // Les autres scripts (revision.js, ressources.js) sont chargés après : on attend la fin du chargement.
-  if (document.readyState === 'complete') router(); else window.addEventListener('load', router);
+  // Hauteur réelle de l'en-tête collant (il passe sur deux lignes sur petit écran) : sert aux éléments collants et aux ancres.
+  var entete = document.querySelector('.entete');
+  function majHauteurEntete() { document.documentElement.style.setProperty('--h-entete', entete.offsetHeight + 'px'); }
+  if (window.ResizeObserver) new ResizeObserver(majHauteurEntete).observe(entete);
+  majHauteurEntete();
+
+  function demarrer() {
+    router();
+    // Rappel « à réviser aujourd'hui » : notification à la première ouverture du jour, si l'apprenant l'a activée.
+    if (window.Suivi) setTimeout(Suivi.notifierSiBesoin, 3000);
+  }
+  if (document.readyState === 'complete') demarrer(); else window.addEventListener('load', demarrer);
 })();

@@ -1,4 +1,6 @@
-/* Progression de l'apprenant, stockée uniquement dans ce navigateur (localStorage). */
+/* Progression de l'apprenant, stockée dans ce navigateur (localStorage, clés préfixées « gp: »).
+ * Chaque écriture émet l'événement « stock:change » : compte.js s'en sert pour synchroniser
+ * la progression avec le compte Supabase quand l'apprenant est connecté. */
 (function () {
   'use strict';
   var PREFIXE = 'gp:';
@@ -9,8 +11,21 @@
       return v === null ? defaut : JSON.parse(v);
     } catch (e) { return defaut; }
   }
-  function ecrire(cle, valeur) {
-    try { localStorage.setItem(PREFIXE + cle, JSON.stringify(valeur)); return true; } catch (e) { return false; }
+  /** Écrit une valeur et prévient les abonnés (synchronisation du compte, tableau de bord…). */
+  function ecrire(cle, valeur, silencieux) {
+    try { localStorage.setItem(PREFIXE + cle, JSON.stringify(valeur)); } catch (e) { return false; }
+    if (!silencieux) {
+      try { window.dispatchEvent(new CustomEvent('stock:change', { detail: cle })); } catch (e) {}
+    }
+    return true;
+  }
+  /** Journal par jour : { 'AAAA-MM-JJ': { secondes, questions, bonnes, cartes, oral, sections } }. */
+  function compterJour(champ, n) {
+    var j = lire('jours', {});
+    var d = aujourdhui();
+    j[d] = j[d] || {};
+    j[d][champ] = (j[d][champ] || 0) + (n || 1);
+    ecrire('jours', j);
   }
   function cles() {
     var r = [];
@@ -31,6 +46,8 @@
     lire: lire,
     ecrire: ecrire,
     aujourdhui: aujourdhui,
+    compterJour: compterJour,
+    cles: cles,
 
     /** Statistiques par question (sert aux points faibles). */
     enregistrerReponse: function (q, ok) {
@@ -44,14 +61,16 @@
       r.date = Date.now();
       s[q.id] = r;
       ecrire('reponses', s);
+      compterJour('questions');
+      if (ok) compterJour('bonnes');
     },
 
-    /** Journal des activités (QCM, examens, flashcards). 100 entrées maximum. */
+    /** Journal des activités (QCM avec erreurs, examens, flashcards, oral). 300 entrées maximum. */
     ajouterHistorique: function (entree) {
       var h = lire('historique', []);
       entree.date = new Date().toISOString();
       h.unshift(entree);
-      ecrire('historique', h.slice(0, 100));
+      ecrire('historique', h.slice(0, 300));
     },
 
     /** Meilleur score par module de QCM. */
@@ -69,6 +88,7 @@
     marquerLu: function (module, sectionId, total) {
       var l = lire('lecture', {});
       var m = l[module] || { sections: {} };
+      if (!m.sections[sectionId]) compterJour('sections');
       m.sections[sectionId] = 1;
       if (total) m.total = total;
       l[module] = m;
@@ -82,10 +102,12 @@
     },
     importer: function (o) {
       if (!o || o.application !== 'gestionnaire-paie-2026' || typeof o.donnees !== 'object') throw new Error('Fichier de progression non reconnu.');
-      Object.keys(o.donnees).forEach(function (k) { ecrire(k, o.donnees[k]); });
+      Object.keys(o.donnees).forEach(function (k) { ecrire(k, o.donnees[k], true); });
+      try { window.dispatchEvent(new CustomEvent('stock:change', { detail: '*' })); } catch (e) {}
     },
     reinitialiser: function () {
       cles().forEach(function (k) { try { localStorage.removeItem(PREFIXE + k); } catch (e) {} });
+      try { window.dispatchEvent(new CustomEvent('stock:change', { detail: '*' })); } catch (e) {}
     }
   };
 })();
